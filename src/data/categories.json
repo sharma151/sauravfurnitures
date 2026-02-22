@@ -1,0 +1,58 @@
+[
+  {
+    "name": "New Arrivals",
+    "slug": "new-arrival",
+    "subcategories": [
+      { "name": "All New Arrivals", "slug": "all" },
+      { "name": "Fast Delivery (5-7 days)", "slug": "fast-delivery" }
+    ]
+  },
+  {
+    "name": "Bedroom",
+    "slug": "bedroom",
+    "subcategories": [
+      { "name": "Bedroom All", "slug": "all" },
+      { "name": "Bedroom Set", "slug": "bedroom-set" },
+      { "name": "Bed", "slug": "bed" },
+      { "name": "Wardrobes", "slug": "wardrobes" },
+      { "name": "Dressing Table", "slug": "dressing-table" },
+      { "name": "Bedside/Night Table", "slug": "bedside-night-table" },
+      { "name": "Kids", "slug": "kids" }
+    ]
+  },
+  {
+    "name": "Living Room",
+    "slug": "living-room",
+    "subcategories": [
+      { "name": "Living Room All", "slug": "all" },
+      { "name": "Sofa Set", "slug": "sofa-set" },
+      { "name": "Coffee Table", "slug": "coffee-table" },
+      { "name": "TV Unit", "slug": "tv-unit" },
+      { "name": "Bookshelf", "slug": "bookshelf" },
+      { "name": "Center Table", "slug": "center-table" }
+    ]
+  },
+  {
+    "name": "Dining",
+    "slug": "dining",
+    "subcategories": [
+      { "name": "Dining All", "slug": "all" },
+      { "name": "Dining Table", "slug": "dining-table" },
+      { "name": "Dining Chairs", "slug": "dining-chairs" },
+      { "name": "Dining Set", "slug": "dining-set" },
+      { "name": "Bar Stools", "slug": "bar-stools" }
+    ]
+  },
+  {
+    "name": "Office",
+    "slug": "office",
+    "subcategories": [
+      { "name": "Office All", "slug": "all" },
+      { "name": "Office Desk", "slug": "office-desk" },
+      { "name": "Office Chair", "slug": "office-chair" },
+      { "name": "Study Table", "slug": "study-table" },
+      { "name": "Filing Cabinet", "slug": "filing-cabinet" },
+      { "name": "Bookshelf", "slug": "bookshelf" }
+    ]
+  }
+]
