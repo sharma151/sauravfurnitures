@@ -18,7 +18,7 @@ export default function Navbar() {
   const categories = getCategories();
 
   return (
-    <header className="sticky top-0 z-40 w-full border-b border-border bg-card/95 backdrop-blur supports-[backdrop-filter]:bg-card/80">
+    <header className="sticky top-0 z-40 w-full border-b border-border bg-card/95 backdrop-blur supports-backdrop-filter:bg-card/80">
       {/* Top Navbar - Main routing: Home, About, Contact Us, Services */}
       <div className="border-b border-border bg-section/80">
         <nav className="mx-auto flex max-w-7xl items-center justify-between gap-6 px-4 py-2 sm:px-6 lg:px-8 ">
@@ -29,7 +29,7 @@ export default function Navbar() {
             Saurav Furnitures
           </Link>
 
-          <span >
+          <span>
             {mainLinks.map((link) => (
               <Link
                 key={link.href}
