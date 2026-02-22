@@ -1,6 +1,57 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+
+@import "tailwindcss";
+
+/* ---------------- THEME CONFIG (Tailwind v4 way) ---------------- */
+
+@theme {
+  /* Colors */
+  --color-background: #F8FAFC;
+  --color-section: #EEF2F7;
+  --color-card: #FFFFFF;
+  --color-primaryText: #0F172A;
+  --color-secondaryText: #475569;
+  --color-border: #E2E8F0;
+  --color-accent: #1E3A8A;
+  --color-accentLight: #3B82F6;
+  --color-cta: #1D4ED8;
+  --color-ctaHover: #1E40AF;
+  --color-highlight: #DBEAFE;
+
+  /* Fonts */
+  --font-sans: var(--font-geist-sans), Inter, system-ui, sans-serif;
+  --font-serif: var(--font-geist-mono), Georgia, serif;
+
+  /* Shadows */
+  --shadow-soft: 0 4px 6px -1px rgba(15, 23, 42, 0.06),
+    0 2px 4px -2px rgba(15, 23, 42, 0.04);
+
+  --shadow-soft-hover: 0 10px 15px -3px rgba(15, 23, 42, 0.08),
+    0 4px 6px -4px rgba(15, 23, 42, 0.06);
+
+  /* Transition */
+  --default-transition-duration: 300ms;
+}
+
+/* ---------------- GLOBAL STYLES ---------------- */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-primaryText);
+  font-family: var(--font-sans);
+}
+
+* {
+  border-color: var(--color-border);
+}
+
+::selection {
+  background-color: var(--color-highlight);
+  color: var(--color-accent);
+}
 
 @layer base {
   :root {
