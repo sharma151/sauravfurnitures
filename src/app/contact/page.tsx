@@ -1,79 +1,89 @@
 import type { Metadata } from "next";
 import ContactForm from "@/components/ContactForm";
+import { Phone, Mail, MapPin } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Contact Us",
-  description:
-    "Get in touch with Saurav Furnitures. Visit our showroom, call, or send a message. We're here to help with your furniture needs.",
+  title: "Contact | Saurav Furnitures",
+  description: "Get in touch for custom furniture and interior solutions.",
 };
 
 export default function ContactPage() {
   return (
-    <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
-      <h1 className="text-4xl font-bold text-primaryText">Contact Us</h1>
-      <p className="mt-4 text-lg text-secondaryText">
-        We&apos;d love to hear from you. Reach out for inquiries, quotes, or
-        visits.
-      </p>
+    <main className="mx-auto max-w-6xl px-6 py-12 lg:py-24">
+      {/* 1. Header: Minimal & Centered on mobile, left-aligned on desktop */}
+      <header className="mb-16 border-b border-slate-100 pb-8">
+        <h1 className="text-5xl font-extrabold tracking-tight text-slate-900 sm:text-6xl">
+          Let's build your <span className="text-cta">dream space.</span>
+        </h1>
+      </header>
 
-      <div className="mt-16 grid gap-12 lg:grid-cols-2">
-        <div>
-          <h2 className="text-xl font-semibold text-primaryText">
-            Get in Touch
-          </h2>
-          <div className="mt-6 space-y-6 border">
-            <div>
-              <h3 className="text-sm font-medium text-primaryText">Address</h3>
-              <p className="mt-1 text-secondaryText">
-                Thasikhel, Lalitpur.
-                <br />
-                Near Hospice Nepal.
-              </p>
+      <div className="flex flex-col gap-16 lg:flex-row lg:items-start">
+        {/* 2. Contact Info & Map (Left on Desktop, Bottom on Mobile) */}
+        {/* order-2 moves this below the form on mobile. lg:order-1 moves it back to the left on desktop */}
+        <div className="order-2 w-full space-y-12 lg:order-1 lg:w-5/12">
+          {/* Address Section */}
+          <section className="space-y-6">
+            <div className="group flex items-start gap-4">
+              <MapPin className="mt-1 h-5 w-5 text-cta" />
+              <div>
+                <h2 className="text-sm font-bold uppercase tracking-widest text-slate-400">
+                  Showroom
+                </h2>
+                <address className="mt-2 not-italic text-slate-600 leading-relaxed">
+                  Thasikhel, Lalitpur <br />
+                  Near Hospice Nepal
+                </address>
+              </div>
             </div>
-            <div>
-              <h3 className="text-sm font-medium text-primaryText">Phone</h3>
-              <p className="mt-1 text-secondaryText">+977-9841469014</p>
-              <p className="mt-1 text-secondaryText">+977-9763200683</p>
+
+            <div className="flex items-start gap-4">
+              <Phone className="mt-1 h-5 w-5 text-cta" />
+              <div>
+                <h2 className="text-sm font-bold uppercase tracking-widest text-slate-400">
+                  Call
+                </h2>
+                <p className="mt-2 text-slate-600">+977-9841469014</p>
+                <p className="text-slate-600">+977-9763200683</p>
+              </div>
             </div>
-            <div>
-              <h3 className="text-sm font-medium text-primaryText">Email</h3>
-              <p className="mt-1 text-secondaryText">
-                contact@sauravfurnitures.com
-              </p>
+
+            <div className="flex items-start gap-4">
+              <Mail className="mt-1 h-5 w-5 text-cta" />
+              <div>
+                <h2 className="text-sm font-bold uppercase tracking-widest text-slate-400">
+                  Email
+                </h2>
+                <p className="mt-2 text-slate-600">
+                  contact@sauravfurnitures.com
+                </p>
+              </div>
             </div>
-            <div>
-              <h3 className="text-sm font-medium text-primaryText">
-                Working Hours
-              </h3>
-              <p className="mt-1 text-secondaryText">
-                sun - fri: 7:00 AM - 6:00 PM
-                <br />
-                Saturday: 07:00 AM - 3:00 PM
-              </p>
-            </div>
+          </section>
+
+          {/* Minimal Map */}
+          <div className="overflow-hidden rounded-xl border border-slate-100 shadow-sm transition-opacity hover:opacity-90">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3533.5684618237!2d85.3149!3d27.668!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjfCsDQwJzA0LjgiTiA4NcKwMTgnNTMuNiJF!5e0!3m2!1sen!2snp!4v1625000000000!5m2!1sen!2snp"
+              width="100%"
+              height="280"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              title="Location Map"
+            />
           </div>
         </div>
-        <div className="rounded-2xl border border-border bg-card p-8 shadow-md">
-          <h2 className="text-xl font-semibold text-primaryText">
-            Send a Message
-          </h2>
-          <ContactForm />
+
+        {/* 3. Form (Top on Mobile, Right on Desktop) */}
+        <div className="order-1 w-full lg:order-2 lg:w-7/12">
+          <div className="rounded-2xl bg-white p-2 sm:p-0">
+            <h2 className="mb-8 text-xl font-medium text-slate-900">
+              Inquiry Form
+            </h2>
+            <ContactForm />
+          </div>
         </div>
       </div>
-
-      <div className="mt-16 overflow-hidden rounded-2xl border border-border shadow-md">
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d606.9336250574507!2d85.31794086610502!3d27.664816750273467!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1sen!2snp!4v1771776636921!5m2!1sen!2snp"
-          width="100%"
-          height="400"
-          style={{ border: 0 }}
-          allowFullScreen
-          loading="lazy"
-          referrerPolicy="no-referrer-when-downgrade"
-          title="Our location on map"
-          className="block"
-        ></iframe>
-      </div>
-    </div>
+    </main>
   );
 }

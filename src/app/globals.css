@@ -1,4 +1,3 @@
-
 @import "tailwindcss";
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
@@ -8,28 +7,40 @@
 /* ---------------- THEME CONFIG (Tailwind v4 way) ---------------- */
 
 @theme {
+  --animate-marquee: marquee 30s linear infinite;
+
+  /* Define the keyframes */
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
   /* Colors */
-  --color-background: #F8FAFC;
-  --color-section: #EEF2F7;
-  --color-card: #FFFFFF;
-  --color-primaryText: #0F172A;
+  --color-background: #f8fafc;
+  --color-section: #eef2f7;
+  --color-card: #ffffff;
+  --color-primaryText: #0f172a;
   --color-secondaryText: #475569;
-  --color-border: #E2E8F0;
-  --color-accent: #1E3A8A;
-  --color-accentLight: #3B82F6;
-  --color-cta: #1D4ED8;
-  --color-ctaHover: #1E40AF;
-  --color-highlight: #DBEAFE;
+  --color-border: #e2e8f0;
+  --color-accent: #1e3a8a;
+  --color-accentLight: #3b82f6;
+  --color-cta: #1d4ed8;
+  --color-ctaHover: #1e40af;
+  --color-highlight: #dbeafe;
 
   /* Fonts */
   --font-sans: var(--font-geist-sans), Inter, system-ui, sans-serif;
   --font-serif: var(--font-geist-mono), Georgia, serif;
 
   /* Shadows */
-  --shadow-soft: 0 4px 6px -1px rgba(15, 23, 42, 0.06),
-    0 2px 4px -2px rgba(15, 23, 42, 0.04);
+  --shadow-soft:
+    0 4px 6px -1px rgba(15, 23, 42, 0.06), 0 2px 4px -2px rgba(15, 23, 42, 0.04);
 
-  --shadow-soft-hover: 0 10px 15px -3px rgba(15, 23, 42, 0.08),
+  --shadow-soft-hover:
+    0 10px 15px -3px rgba(15, 23, 42, 0.08),
     0 4px 6px -4px rgba(15, 23, 42, 0.06);
 
   /* Transition */
