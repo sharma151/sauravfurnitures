@@ -178,6 +178,7 @@ const mainLinks = [
   { href: "/about", label: "About" },
   { href: "/services", label: "Services" },
   { href: "/contact", label: "Contact Us" },
+  { href: "/helpdesk", label: "Book service" },
 ];
 
 export default function Navbar() {
