@@ -14,13 +14,13 @@ export default function ContactForm() {
     return (
       <div className="py-12 text-center animate-in fade-in duration-500">
         <p className="text-lg font-medium text-cta">Thank you.</p>
-        <p className="text-slate-500">We'll be in touch shortly.</p>
+        <p className="text-secondaryText">We'll be in touch shortly.</p>
       </div>
     );
   }
 
   const inputBase =
-    "w-full border-b border-slate-200 bg-transparent py-3 outline-none transition-all focus:border-cta text-slate-900 placeholder:text-slate-300";
+    "w-full border-b border-border bg-transparent py-3 text-primaryText outline-none transition-all placeholder:text-secondaryText/60 focus:border-cta";
 
   return (
     <form
@@ -67,7 +67,7 @@ export default function ContactForm() {
       <div className="sm:col-span-2 pt-4">
         <button
           type="submit"
-          className="inline-flex items-center justify-center rounded-full bg-slate-900 px-10 py-4 text-sm font-bold uppercase tracking-widest text-white transition-all hover:bg-cta active:scale-95"
+          className="inline-flex items-center justify-center rounded-full bg-primaryText px-10 py-4 text-sm font-bold uppercase tracking-widest text-white transition-all hover:bg-cta active:scale-95"
         >
           Send Inquiry
         </button>

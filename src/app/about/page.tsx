@@ -18,7 +18,7 @@ export default function AboutPage() {
         <div>
           <h2 className="text-2xl font-semibold text-primaryText">Our Story</h2>
           <p className="mt-4 leading-relaxed">
-            For over two decades, Saurav Furnitures has been a trusted name in premium furniture.
+            For over three decades, Saurav Furnitures has been a trusted name in premium furniture.
             What started as a small workshop has grown into a brand synonymous with quality,
             craftsmanship, and timeless design. Our journey is built on a simple promise: to deliver
             furniture that lasts generations.

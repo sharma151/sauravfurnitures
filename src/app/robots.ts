@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: "/",
       disallow: ["/api/"],
     },
-    sitemap: "https://sauravfurnitures.com/sitemap.xml",
+    sitemap: "https://sauravfurniture.com/sitemap.xml",
   };
 }

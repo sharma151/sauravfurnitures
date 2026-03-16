@@ -1,7 +1,6 @@
 import React from "react";
 import yipl from "../../public/images/companylogo/yipl-logo.svg";
 import codingmountain from "../../public/images/companylogo/codingmountain-logo.svg";
-// import Helpatas from "../../public/images/companylogo/helvetas-logo.png";
 interface Company {
   name: string;
   logo: any;
@@ -16,20 +15,16 @@ const companies: Company[] = [
     name: "codingmountain",
     logo: codingmountain,
   },
-  // {
-  //   name: "helpatas",
-  //   // logo: Helpatas,
-  // },
 ];
 
 const CompanyMarquee: React.FC = () => {
   // We double the array to ensure the loop is seamless
-  const displayLogos = [...companies, ...companies,...companies];
+  const displayLogos = [...companies, ...companies, ...companies];
 
   return (
-    <div className="w-full bg-white py-12 overflow-hidden">
+    <div className="w-full overflow-hidden bg-section py-12">
       <div className="flex flex-col items-center mb-8">
-        <h2 className="text-2xl font-bold text-gray-800">
+        <h2 className="text-2xl font-bold text-primaryText">
           Companies We've Worked With
         </h2>
       </div>
@@ -43,7 +38,6 @@ const CompanyMarquee: React.FC = () => {
               className="mx-8 flex items-center justify-center w-40 h-20"
             >
               <img
-                // src={company.logo}
                 src={
                   typeof company.logo === "string"
                     ? company.logo

@@ -91,7 +91,7 @@ export default function HomePage() {
     <>
       <HeroSection />
       <Carousel />
-      <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+      <section className="mx-auto max-w-7xl px-4 py-24 sm:px-6 lg:px-8">
         <h2 className="text-3xl font-bold text-primaryText">
           Featured Categories
         </h2>
@@ -102,7 +102,7 @@ export default function HomePage() {
           <CategoryGrid />
         </div>
       </section>
-      <section className="bg-section py-16">
+      <section className="bg-section py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-primaryText">New Arrivals</h2>
           <p className="mt-2 text-secondaryText">
@@ -112,7 +112,7 @@ export default function HomePage() {
         </div>
       </section>
       <CompanyMarquee />
-      <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+      <section className="mx-auto max-w-7xl px-4 py-24 sm:px-6 lg:px-8">
         <h2 className="text-3xl font-bold text-primaryText">Why Choose Us</h2>
         <p className="mt-2 text-secondaryText">
           The Saurav Furnitures difference

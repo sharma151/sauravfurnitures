@@ -24,12 +24,12 @@ export default function ReusableDropdown({ category }: DropdownMenuProps) {
       <NavigationMenuList>
         <NavigationMenuItem>
           {/* The Trigger is the top-level Category name */}
-          <NavigationMenuTrigger className="bg-transparent  px-4 py-2 text-sm font-medium text-primaryText transition-colors">
+          <NavigationMenuTrigger className="bg-transparent px-4 py-2 text-sm font-medium text-primaryText transition-colors hover:bg-highlight hover:text-accent data-[state=open]:bg-highlight data-[state=open]:text-accent">
             {category.name}
           </NavigationMenuTrigger>
 
           <NavigationMenuContent>
-            <ul className="grid w-55 gap-1 bg-card  rounded-xl ">
+            <ul className="grid w-55 gap-1 rounded-xl bg-card">
               {category.subcategories.map((sub) => {
                 const href =
                   category.slug === "new-arrival"

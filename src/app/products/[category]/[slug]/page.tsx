@@ -123,7 +123,7 @@ export default async function SlugPage({ params }: PageProps) {
                 </span>
                 <span className="text-sm text-secondaryText">{product.deliveryTime} delivery</span>
               </div>
-              <p className="mt-6 text-2xl font-semibold text-accent">
+              <p className="mt-6 text-2xl font-semibold text-cta">
                 ${product.price.toLocaleString()}
               </p>
               <p className="mt-6 text-secondaryText">{product.description}</p>
