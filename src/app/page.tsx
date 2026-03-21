@@ -7,7 +7,7 @@ import CompanyMarquee from "@/components/CompanyMarquee";
 
 const features = [
   {
-    title: "20+ Years Experience",
+    title: "30+ Years Experience",
     description: "Decades of craftsmanship and customer satisfaction",
     icon: (
       <svg
@@ -111,7 +111,7 @@ export default function HomePage() {
           <HomeProducts products={newArrivals} />
         </div>
       </section>
-      <CompanyMarquee />
+      {/* <CompanyMarquee /> */}
       <section className="mx-auto max-w-7xl px-4 py-24 sm:px-6 lg:px-8">
         <h2 className="text-3xl font-bold text-primaryText">Why Choose Us</h2>
         <p className="mt-2 text-secondaryText">

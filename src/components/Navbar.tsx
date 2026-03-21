@@ -71,13 +71,13 @@ function CategoryDropdown({
       </button>
 
       {open && (
-        <div className="absolute left-0 top-full z-50 w-56 bg-white shadow-xl rounded-b-md">
+        <div className="absolute left-0 top-full z-50 w-56 bg-card shadow-xl rounded-b-md">
           <ul className="p-2">
             {category.subcategories.map((sub) => (
               <li key={sub.slug}>
                 <Link
                   href={getCategoryHref(category.slug, sub.slug)}
-                  className="block w-full px-4 py-3 text-[15px] font-medium text-gray-700 hover:bg-[#F2E3CA] hover:text-black rounded-sm transition-colors"
+                  className="block w-full px-4 py-3 text-[15px] font-medium text-gray-700 hover:bg-cta hover:text-section rounded-sm transition-colors"
                 >
                   {sub.name}
                 </Link>
@@ -105,21 +105,23 @@ export default function Navbar() {
           </Link>
 
           {/* Desktop main nav links */}
-          <nav className="hidden items-center gap-8 lg:flex">
-            {mainLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="text-sm font-medium text-muted-foreground hover:text-primaryText transition-colors"
-              >
-                {link.label}
-              </Link>
-            ))}
-          </nav>
+          <div>
+            <nav className="hidden items-center gap-8 lg:flex">
+              {mainLinks.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className="text-sm font-medium text-muted-foreground hover:text-primaryText transition-colors"
+                >
+                  {link.label}
+                </Link>
+              ))}
+            </nav>
 
-          <div className="flex items-center gap-2 sm:gap-4">
-            <div className="lg:hidden">
-              <MobileNav categories={categories} />
+            <div className="flex items-center gap-2 sm:gap-4">
+              <div className="lg:hidden">
+                <MobileNav categories={categories} />
+              </div>
             </div>
           </div>
         </div>
