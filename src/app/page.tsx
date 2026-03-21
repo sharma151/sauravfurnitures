@@ -123,7 +123,7 @@ export default function HomePage() {
               key={f.title}
               className="rounded-2xl border border-border bg-card p-8 shadow-md transition-all duration-300 ease-in-out hover:shadow-lg"
             >
-              <div className="text-accent">{f.icon}</div>
+              <div className="text-primaryText">{f.icon}</div>
               <h3 className="mt-4 font-semibold text-primaryText">{f.title}</h3>
               <p className="mt-2 text-sm text-secondaryText">{f.description}</p>
             </div>

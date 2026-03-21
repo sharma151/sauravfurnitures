@@ -13,14 +13,18 @@ export default function ContactForm() {
   if (submitted) {
     return (
       <div className="py-12 text-center animate-in fade-in duration-500">
-        <p className="text-lg font-medium text-cta">Thank you.</p>
-        <p className="text-secondaryText">We'll be in touch shortly.</p>
+        <p className="text-xl font-semibold text-amber-600">
+          Thank you!
+        </p>
+        <p className="mt-2 text-gray-600">
+          We'll be in touch shortly.
+        </p>
       </div>
     );
   }
 
-  const inputBase =
-    "w-full border-b border-border bg-transparent py-3 text-primaryText outline-none transition-all placeholder:text-secondaryText/60 focus:border-cta";
+  const inputStyle =
+    "w-full rounded-lg border border-gray-200 bg-white px-4 py-3 text-gray-800 outline-none transition focus:border-amber-500 focus:ring-2 focus:ring-amber-200";
 
   return (
     <form
@@ -28,50 +32,46 @@ export default function ContactForm() {
         e.preventDefault();
         setSubmitted(true);
       }}
-      className="grid grid-cols-1 gap-8 sm:grid-cols-2"
+      className="space-y-5"
     >
-      <div className="sm:col-span-1">
+      <div className="grid gap-5 sm:grid-cols-2">
         <input
           type="text"
           placeholder="Your Name"
           required
-          className={inputBase}
+          className={inputStyle}
           onChange={(e) => setForm({ ...form, name: e.target.value })}
         />
-      </div>
-      <div className="sm:col-span-1">
+
         <input
           type="email"
           placeholder="Email Address"
           required
-          className={inputBase}
+          className={inputStyle}
           onChange={(e) => setForm({ ...form, email: e.target.value })}
         />
       </div>
-      <div className="sm:col-span-2">
-        <input
-          type="tel"
-          placeholder="Phone Number"
-          className={inputBase}
-          onChange={(e) => setForm({ ...form, phone: e.target.value })}
-        />
-      </div>
-      <div className="sm:col-span-2">
-        <textarea
-          placeholder="Message"
-          rows={3}
-          className={inputBase}
-          onChange={(e) => setForm({ ...form, message: e.target.value })}
-        />
-      </div>
-      <div className="sm:col-span-2 pt-4">
-        <button
-          type="submit"
-          className="inline-flex items-center justify-center rounded-full bg-primaryText px-10 py-4 text-sm font-bold uppercase tracking-widest text-white transition-all hover:bg-cta active:scale-95"
-        >
-          Send Inquiry
-        </button>
-      </div>
+
+      <input
+        type="tel"
+        placeholder="Phone Number"
+        className={inputStyle}
+        onChange={(e) => setForm({ ...form, phone: e.target.value })}
+      />
+
+      <textarea
+        placeholder="Your Message"
+        rows={4}
+        className={inputStyle}
+        onChange={(e) => setForm({ ...form, message: e.target.value })}
+      />
+
+      <button
+        type="submit"
+        className="w-full rounded-lg bg-gradient-to-r from-amber-500 to-orange-600 py-3 font-semibold text-white transition hover:shadow-lg hover:scale-[1.02] active:scale-95"
+      >
+        Send Inquiry
+      </button>
     </form>
   );
 }
