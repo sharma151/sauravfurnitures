@@ -6,6 +6,18 @@
 
 /* ---------------- THEME CONFIG (Tailwind v4 way) ---------------- */
 
+/* Fix for Radix/Shadcn dropdown positioning */
+.NavigationMenuContent {
+  left: 0 !important;
+  top: 100% !important;
+  width: auto !important;
+}
+
+/* Ensure the animation doesn't pop from the center */
+[data-radix-menu-content] {
+  transform-origin: top left !important;
+}
+
 @theme {
   --animate-marquee: marquee 30s linear infinite;
 

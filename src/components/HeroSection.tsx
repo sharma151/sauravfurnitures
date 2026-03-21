@@ -2,8 +2,8 @@ import Link from "next/link";
 
 export default function HeroSection() {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-white via-highlight/30 to-background">
-      <div className="relative mx-auto max-w-7xl px-4 py-20 sm:px-6 sm:py-28 lg:px-8 lg:py-36">
+    <section className="relative overflow-hidden bg-linear-to-br from-white via-highlight/30 to-background">
+      <div className="relative mx-auto max-w-7xl px-4 py-10 sm:px-6 sm:py-28 lg:px-8 lg:py-20">
         <div className="max-w-2xl">
           <h1 className="text-4xl font-bold tracking-tight text-primaryText sm:text-5xl lg:text-6xl">
             Trust, Comfort & Experience

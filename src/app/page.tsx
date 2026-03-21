@@ -90,8 +90,8 @@ export default function HomePage() {
   return (
     <>
       <HeroSection />
-      <Carousel />
-      <section className="mx-auto max-w-7xl px-4 py-24 sm:px-6 lg:px-8">
+      {/* <Carousel /> */}
+      <section className="mx-auto max-w-7xl px-4 py-15 sm:px-6 lg:px-8">
         <h2 className="text-3xl font-bold text-primaryText">
           Featured Categories
         </h2>
