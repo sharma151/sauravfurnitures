@@ -9,7 +9,7 @@ export default function HeroSection() {
             Trust, Comfort & Experience
           </h1>
           <p className="mt-6 text-lg text-secondaryText sm:text-xl">
-            Premium furniture crafted with over 20 years of expertise. Transform your living
+            Premium furniture crafted with over 30+ years of expertise. Transform your living
             spaces with timeless design and exceptional quality.
           </p>
           <div className="mt-10 flex flex-wrap gap-4 text-sm text-secondaryText sm:flex-nowrap">
@@ -28,7 +28,7 @@ export default function HeroSection() {
             </Link>
             <Link
               href="/about"
-              className="inline-flex items-center justify-center rounded-lg border-2 border-accent px-8 py-4 text-base font-semibold text-accent transition-all duration-300 ease-in-out hover:bg-highlight"
+              className="inline-flex items-center justify-center rounded-lg border-2 border-accent px-8 py-4 text-base font-semibold text-secondaryText transition-all duration-300 ease-in-out hover:bg-highlight"
             >
               Our Story
             </Link>

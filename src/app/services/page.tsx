@@ -18,7 +18,7 @@ const services = [
       "Premium Wood Polishing",
       "Structural Wood Repair",
     ],
-    activeColor: "group-hover:text-amber-600",
+    // activeColor: "group-hover:text-amber-600",
     icon: (
       <svg
         className="h-10 w-10 transition-colors duration-300"
@@ -52,7 +52,7 @@ const services = [
       "Premium Fabric Selection",
       "Deep Comfort Cushioning",
     ],
-    activeColor: "group-hover:text-orange-500",
+    // activeColor: "group-hover:text-orange-500",
     icon: (
       <svg
         className="h-10 w-10 transition-colors duration-300"
@@ -76,7 +76,7 @@ const services = [
     shortDescription:
       "Precision metal fabrication for industrial frames, gates, and minimalist decor.",
     details: ["Iron Bed Frames", "Architectural Gates", "Steel Shelving Units"],
-    activeColor: "group-hover:text-indigo-600",
+    // activeColor: "group-hover:text-indigo-600",
     icon: (
       <svg
         className="h-10 w-10 transition-colors duration-300"
@@ -125,7 +125,7 @@ export default function ServicesPage() {
           >
             {/* Minimalist Icon Redesign */}
             <div
-              className={`mb-6 flex h-14 w-14 items-center justify-center rounded-lg bg-stone-50 text-stone-400 transition-all duration-300 ${service.activeColor}`}
+              className={`mb-6 flex h-14 w-14 items-center justify-center rounded-lg bg-cta text-stone-200 transition-all duration-300 $`}
             >
               {service.icon}
             </div>
@@ -151,7 +151,7 @@ export default function ServicesPage() {
             </ul>
 
             {/* Subtle Hover Decoration */}
-            <div className="absolute top-4 right-4 text-xs font-mono text-stone-200 opacity-0 transition-opacity group-hover:opacity-100 uppercase">
+            <div className="absolute top-4 right-4 text-xs font-mono text-secondaryText-200 opacity-0 transition-opacity group-hover:opacity-100 uppercase">
               {service.id.replace("-", " ")}
             </div>
           </div>

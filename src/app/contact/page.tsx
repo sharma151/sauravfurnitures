@@ -14,13 +14,11 @@ export default function ContactPage() {
         {/* Header */}
         <header className="mb-16 max-w-3xl">
           <h1 className="text-5xl font-bold leading-tight text-gray-900 sm:text-6xl">
-            Let’s build your{" "}
-            <span className="bg-gradient-to-r from-amber-500 to-orange-600 bg-clip-text text-transparent">
-              dream space
-            </span>
+            Let’s build your <span className="text-cta">dream space</span>
           </h1>
           <p className="mt-4 text-lg text-gray-600">
-            Reach out to us for custom furniture, interior design, and expert craftsmanship.
+            Reach out to us for custom furniture, interior design, and expert
+            craftsmanship.
           </p>
         </header>
 
@@ -53,7 +51,7 @@ export default function ContactPage() {
                     key={i}
                     className="flex gap-4 rounded-xl border border-white/40 bg-white/70 p-5 backdrop-blur-md transition hover:shadow-lg hover:-translate-y-1"
                   >
-                    <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-gradient-to-br from-amber-500 to-orange-600 text-white">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-cta text-white">
                       <Icon className="h-5 w-5" />
                     </div>
 
@@ -83,12 +81,39 @@ export default function ContactPage() {
             </div>
           </div>
 
-          {/* RIGHT: Form */}
-          <div className="rounded-2xl border border-white/40 bg-white/80 p-8 shadow-xl backdrop-blur-md">
-            <h2 className="mb-6 text-2xl font-semibold text-gray-900">
-              Send us a message
-            </h2>
-            <ContactForm />
+          {/* RIGHT: CTA + FORM */}
+          <div className="space-y-8">
+            <div className="rounded-2xl border border-white/40 bg-white/80 p-8 shadow-xl backdrop-blur-md">
+              <h2 className="mb-6 text-2xl font-semibold text-gray-900">
+                Send us a message
+              </h2>
+              <ContactForm />
+            </div>
+            {/* NEED HELP FAST CARD */}
+            <div className="rounded-3xl bg-cta p-8 text-center text-white shadow-xl relative overflow-hidden">
+              {/* subtle gradient overlay */}
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(255,255,255,0.08),_transparent)]" />
+
+              <div className="relative">
+                <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-white/10">
+                  <Phone className="h-6 w-6" />
+                </div>
+
+                <h3 className="text-2xl font-semibold">Need Help Fast?</h3>
+                <p className="mt-2 text-sm text-white/80">
+                  Call us directly to talk to a carpenter right now.
+                </p>
+
+                <a
+                  href="tel:9841469014"
+                  className="mt-6 inline-block rounded-full bg-white px-6 py-3 font-semibold text-gray-900 shadow-md transition hover:scale-105"
+                >
+                  Call: 98414-69014
+                </a>
+              </div>
+            </div>
+
+            {/* CONTACT FORM */}
           </div>
         </div>
       </div>

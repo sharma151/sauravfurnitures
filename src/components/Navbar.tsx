@@ -20,7 +20,7 @@ const mainLinks = [
   { href: "/services", label: "Services" },
   { href: "/about", label: "About" },
   { href: "/contact", label: "Contact Us" },
-  { href: "/helpdesk", label: "Book Service" },
+  // { href: "/helpdesk", label: "Book Service" },
 ];
 
 function getCategoryHref(categorySlug: string, subSlug: string) {
@@ -28,7 +28,6 @@ function getCategoryHref(categorySlug: string, subSlug: string) {
   return `/products/${categorySlug}${subSlug !== "all" ? `/${subSlug}` : ""}`;
 }
 
-// Custom hover dropdown — renders directly below its own trigger (no portal)
 function CategoryDropdown({
   category,
 }: {
@@ -96,7 +95,6 @@ export default function Navbar() {
 
   return (
     <header className="sticky top-0 z-50 w-full shadow-sm">
-      {/* TOP BRAND BAR */}
       <div className="bg-white border-b">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
           <Link
@@ -112,7 +110,7 @@ export default function Navbar() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-sm font-medium text-muted-foreground hover:text-black transition-colors"
+                className="text-sm font-medium text-muted-foreground hover:text-primaryText transition-colors"
               >
                 {link.label}
               </Link>
@@ -120,17 +118,6 @@ export default function Navbar() {
           </nav>
 
           <div className="flex items-center gap-2 sm:gap-4">
-            <Button
-              variant="ghost"
-              size="icon"
-              className="hidden sm:flex"
-              aria-label="Phone"
-            >
-              <Phone className="h-5 w-5" />
-            </Button>
-            <Button variant="ghost" size="icon" aria-label="Account">
-              <User className="h-5 w-5" />
-            </Button>
             <div className="lg:hidden">
               <MobileNav categories={categories} />
             </div>

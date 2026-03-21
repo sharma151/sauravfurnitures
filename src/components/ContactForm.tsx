@@ -68,7 +68,7 @@ export default function ContactForm() {
 
       <button
         type="submit"
-        className="w-full rounded-lg bg-gradient-to-r from-amber-500 to-orange-600 py-3 font-semibold text-white transition hover:shadow-lg hover:scale-[1.02] active:scale-95"
+        className="w-full rounded-lg bg-cta py-3 font-semibold text-white transition hover:shadow-lg hover:scale-[1.02] active:scale-95"
       >
         Send Inquiry
       </button>

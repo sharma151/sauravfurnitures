@@ -19,7 +19,7 @@ export default function ProductCard({ product, onClick }: ProductCardProps) {
       onKeyDown={(e) => (e.key === "Enter" ? onClick() : null)}
       className="group cursor-pointer overflow-hidden rounded-xl border border-border bg-card shadow-md transition-all duration-300 ease-in-out hover:-translate-y-1 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2"
     >
-      <div className="relative aspect-[4/3] overflow-hidden bg-section">
+      <div className="relative aspect-4/3 overflow-hidden bg-section">
         <Image
           src={imageSrc}
           alt={product.name}
@@ -46,7 +46,7 @@ export default function ProductCard({ product, onClick }: ProductCardProps) {
         <h3 className="mt-1 font-semibold text-primaryText">{product.name}</h3>
         <p className="mt-2 line-clamp-2 text-sm text-secondaryText">{product.shortDescription}</p>
         <div className="mt-4 flex items-center justify-between">
-          <span className="text-lg font-semibold text-accent">${product.price.toLocaleString()}</span>
+          {/* <span className="text-lg font-semibold text-accent">${product.price.toLocaleString()}</span> */}
           <span className="text-xs text-secondaryText">{product.deliveryTime}</span>
         </div>
       </div>
