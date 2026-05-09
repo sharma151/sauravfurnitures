@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
   return (
-    <main className="bg-gradient-to-b from-[#f8f5f2] to-[#efe7df]">
+    <main className="bg-linear-to-b from-[#f8f5f2] to-[#efe7df]">
       <div className="mx-auto max-w-6xl px-6 py-16 lg:py-24">
         {/* Header */}
         <header className="mb-16 max-w-3xl">
@@ -92,7 +92,7 @@ export default function ContactPage() {
             {/* NEED HELP FAST CARD */}
             <div className="rounded-3xl bg-cta p-8 text-center text-white shadow-xl relative overflow-hidden">
               {/* subtle gradient overlay */}
-              <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(255,255,255,0.08),_transparent)]" />
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.08),transparent)]" />
 
               <div className="relative">
                 <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-white/10">

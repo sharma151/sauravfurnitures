@@ -159,7 +159,7 @@ function MobileNav({ categories }: { categories: any[] }) {
       </SheetTrigger>
       <SheetContent
         side="left"
-        className="w-[300px] p-0 border-r-0 bg-[#FAF3E7]"
+        className="w-75 p-0 border-r-0 bg-[#FAF3E7]"
       >
         <div className="flex flex-col h-full">
           <SheetHeader className="p-6 text-left border-b bg-white">

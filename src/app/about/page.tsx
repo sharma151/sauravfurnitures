@@ -61,7 +61,7 @@ const sections = [
 
 export default function AboutPage() {
   return (
-    <div className="bg-gradient-to-b from-[#f8f5f2] to-[#efe7df]">
+    <div className="bg-linear-to-b from-[#f8f5f2] to-[#efe7df]">
       <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="max-w-2xl">
@@ -85,12 +85,12 @@ export default function AboutPage() {
               >
                 {/* Gradient Glow */}
                 <div
-                  className={`absolute inset-0 opacity-0 transition duration-300 group-hover:opacity-10 bg-gradient-to-br ${section.color}`}
+                  className={`absolute inset-0 opacity-0 transition duration-300 group-hover:opacity-10 bg-linear-to-br ${section.color}`}
                 />
 
                 {/* Icon */}
                 <div
-                  className={`mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br ${section.color} text-white shadow-md`}
+                  className={`mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-linear-to-br ${section.color} text-white shadow-md`}
                 >
                   <Icon className="h-6 w-6" />
                 </div>
