@@ -1,114 +1,158 @@
 import type { Metadata } from "next";
 import {
-  Hammer,
-  TreePine,
-  ShieldCheck,
-  Users,
-  PencilRuler,
+  ArrowRight,
+  Award,
+  Clock3,
   Leaf,
+  ShieldCheck,
+  Sparkles,
+  TreePine,
+  Users,
 } from "lucide-react";
+import SectionHeading from "@/components/luxury/SectionHeading";
+import PremiumButton from "@/components/luxury/PremiumButton";
 
 export const metadata: Metadata = {
   title: "About Us",
   description:
-    "Learn about Saurav Furnitures - 20+ years of wood craftsmanship, quality commitment, and custom furniture solutions. Trust, Comfort & Experience.",
+    "Discover the story, craftsmanship, and design philosophy behind Saurav Furnitures.",
 };
 
-const sections = [
+const values = [
   {
-    title: "Our Story",
-    icon: Hammer,
-    color: "from-amber-500 to-orange-600",
+    title: "Heritage Craftsmanship",
+    icon: Award,
     content:
-      "For over three decades, Saurav Furnitures has been a trusted name in premium furniture. What started as a small workshop has grown into a brand synonymous with quality, craftsmanship, and timeless design. Our journey is built on a simple promise: to deliver furniture that lasts generations.",
+      "For over three decades, our artisans have crafted furniture with a timeless blend of precision, soul, and enduring quality.",
   },
   {
-    title: "Expertise in Wood Craftsmanship",
+    title: "Material Excellence",
     icon: TreePine,
-    color: "from-green-500 to-emerald-600",
     content:
-      "We specialize in transforming the finest woods into functional art. From Sheesham and teak to engineered wood, every piece is selected for durability and beauty. Our artisans bring decades of experience to every cut, joint, and finish.",
+      "From premium hardwood to high-grade upholstery and metal details, every material is selected for beauty, durability, and performance.",
   },
   {
-    title: "Commitment to Quality",
+    title: "Design-Led Process",
+    icon: Sparkles,
+    content:
+      "Each piece balances luxury aesthetics with practical comfort, ensuring your home feels both elevated and truly livable.",
+  },
+  {
+    title: "Trusted Quality Promise",
     icon: ShieldCheck,
-    color: "from-blue-500 to-indigo-600",
     content:
-      "Quality is never an accident. We implement strict quality checks at every stage — from sourcing raw materials to the final polish. Every piece that leaves our workshop carries our warranty and our reputation.",
-  },
-  {
-    title: "Skilled Artisans",
-    icon: Users,
-    color: "from-purple-500 to-pink-600",
-    content:
-      "Our craftsmen are the heart of Saurav Furnitures. Trained in traditional and modern techniques, they take pride in every detail. Their skill ensures that each piece is not just furniture — it’s a statement of excellence.",
-  },
-  {
-    title: "Custom Furniture Solutions",
-    icon: PencilRuler,
-    color: "from-yellow-500 to-amber-600",
-    content:
-      "We understand that every space and every customer is unique. That’s why we offer custom furniture solutions — tailored to your dimensions, style, and preferences. From concept to delivery, we work with you to create pieces that fit perfectly.",
-  },
-  {
-    title: "Sustainability & Responsible Sourcing",
-    icon: Leaf,
-    color: "from-lime-500 to-green-600",
-    content:
-      "We believe in responsible craftsmanship. Our wood is sourced from sustainable suppliers, and we minimize waste at every step. By choosing Saurav Furnitures, you’re supporting a brand that cares for the planet as much as it cares for your home.",
+      "Our quality checks span every phase from design and sourcing to finishing, so every furniture piece leaves with confidence.",
   },
 ];
 
 export default function AboutPage() {
   return (
-    <div className="bg-gradient-to-b from-[#f8f5f2] to-[#efe7df]">
-      <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:px-8">
-        {/* Header */}
-        <div className="max-w-2xl">
-          <h1 className="text-4xl font-bold text-gray-900">
-            About Us
-          </h1>
-          <p className="mt-4 text-lg text-gray-600">
-            Trust, Comfort & Experience — this is what we stand for at Saurav Furnitures.
-          </p>
-        </div>
-
-        {/* Cards */}
-        <div className="mt-12 grid gap-8 sm:grid-cols-2">
-          {sections.map((section, index) => {
-            const Icon = section.icon;
-
-            return (
-              <div
-                key={index}
-                className="group relative overflow-hidden rounded-2xl border border-white/40 bg-white/60 p-6 backdrop-blur-md transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl"
-              >
-                {/* Gradient Glow */}
-                <div
-                  className={`absolute inset-0 opacity-0 transition duration-300 group-hover:opacity-10 bg-gradient-to-br ${section.color}`}
-                />
-
-                {/* Icon */}
-                <div
-                  className={`mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br ${section.color} text-white shadow-md`}
-                >
-                  <Icon className="h-6 w-6" />
+    <main>
+      <section className="relative overflow-hidden px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_#EFE4D7_0%,_#FAF8F5_45%,_#FAF8F5_100%)]" />
+        <div className="relative mx-auto grid max-w-7xl gap-10 lg:grid-cols-[1.15fr_1fr]">
+          <div className="space-y-7">
+            <SectionHeading
+              eyebrow="About Saurav Furnitures"
+              title="A Luxury Furniture House Built On Craft, Warmth, And Precision."
+              description="Our journey started as a family workshop and evolved into a modern premium furniture brand trusted by homeowners, architects, and interior designers."
+            />
+            <div className="grid grid-cols-2 gap-4 sm:grid-cols-4">
+              {[
+                { label: "Years Legacy", value: "30+" },
+                { label: "Projects Delivered", value: "5,000+" },
+                { label: "Designers & Artisans", value: "45+" },
+                { label: "Client Satisfaction", value: "98%" },
+              ].map((stat) => (
+                <div key={stat.label} className="rounded-2xl border border-[#E8DCCF] bg-white/80 p-4">
+                  <p className="text-2xl font-semibold text-[#3B241A]">{stat.value}</p>
+                  <p className="text-xs uppercase tracking-[0.12em] text-[#6B7280]">{stat.label}</p>
                 </div>
+              ))}
+            </div>
+            <div className="flex flex-wrap gap-4">
+              <PremiumButton href="/contact" size="lg">
+                Talk To Our Design Team
+              </PremiumButton>
+              <PremiumButton href="/services" variant="secondary" size="lg">
+                Explore Services
+              </PremiumButton>
+            </div>
+          </div>
 
-                {/* Title */}
-                <h2 className="text-xl font-semibold text-gray-900">
-                  {section.title}
-                </h2>
+          <aside className="rounded-[2rem] border border-[#E8DCCF] bg-[#FFFCF8] p-8 shadow-[0_30px_65px_-48px_rgba(59,36,26,0.92)]">
+            <h2 className="text-2xl font-semibold text-[#3B241A]">Our Design Philosophy</h2>
+            <p className="mt-4 leading-relaxed text-[#6B7280]">
+              We create furniture that balances visual elegance and everyday ease. Every line,
+              curve, texture, and proportion is considered so your home feels curated yet deeply
+              comfortable.
+            </p>
+            <div className="mt-8 space-y-4">
+              {[
+                { icon: Users, title: "Collaborative Design", description: "Your lifestyle guides each furniture concept." },
+                { icon: Clock3, title: "Long-Term Value", description: "Built to last in style and structure for years." },
+                { icon: Leaf, title: "Responsible Sourcing", description: "Thoughtful material choices with sustainability in mind." },
+              ].map((item) => {
+                const Icon = item.icon;
+                return (
+                  <div key={item.title} className="flex items-start gap-3 rounded-2xl border border-[#E8DCCF] bg-white p-4">
+                    <Icon className="mt-0.5 h-5 w-5 text-[#C6A77D]" />
+                    <div>
+                      <p className="font-semibold text-[#3B241A]">{item.title}</p>
+                      <p className="text-sm text-[#6B7280]">{item.description}</p>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </aside>
+        </div>
+      </section>
 
-                {/* Content */}
-                <p className="mt-3 leading-relaxed text-gray-600">
-                  {section.content}
-                </p>
-              </div>
+      <section className="mx-auto max-w-7xl px-4 pb-16 sm:px-6 lg:px-8 lg:pb-20">
+        <SectionHeading
+          eyebrow="What Defines Us"
+          title="Craft Values Behind Every Signature Piece."
+          description="A premium process shaped by artistry, precision, and long-term durability."
+        />
+        <div className="mt-10 grid gap-6 md:grid-cols-2">
+          {values.map((section) => {
+            const Icon = section.icon;
+            return (
+              <article
+                key={section.title}
+                className="group rounded-3xl border border-[#E8DCCF] bg-[#FFFCF8] p-7 shadow-[0_22px_45px_-40px_rgba(59,36,26,0.95)] transition-all duration-300 hover:-translate-y-1 hover:border-[#C6A77D]/45"
+              >
+                <div className="mb-4 inline-flex rounded-2xl border border-[#C6A77D]/35 bg-[#F7F3EE] p-3 text-[#5B3A29]">
+                  <Icon className="h-5 w-5" />
+                </div>
+                <h3 className="text-2xl font-semibold text-[#3B241A]">{section.title}</h3>
+                <p className="mt-3 leading-relaxed text-[#6B7280]">{section.content}</p>
+              </article>
             );
           })}
         </div>
-      </div>
-    </div>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-4 pb-16 sm:px-6 lg:px-8 lg:pb-20">
+        <div className="rounded-[2rem] border border-[#C6A77D]/35 bg-gradient-to-br from-[#5B3A29] via-[#4A2F22] to-[#3B241A] p-10 text-[#F7F3EE] shadow-[0_34px_78px_-56px_rgba(43,43,43,0.95)] sm:p-12">
+          <p className="text-xs font-semibold uppercase tracking-[0.25em] text-[#E8DCCF]">Our Promise</p>
+          <h2 className="mt-4 text-3xl font-bold sm:text-4xl">From Concept To Delivery, Luxury In Every Detail.</h2>
+          <p className="mt-4 max-w-3xl text-[#F7F3EE]/85">
+            We partner with you from material selection and design mockups to final installation,
+            ensuring a seamless premium furniture experience at every stage.
+          </p>
+          <PremiumButton
+            href="/contact"
+            variant="secondary"
+            size="lg"
+            className="mt-8 inline-flex bg-white/10 text-[#F7F3EE] hover:bg-white/20"
+          >
+            Start Your Custom Project
+            <ArrowRight className="ml-1 h-4 w-4" />
+          </PremiumButton>
+        </div>
+      </section>
+    </main>
   );
 }

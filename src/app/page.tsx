@@ -1,135 +1,135 @@
 import HeroSection from "@/components/HeroSection";
-import Carousel from "@/components/Carousel";
 import CategoryGrid from "@/components/CategoryGrid";
-import { getNewArrivals } from "@/lib/data";
+import { getFeaturedProducts } from "@/lib/data";
 import HomeProducts from "./HomeProducts";
-import CompanyMarquee from "@/components/CompanyMarquee";
+import SectionHeading from "@/components/luxury/SectionHeading";
+import TestimonialCard from "@/components/luxury/TestimonialCard";
+import CTABanner from "@/components/luxury/CTABanner";
+import { BadgeCheck, Leaf, ShieldCheck, Sparkles } from "lucide-react";
 
 const features = [
   {
-    title: "30+ Years Experience",
-    description: "Decades of craftsmanship and customer satisfaction",
-    icon: (
-      <svg
-        className="h-8 w-8"
-        fill="none"
-        stroke="currentColor"
-        viewBox="0 0 24 24"
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth={2}
-          d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
-        />
-      </svg>
-    ),
+    title: "Heritage Craftsmanship",
+    description: "Built by skilled artisans with decades of woodworking expertise.",
+    icon: <BadgeCheck className="h-6 w-6" />,
   },
   {
-    title: "Premium Wood Quality",
-    description: "Only the finest materials for lasting durability",
-    icon: (
-      <svg
-        className="h-8 w-8"
-        fill="none"
-        stroke="currentColor"
-        viewBox="0 0 24 24"
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth={2}
-          d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"
-        />
-      </svg>
-    ),
+    title: "Premium Material Selection",
+    description: "Engineered wood, solid hardwood, and luxe upholstery sourced responsibly.",
+    icon: <ShieldCheck className="h-6 w-6" />,
   },
   {
-    title: "Skilled Craftsmanship",
-    description: "Artisans dedicated to perfection in every detail",
-    icon: (
-      <svg
-        className="h-8 w-8"
-        fill="none"
-        stroke="currentColor"
-        viewBox="0 0 24 24"
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth={2}
-          d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"
-        />
-      </svg>
-    ),
+    title: "Elegant Modern Design",
+    description: "Refined silhouettes crafted to complement contemporary interiors.",
+    icon: <Sparkles className="h-6 w-6" />,
   },
   {
-    title: "Fast Delivery",
-    description: "Quick and reliable shipping to your doorstep",
-    icon: (
-      <svg
-        className="h-8 w-8"
-        fill="none"
-        stroke="currentColor"
-        viewBox="0 0 24 24"
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth={2}
-          d="M13 16V6a1 1 0 00-1-1H4a1 1 0 00-1 1v10a1 1 0 001 1h1m8-1a1 1 0 01-1 1h9M5 17a2 2 0 104 0m-4 0a2 2 0 114 0m6 0a2 2 0 104 0m-4 0a2 2 0 114 0"
-        />
-      </svg>
-    ),
+    title: "Sustainable Production",
+    description: "Thoughtful production with eco-conscious methods and long-lasting quality.",
+    icon: <Leaf className="h-6 w-6" />,
+  },
+];
+
+const testimonials = [
+  {
+    quote:
+      "The design team transformed our space with furniture that feels warm, elegant, and incredibly premium.",
+    author: "Aakriti Sharma",
+    role: "Interior Client, Kathmandu",
+  },
+  {
+    quote:
+      "From finish quality to delivery experience, everything felt high-end and deeply professional.",
+    author: "Ritvik Thapa",
+    role: "Homeowner",
+  },
+  {
+    quote:
+      "A rare blend of modern aesthetics and handcrafted details. Every piece looks timeless in our home.",
+    author: "Nina Gurung",
+    role: "Architect",
   },
 ];
 
 export default function HomePage() {
-  const newArrivals = getNewArrivals();
+  const featuredProducts = getFeaturedProducts();
 
   return (
     <>
       <HeroSection />
-      {/* <Carousel /> */}
-      <section className="mx-auto max-w-7xl px-4 py-15 sm:px-6 lg:px-8">
-        <h2 className="text-3xl font-bold text-primaryText">
-          Featured Categories
-        </h2>
-        <p className="mt-2 text-secondaryText">
-          Discover our curated collections
-        </p>
+
+      <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
+        <SectionHeading
+          eyebrow="Featured Categories"
+          title="Curated Collections For Sophisticated Living."
+          description="Discover premium bedroom, dining, living, and workspace solutions with refined textures and warm contemporary detailing."
+        />
         <div className="mt-10">
           <CategoryGrid />
         </div>
       </section>
-      <section className="bg-section py-24">
+
+      <section className="bg-[#F7F3EE] py-16 sm:py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-primaryText">New Arrivals</h2>
-          <p className="mt-2 text-secondaryText">
-            Fresh designs, fast delivery
-          </p>
-          <HomeProducts products={newArrivals} />
+          <SectionHeading
+            eyebrow="Best Sellers"
+            title="Furniture Loved By Modern Homes."
+            description="Top-rated picks that combine comfort, statement design, and durable craftsmanship."
+          />
+          <HomeProducts products={featuredProducts} />
         </div>
       </section>
-      {/* <CompanyMarquee /> */}
-      <section className="mx-auto max-w-7xl px-4 py-24 sm:px-6 lg:px-8">
-        <h2 className="text-3xl font-bold text-primaryText">Why Choose Us</h2>
-        <p className="mt-2 text-secondaryText">
-          The Saurav Furnitures difference
-        </p>
-        <div className="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+
+      <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
+        <SectionHeading
+          eyebrow="Why Choose Us"
+          title="Luxury Service, Built Around Your Lifestyle."
+          description="Every interaction is designed for convenience, confidence, and elevated design quality."
+        />
+        <div className="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
           {features.map((f) => (
             <div
               key={f.title}
-              className="rounded-2xl border border-border bg-card p-8 shadow-md transition-all duration-300 ease-in-out hover:shadow-lg"
+              className="group rounded-3xl border border-[#E8DCCF] bg-[#FFFCF8] p-7 shadow-[0_22px_42px_-38px_rgba(59,36,26,0.85)] transition-all duration-300 hover:-translate-y-1 hover:border-[#C6A77D]/55"
             >
-              <div className="text-primaryText">{f.icon}</div>
-              <h3 className="mt-4 font-semibold text-primaryText">{f.title}</h3>
-              <p className="mt-2 text-sm text-secondaryText">{f.description}</p>
+              <div className="inline-flex rounded-2xl border border-[#C6A77D]/40 bg-[#F7F3EE] p-3 text-[#5B3A29]">
+                {f.icon}
+              </div>
+              <h3 className="mt-5 text-xl font-semibold text-[#3B241A]">{f.title}</h3>
+              <p className="mt-2 text-sm leading-relaxed text-[#6B7280]">{f.description}</p>
             </div>
           ))}
         </div>
       </section>
+
+      <section className="mx-auto max-w-7xl px-4 pb-16 sm:px-6 lg:px-8">
+        <div className="relative overflow-hidden rounded-[2rem] border border-[#E8DCCF] bg-[linear-gradient(125deg,#FAF8F5_0%,#F3E8DC_52%,#E8DCCF_100%)] p-10 shadow-[0_26px_55px_-46px_rgba(59,36,26,0.95)] sm:p-14">
+          <p className="text-xs font-semibold uppercase tracking-[0.25em] text-[#5B3A29]">Luxury Craft Narrative</p>
+          <h2 className="mt-4 max-w-3xl text-3xl font-bold leading-tight text-[#3B241A] sm:text-4xl lg:text-5xl">
+            Where Contemporary Design Meets Timeless Craftsmanship.
+          </h2>
+          <p className="mt-4 max-w-2xl text-[#6B7280]">
+            We create immersive furniture experiences that feel like a private high-end showroom:
+            warm tones, rich materials, and elegant forms with practical comfort.
+          </p>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-4 pb-16 sm:px-6 lg:px-8 lg:pb-20">
+        <SectionHeading
+          eyebrow="Testimonials"
+          title="Loved By Homeowners And Designers."
+          description="Experiences from customers who wanted luxurious furniture that still feels warm and lived-in."
+          align="center"
+        />
+        <div className="mt-10 grid gap-6 lg:grid-cols-3">
+          {testimonials.map((testimonial) => (
+            <TestimonialCard key={testimonial.author} {...testimonial} />
+          ))}
+        </div>
+      </section>
+
+      <CTABanner />
     </>
   );
 }
