@@ -3,41 +3,64 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import type { Category } from "@/types";
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+} from "@/components/ui/navigation-menu";
 
 interface DropdownMenuProps {
   category: Category;
-  isOpen: boolean;
-  onClose: () => void;
 }
 
-export default function DropdownMenu({ category, isOpen, onClose }: DropdownMenuProps) {
+export default function ReusableDropdown({ category }: DropdownMenuProps) {
   const pathname = usePathname();
 
-  if (!isOpen) return null;
-
   return (
-    <div
-      className="absolute left-0 top-full z-50 mt-1 min-w-[220px] rounded-xl border border-border bg-card py-3 shadow-soft transition-all duration-300"
-      onMouseLeave={onClose}
-    >
-      {category.subcategories.map((sub) => (
-        <Link
-          key={sub.slug}
-          href={
-            category.slug === "new-arrival"
-              ? `/products/new-arrival/${sub.slug}`
-              : `/products/${category.slug}${sub.slug !== "all" ? `/${sub.slug}` : ""}`
-          }
-          onClick={onClose}
-          className={`block px-5 py-2.5 text-sm transition-colors hover:bg-highlight ${
-            pathname.includes(category.slug) && pathname.includes(sub.slug)
-              ? "bg-highlight font-medium text-accent"
-              : "text-primaryText"
-          }`}
-        >
-          {sub.name}
-        </Link>
-      ))}
-    </div>
+    <NavigationMenu>
+      <NavigationMenuList>
+        <NavigationMenuItem>
+          {/* The Trigger is the top-level Category name */}
+          <NavigationMenuTrigger className="bg-transparent px-4 py-2 text-sm font-medium text-primaryText transition-colors hover:bg-highlight hover:text-accent data-[state=open]:bg-highlight data-[state=open]:text-accent">
+            {category.name}
+          </NavigationMenuTrigger>
+
+          <NavigationMenuContent>
+            <ul className="grid w-55 gap-1 rounded-xl bg-card">
+              {category.subcategories.map((sub) => {
+                const href =
+                  category.slug === "new-arrival"
+                    ? `/products/new-arrival/${sub.slug}`
+                    : `/products/${category.slug}${sub.slug !== "all" ? `/${sub.slug}` : ""}`;
+
+                const isActive =
+                  pathname.includes(category.slug) &&
+                  pathname.includes(sub.slug);
+
+                return (
+                  <li key={sub.slug}>
+                    <NavigationMenuLink asChild>
+                      <Link
+                        href={href}
+                        className={`block select-none rounded-md px-5 py-2.5 text-sm no-underline outline-none transition-colors hover:bg-highlight hover:text-accent focus:bg-highlight focus:text-accent ${
+                          isActive
+                            ? "bg-highlight font-medium text-accent"
+                            : "text-primaryText"
+                        }`}
+                      >
+                        {sub.name}
+                      </Link>
+                    </NavigationMenuLink>
+                  </li>
+                );
+              })}
+            </ul>
+          </NavigationMenuContent>
+        </NavigationMenuItem>
+      </NavigationMenuList>
+    </NavigationMenu>
   );
 }

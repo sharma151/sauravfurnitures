@@ -3,6 +3,12 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import type { Product } from "@/types";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
 
 interface ProductModalProps {
   product: Product | null;
@@ -13,127 +19,109 @@ export default function ProductModal({ product, onClose }: ProductModalProps) {
   const [activeImageIndex, setActiveImageIndex] = useState(0);
 
   useEffect(() => {
-    if (!product) return;
-    const handleEscape = (e: KeyboardEvent) => {
-      if (e.key === "Escape") onClose();
-    };
-    document.addEventListener("keydown", handleEscape);
-    document.body.style.overflow = "hidden";
-    return () => {
-      document.removeEventListener("keydown", handleEscape);
-      document.body.style.overflow = "";
-    };
-  }, [product, onClose]);
-
-  useEffect(() => {
     setActiveImageIndex(0);
   }, [product?.id]);
 
   if (!product) return null;
 
-  const images = product.images.length > 0 ? product.images : ["/images/placeholder.svg"];
+  const images =
+    product.images.length > 0 ? product.images : ["/images/placeholder.svg"];
 
   return (
-    <div
-      className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4 backdrop-blur-sm"
-      onClick={onClose}
-      role="dialog"
-      aria-modal="true"
-      aria-labelledby="modal-title"
-    >
-      <div
-        className="relative max-h-[90vh] w-full max-w-4xl overflow-y-auto rounded-xl bg-card shadow-xl"
-        onClick={(e) => e.stopPropagation()}
-      >
-        <button
-          type="button"
-          onClick={onClose}
-          className="absolute right-4 top-4 z-10 rounded-full bg-card/90 p-2 shadow-md transition-colors hover:bg-section"
-          aria-label="Close modal"
-        >
-          <svg className="h-5 w-5 text-primaryText" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-          </svg>
-        </button>
+    <Dialog open={!!product} onOpenChange={(open) => !open && onClose()}>
+      <DialogContent className="p-0">
+        <DialogHeader className="sr-only">
+          <DialogTitle>{product.name}</DialogTitle>
+        </DialogHeader>
 
-        <div className="grid gap-8 p-6 md:grid-cols-2 md:p-8">
-          <div className="space-y-4">
-            <div className="relative aspect-square overflow-hidden rounded-xl bg-section">
+        <div className="flex flex-col md:grid md:grid-cols-[1fr_0.9fr] h-[85vh]">
+          {/* 🖼 IMAGE SECTION */}
+          <div className="flex flex-col bg-black/5 md:h-full md:overflow-hidden">
+            {/* Main Image */}
+            <div className="relative w-full h-[40vh] md:h-full">
               <Image
                 src={images[activeImageIndex]}
                 alt={product.name}
                 fill
-                className="object-cover"
+                className="object-cover md:object-contain"
                 priority
-                sizes="(max-width: 768px) 100vw, 50vw"
               />
             </div>
+
+            {/* Thumbnails */}
             {images.length > 1 && (
-              <div className="flex gap-2 overflow-x-auto pb-2">
+              <div className="flex gap-2 p-3 border-t bg-background overflow-x-auto md:overflow-visible md:flex-wrap md:justify-center">
                 {images.map((img, idx) => (
                   <button
                     key={idx}
-                    type="button"
                     onClick={() => setActiveImageIndex(idx)}
-                    className={`relative h-16 w-16 shrink-0 overflow-hidden rounded-lg border-2 transition-colors ${
-                      activeImageIndex === idx ? "border-accent" : "border-transparent hover:border-border"
+                    className={`relative h-14 w-14 shrink-0 rounded-md overflow-hidden border-2 ${
+                      activeImageIndex === idx
+                        ? "border-accent"
+                        : "border-transparent"
                     }`}
                   >
-                    <Image src={img} alt={`${product.name} view ${idx + 1}`} fill className="object-cover" />
+                    <Image src={img} alt="" fill className="object-cover" />
                   </button>
                 ))}
               </div>
             )}
           </div>
 
-          <div>
-            <h2 id="modal-title" className="text-2xl font-bold text-primaryText">
+          {/* 📄 CONTENT SECTION */}
+          <div className="flex flex-col h-[60vh] md:h-full overflow-y-auto px-4 pt-5 pb-[calc(5rem+env(safe-area-inset-bottom))] md:px-10 md:pt-10 md:pb-24">
+            <h2 className="text-xl md:text-3xl font-bold text-primaryText">
               {product.name}
             </h2>
-            <div className="mt-2 flex items-center gap-4">
-              <span className="flex items-center gap-1 text-amber-600">
-                <svg className="h-5 w-5 fill-amber-400" viewBox="0 0 20 20">
-                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                </svg>
-                {product.rating} ({product.reviews} reviews)
-              </span>
-              <span className="text-sm text-secondaryText">Delivery: {product.deliveryTime}</span>
-            </div>
-            <p className="mt-4 text-2xl font-semibold text-accent">${product.price.toLocaleString()}</p>
-            <p className="mt-4 text-secondaryText">{product.description}</p>
 
-            <div className="mt-6 space-y-4">
+            <p className="mt-3 text-sm md:text-base text-secondaryText leading-relaxed">
+              {product.description}
+            </p>
+
+            <div className="mt-6 space-y-6">
+              {/* Features */}
               <div>
                 <h4 className="font-semibold text-primaryText">Features</h4>
                 <ul className="mt-2 flex flex-wrap gap-2">
                   {product.features.map((f, i) => (
-                    <li key={i} className="rounded-full bg-highlight px-3 py-1 text-sm text-primaryText">
+                    <li
+                      key={i}
+                      className="rounded-full bg-highlight px-3 py-1 text-xs md:text-sm"
+                    >
                       {f}
                     </li>
                   ))}
                 </ul>
               </div>
-              <div>
-                <h4 className="font-semibold text-primaryText">Dimensions</h4>
-                <p className="mt-1 text-sm text-secondaryText">
-                  {product.dimensions.length} × {product.dimensions.width} × {product.dimensions.height}
-                </p>
-              </div>
-              <div>
-                <h4 className="font-semibold text-primaryText">Materials</h4>
-                <p className="mt-1 text-sm text-secondaryText">{product.materials.join(", ")}</p>
+
+              {/* Details */}
+              <div className="grid grid-cols-2 gap-4">
+                <div>
+                  <h4 className="font-semibold text-primaryText">Dimensions</h4>
+                  <p className="mt-1 text-xs md:text-sm text-secondaryText">
+                    {product.dimensions.length} × {product.dimensions.width} ×{" "}
+                    {product.dimensions.height}
+                  </p>
+                </div>
+
+                <div>
+                  <h4 className="font-semibold text-primaryText">Materials</h4>
+                  <p className="mt-1 text-xs md:text-sm text-secondaryText">
+                    {product.materials.join(", ")}
+                  </p>
+                </div>
               </div>
             </div>
-
-            <button
-              type="button"
-              className="mt-8 w-full rounded-lg bg-cta px-6 py-4 font-semibold text-white transition-all duration-300 ease-in-out hover:bg-ctaHover"
-            >
-              Add to Cart
-            </button>
           </div>
         </div>
-      </div>
-    </div>
+
+        {/* 🔥 STICKY CTA (Mobile Only) */}
+        {/* <div className="fixed bottom-0 left-0 w-full md:hidden bg-background border-t px-4 py-3 pb-[calc(0.75rem+env(safe-area-inset-bottom))]">
+          <button className="w-full bg-accent text-white py-3 rounded-lg font-semibold">
+            Enquire Now
+          </button>
+        </div> */}
+      </DialogContent>
+    </Dialog>
   );
 }

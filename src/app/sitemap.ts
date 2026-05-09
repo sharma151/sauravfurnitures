@@ -2,7 +2,7 @@ import { MetadataRoute } from "next";
 import { getCategories, getProducts } from "@/lib/data";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://sauravfurnitures.com"; // Update with your domain
+  const baseUrl = "https://sauravfurniture.com"; // Update with your domain
   const categories = getCategories();
   const products = getProducts();
 

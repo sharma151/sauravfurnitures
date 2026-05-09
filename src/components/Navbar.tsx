@@ -1,157 +1,214 @@
 "use client";
 
+import * as React from "react";
 import Link from "next/link";
-import { useState } from "react";
+import { Menu, Phone, User, ChevronDown } from "lucide-react";
+import {
+  Sheet,
+  SheetContent,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet";
+import { Button } from "@/components/ui/button";
+import { Separator } from "@/components/ui/separator";
 import { getCategories } from "@/lib/data";
-import DropdownMenu from "./DropdownMenu";
+import { cn } from "@/lib/utils";
 
 const mainLinks = [
   { href: "/", label: "Home" },
-  { href: "/about", label: "About" },
   { href: "/services", label: "Services" },
+  { href: "/about", label: "About" },
   { href: "/contact", label: "Contact Us" },
+  // { href: "/helpdesk", label: "Book Service" },
 ];
 
+function getCategoryHref(categorySlug: string, subSlug: string) {
+  if (categorySlug === "new-arrival") return `/products/new-arrival/${subSlug}`;
+  return `/products/${categorySlug}${subSlug !== "all" ? `/${subSlug}` : ""}`;
+}
+
+function CategoryDropdown({
+  category,
+}: {
+  category: {
+    slug: string;
+    name: string;
+    subcategories: { slug: string; name: string }[];
+  };
+}) {
+  const [open, setOpen] = React.useState(false);
+  const timeoutRef = React.useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  const handleMouseEnter = () => {
+    if (timeoutRef.current) clearTimeout(timeoutRef.current);
+    setOpen(true);
+  };
+
+  const handleMouseLeave = () => {
+    timeoutRef.current = setTimeout(() => setOpen(false), 100);
+  };
+
+  return (
+    <div
+      className="relative"
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+    >
+      <button
+        className={cn(
+          "flex items-center gap-1 h-14 px-6 text-[15px] font-semibold text-[#4A3728] transition-all outline-none",
+          open ? "bg-[#F2E3CA]" : "hover:bg-[#F2E3CA]",
+        )}
+      >
+        {category.name}
+        <ChevronDown
+          className={cn(
+            "h-4 w-4 opacity-50 transition-transform duration-200",
+            open && "rotate-180",
+          )}
+        />
+      </button>
+
+      {open && (
+        <div className="absolute left-0 top-full z-50 w-56 bg-card shadow-xl rounded-b-md">
+          <ul className="p-2">
+            {category.subcategories.map((sub) => (
+              <li key={sub.slug}>
+                <Link
+                  href={getCategoryHref(category.slug, sub.slug)}
+                  className="block w-full px-4 py-3 text-[15px] font-medium text-gray-700 hover:bg-cta hover:text-section rounded-sm transition-colors"
+                >
+                  {sub.name}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+    </div>
+  );
+}
+
 export default function Navbar() {
-  const [openDropdown, setOpenDropdown] = useState<string | null>(null);
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const categories = getCategories();
 
   return (
-    <header className="sticky top-0 z-40 w-full border-b border-border bg-card/95 backdrop-blur supports-[backdrop-filter]:bg-card/80">
-      {/* Top Navbar - Main routing: Home, About, Contact Us, Services */}
-      <div className="border-b border-border bg-section/80">
-        <nav className="mx-auto flex max-w-7xl items-center justify-between gap-6 px-4 py-2 sm:px-6 lg:px-8 ">
+    <header className="sticky top-0 z-50 w-full shadow-sm">
+      <div className="bg-white border-b">
+        <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
           <Link
             href="/"
-            className="text-xl font-semibold text-primaryText transition-colors hover:text-accent"
+            className="text-xl font-bold tracking-tight text-[#4A3728]"
           >
             Saurav Furnitures
           </Link>
 
-          <span >
-            {mainLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="text-sm font-medium text-primaryText transition-colors hover:text-accent gap-6 px-4 py-2 sm:px-6 lg:px-8"
-              >
-                {link.label}
-              </Link>
-            ))}
-          </span>
-        </nav>
-      </div>
-
-      {/* Main Navbar - Logo + Product Categories / Filters */}
-      <nav className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
-        {/* Desktop - Product Categories */}
-        <div className="hidden items-center gap-1 lg:flex ">
-          {categories.map((category) => (
-            <div
-              key={category.slug}
-              className="relative"
-              onMouseEnter={() => setOpenDropdown(category.slug)}
-              onMouseLeave={() => setOpenDropdown(null)}
-            >
-              <Link
-                href={
-                  category.slug === "new-arrival"
-                    ? "/products/new-arrival/all"
-                    : `/products/${category.slug}`
-                }
-                className="block rounded-lg px-4 py-2 text-sm font-medium text-primaryText transition-colors hover:bg-highlight hover:text-accent"
-              >
-                {category.name}
-              </Link>
-              <DropdownMenu
-                category={category}
-                isOpen={openDropdown === category.slug}
-                onClose={() => setOpenDropdown(null)}
-              />
-            </div>
-          ))}
-        </div>
-
-        {/* Mobile menu button */}
-        <button
-          type="button"
-          className="rounded-lg p-2 lg:hidden"
-          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          aria-label="Toggle menu"
-        >
-          <svg
-            className="h-6 w-6 text-primaryText"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            {mobileMenuOpen ? (
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M6 18L18 6M6 6l12 12"
-              />
-            ) : (
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M4 6h16M4 12h16M4 18h16"
-              />
-            )}
-          </svg>
-        </button>
-      </nav>
-
-      {/* Mobile menu - Main links + Product categories */}
-      {mobileMenuOpen && (
-        <div className="border-t border-border bg-card lg:hidden">
-          <div className="space-y-1 px-4 py-4">
-            <div className="mb-4 flex flex-col gap-1 border-b border-border pb-4">
-              <p className="mb-2 px-4 text-xs font-semibold uppercase tracking-wide text-secondaryText">
-                Main
-              </p>
+          {/* Desktop main nav links */}
+          <div>
+            <nav className="hidden items-center gap-8 lg:flex">
               {mainLinks.map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="rounded-lg px-4 py-3 font-medium text-primaryText"
-                  onClick={() => setMobileMenuOpen(false)}
+                  className="text-sm font-medium text-muted-foreground hover:text-primaryText transition-colors"
                 >
                   {link.label}
                 </Link>
               ))}
+            </nav>
+
+            <div className="flex items-center gap-2 sm:gap-4">
+              <div className="lg:hidden">
+                <MobileNav categories={categories} />
+              </div>
             </div>
-            <div>
-              <p className="mb-2 px-4 text-xs font-semibold uppercase tracking-wide text-secondaryText">
-                Products & Categories
+          </div>
+        </div>
+      </div>
+
+      {/* CATEGORY BAR — Desktop hover dropdowns */}
+      <nav className="hidden lg:block bg-[#FAF3E7]">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center">
+            {categories.map((category) => (
+              <CategoryDropdown key={category.slug} category={category} />
+            ))}
+          </div>
+        </div>
+      </nav>
+    </header>
+  );
+}
+
+// MOBILE SIDEBAR
+function MobileNav({ categories }: { categories: any[] }) {
+  const [open, setOpen] = React.useState(false);
+
+  return (
+    <Sheet open={open} onOpenChange={setOpen}>
+      <SheetTrigger asChild>
+        <Button
+          variant="ghost"
+          size="icon"
+          className="hover:bg-[#F2E3CA]"
+          aria-label="Open menu"
+        >
+          <Menu className="h-6 w-6 text-[#4A3728]" />
+        </Button>
+      </SheetTrigger>
+      <SheetContent
+        side="left"
+        className="w-[300px] p-0 border-r-0 bg-[#FAF3E7]"
+      >
+        <div className="flex flex-col h-full">
+          <SheetHeader className="p-6 text-left border-b bg-white">
+            <SheetTitle className="text-[#4A3728] font-bold">
+              Saurav Furnitures
+            </SheetTitle>
+          </SheetHeader>
+
+          <div className="flex-1 overflow-y-auto p-6 space-y-8">
+            <div className="space-y-4">
+              <p className="text-[10px] font-bold uppercase tracking-[2px] text-muted-foreground">
+                Company
+              </p>
+              <div className="grid gap-3">
+                {mainLinks.map((link) => (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    onClick={() => setOpen(false)}
+                    className="text-lg font-medium text-[#4A3728]"
+                  >
+                    {link.label}
+                  </Link>
+                ))}
+              </div>
+            </div>
+
+            <Separator className="bg-black/5" />
+
+            <div className="space-y-6">
+              <p className="text-[10px] font-bold uppercase tracking-[2px] text-muted-foreground">
+                Shop Categories
               </p>
               {categories.map((category) => (
-                <div key={category.slug} className="space-y-1">
+                <div key={category.slug} className="space-y-3">
                   <Link
-                    href={
-                      category.slug === "new-arrival"
-                        ? "/products/new-arrival/all"
-                        : `/products/${category.slug}`
-                    }
-                    className="block rounded-lg px-4 py-3 font-medium text-primaryText"
-                    onClick={() => setMobileMenuOpen(false)}
+                    href={`/products/${category.slug}`}
+                    onClick={() => setOpen(false)}
+                    className="block text-md font-bold text-[#4A3728]"
                   >
                     {category.name}
                   </Link>
-                  <div className="ml-4 flex flex-col gap-1">
-                    {category.subcategories.map((sub) => (
+                  <div className="ml-2 border-l-2 border-[#F2E3CA] pl-4 flex flex-col gap-3">
+                    {category.subcategories.map((sub: any) => (
                       <Link
                         key={sub.slug}
-                        href={
-                          category.slug === "new-arrival"
-                            ? `/products/new-arrival/${sub.slug}`
-                            : `/products/${category.slug}${sub.slug !== "all" ? `/${sub.slug}` : ""}`
-                        }
-                        className="rounded-lg px-4 py-2 text-sm text-secondaryText"
-                        onClick={() => setMobileMenuOpen(false)}
+                        href={getCategoryHref(category.slug, sub.slug)}
+                        onClick={() => setOpen(false)}
+                        className="text-[16px] text-gray-600 hover:text-black transition-colors"
                       >
                         {sub.name}
                       </Link>
@@ -162,7 +219,7 @@ export default function Navbar() {
             </div>
           </div>
         </div>
-      )}
-    </header>
+      </SheetContent>
+    </Sheet>
   );
 }

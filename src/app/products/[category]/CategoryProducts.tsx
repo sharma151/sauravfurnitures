@@ -10,14 +10,21 @@ interface CategoryProductsProps {
   categorySlug: string;
 }
 
-export default function CategoryProducts({ products, categorySlug }: CategoryProductsProps) {
+export default function CategoryProducts({
+  products,
+  categorySlug,
+}: CategoryProductsProps) {
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
 
   if (products.length === 0) {
     return (
       <div className="mt-16 rounded-2xl border border-border bg-section p-12 text-center">
-        <p className="text-lg text-secondaryText">No products found in this category yet.</p>
-        <p className="mt-2 text-sm text-secondaryText/80">Check back soon for new arrivals!</p>
+        <p className="text-lg text-secondaryText">
+          No products found in this category yet.
+        </p>
+        <p className="mt-2 text-sm text-secondaryText/80">
+          Check back soon for new arrivals!
+        </p>
       </div>
     );
   }
@@ -33,7 +40,11 @@ export default function CategoryProducts({ products, categorySlug }: CategoryPro
           />
         ))}
       </div>
-      <ProductModal product={selectedProduct} onClose={() => setSelectedProduct(null)} />
+
+      <ProductModal
+        product={selectedProduct}
+        onClose={() => setSelectedProduct(null)}
+      />
     </>
   );
 }

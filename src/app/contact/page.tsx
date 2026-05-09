@@ -1,79 +1,122 @@
 import type { Metadata } from "next";
 import ContactForm from "@/components/ContactForm";
+import { Phone, Mail, MapPin } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Contact Us",
-  description:
-    "Get in touch with Saurav Furnitures. Visit our showroom, call, or send a message. We're here to help with your furniture needs.",
+  title: "Contact | Saurav Furnitures",
+  description: "Get in touch for custom furniture and interior solutions.",
 };
 
 export default function ContactPage() {
   return (
-    <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
-      <h1 className="text-4xl font-bold text-primaryText">Contact Us</h1>
-      <p className="mt-4 text-lg text-secondaryText">
-        We&apos;d love to hear from you. Reach out for inquiries, quotes, or
-        visits.
-      </p>
+    <main className="bg-gradient-to-b from-[#f8f5f2] to-[#efe7df]">
+      <div className="mx-auto max-w-6xl px-6 py-16 lg:py-24">
+        {/* Header */}
+        <header className="mb-16 max-w-3xl">
+          <h1 className="text-5xl font-bold leading-tight text-gray-900 sm:text-6xl">
+            Let’s build your <span className="text-cta">dream space</span>
+          </h1>
+          <p className="mt-4 text-lg text-gray-600">
+            Reach out to us for custom furniture, interior design, and expert
+            craftsmanship.
+          </p>
+        </header>
 
-      <div className="mt-16 grid gap-12 lg:grid-cols-2">
-        <div>
-          <h2 className="text-xl font-semibold text-primaryText">
-            Get in Touch
-          </h2>
-          <div className="mt-6 space-y-6 border">
-            <div>
-              <h3 className="text-sm font-medium text-primaryText">Address</h3>
-              <p className="mt-1 text-secondaryText">
-                Thasikhel, Lalitpur.
-                <br />
-                Near Hospice Nepal.
-              </p>
+        {/* Layout */}
+        <div className="grid gap-10 lg:grid-cols-2">
+          {/* LEFT: Contact Info */}
+          <div className="space-y-8">
+            {/* Info Cards */}
+            <div className="space-y-6">
+              {[
+                {
+                  icon: MapPin,
+                  title: "Showroom",
+                  content: "Thasikhel, Lalitpur\nNear Hospice Nepal",
+                },
+                {
+                  icon: Phone,
+                  title: "Call",
+                  content: "+977-9841469014\n+977-9763200683",
+                },
+                {
+                  icon: Mail,
+                  title: "Email",
+                  content: "contact@sauravfurniture.com",
+                },
+              ].map((item, i) => {
+                const Icon = item.icon;
+                return (
+                  <div
+                    key={i}
+                    className="flex gap-4 rounded-xl border border-white/40 bg-white/70 p-5 backdrop-blur-md transition hover:shadow-lg hover:-translate-y-1"
+                  >
+                    <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-cta text-white">
+                      <Icon className="h-5 w-5" />
+                    </div>
+
+                    <div>
+                      <h3 className="text-sm font-semibold uppercase tracking-wider text-gray-500">
+                        {item.title}
+                      </h3>
+                      <p className="mt-1 whitespace-pre-line text-gray-700">
+                        {item.content}
+                      </p>
+                    </div>
+                  </div>
+                );
+              })}
             </div>
-            <div>
-              <h3 className="text-sm font-medium text-primaryText">Phone</h3>
-              <p className="mt-1 text-secondaryText">+977-9841469014</p>
-              <p className="mt-1 text-secondaryText">+977-9763200683</p>
-            </div>
-            <div>
-              <h3 className="text-sm font-medium text-primaryText">Email</h3>
-              <p className="mt-1 text-secondaryText">
-                contact@sauravfurnitures.com
-              </p>
-            </div>
-            <div>
-              <h3 className="text-sm font-medium text-primaryText">
-                Working Hours
-              </h3>
-              <p className="mt-1 text-secondaryText">
-                sun - fri: 7:00 AM - 6:00 PM
-                <br />
-                Saturday: 07:00 AM - 3:00 PM
-              </p>
+
+            {/* Map */}
+            <div className="overflow-hidden rounded-2xl shadow-md transition hover:shadow-xl">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2691.68477762213!2d85.3151873740512!3d27.664780027370202!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb19be7eb9c70d%3A0xc780a9c5fe60cec7!2sSaurav%20Furniture%20Udyog%20Pvt.%20Ltd.!5e1!3m2!1sen!2snp!4v1772463998962!5m2!1sen!2snp"
+                width="100%"
+                height="300"
+                style={{ border: 0 }}
+                loading="lazy"
+                title="Location Map"
+              />
             </div>
           </div>
-        </div>
-        <div className="rounded-2xl border border-border bg-card p-8 shadow-md">
-          <h2 className="text-xl font-semibold text-primaryText">
-            Send a Message
-          </h2>
-          <ContactForm />
-        </div>
-      </div>
 
-      <div className="mt-16 overflow-hidden rounded-2xl border border-border shadow-md">
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d606.9336250574507!2d85.31794086610502!3d27.664816750273467!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1sen!2snp!4v1771776636921!5m2!1sen!2snp"
-          width="100%"
-          height="400"
-          style={{ border: 0 }}
-          allowFullScreen
-          loading="lazy"
-          referrerPolicy="no-referrer-when-downgrade"
-          title="Our location on map"
-          className="block"
-        ></iframe>
+          {/* RIGHT: CTA + FORM */}
+          <div className="space-y-8">
+            <div className="rounded-2xl border border-white/40 bg-white/80 p-8 shadow-xl backdrop-blur-md">
+              <h2 className="mb-6 text-2xl font-semibold text-gray-900">
+                Send us a message
+              </h2>
+              <ContactForm />
+            </div>
+            {/* NEED HELP FAST CARD */}
+            <div className="rounded-3xl bg-cta p-8 text-center text-white shadow-xl relative overflow-hidden">
+              {/* subtle gradient overlay */}
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(255,255,255,0.08),_transparent)]" />
+
+              <div className="relative">
+                <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-white/10">
+                  <Phone className="h-6 w-6" />
+                </div>
+
+                <h3 className="text-2xl font-semibold">Need Help Fast?</h3>
+                <p className="mt-2 text-sm text-white/80">
+                  Call us directly to talk to a carpenter right now.
+                </p>
+
+                <a
+                  href="tel:9841469014"
+                  className="mt-6 inline-block rounded-full bg-white px-6 py-3 font-semibold text-gray-900 shadow-md transition hover:scale-105"
+                >
+                  Call: 98414-69014
+                </a>
+              </div>
+            </div>
+
+            {/* CONTACT FORM */}
+          </div>
+        </div>
       </div>
-    </div>
+    </main>
   );
 }
