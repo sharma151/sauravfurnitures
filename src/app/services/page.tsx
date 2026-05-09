@@ -1,10 +1,13 @@
 import type { Metadata } from "next";
 import ServiceCard from "@/components/ServiceCard";
+import SectionHeading from "@/components/luxury/SectionHeading";
+import PremiumButton from "@/components/luxury/PremiumButton";
+import { ArrowRight } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Services | Saurav Furnitures",
+  title: "Services",
   description:
-    "Expert craftsmanship in wood, upholstery, and metal fabrication.",
+    "Explore premium furniture services including custom woodwork, luxury upholstery, and metal fabrication.",
 };
 
 const services = [
@@ -105,58 +108,75 @@ const services = [
 
 export default function ServicesPage() {
   return (
-    <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
-      {/* Header with better detailing */}
-      <div className="border-l-4 border-primaryText pl-6">
-        <h1 className="text-4xl font-bold tracking-tight text-primaryText sm:text-5xl">
-          Our Services
-        </h1>
-        <p className="mt-4 max-w-2xl text-lg text-secondaryText/80 italic">
-          Mastering the elements of Wood, Fabric, and Steel to build your
-          sanctuary.
-        </p>
-      </div>
+    <main>
+      <section className="relative overflow-hidden px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_#EFE4D7_0%,_#FAF8F5_45%,_#FAF8F5_100%)]" />
+        <div className="relative mx-auto max-w-7xl">
+          <SectionHeading
+            eyebrow="Luxury Services"
+            title="End-To-End Furniture Services For Refined Interiors."
+            description="From bespoke wood pieces to premium upholstery and precision metal detailing, we deliver complete solutions designed around your space."
+          />
 
-      <div className="mt-16 grid gap-10 md:grid-cols-2 lg:grid-cols-3">
-        {services.map((service) => (
-          <div
-            key={service.id}
-            className="group relative flex flex-col rounded-xl border border-transparent bg-white p-8 transition-all duration-300 hover:border-stone-200 hover:shadow-xl active:scale-[0.98]"
-          >
-            {/* Minimalist Icon Redesign */}
-            <div
-              className={`mb-6 flex h-14 w-14 items-center justify-center rounded-lg bg-cta text-stone-200 transition-all duration-300 $`}
-            >
-              {service.icon}
-            </div>
-
-            <h3 className="text-2xl font-semibold text-primaryText transition-colors group-hover:text-black">
-              {service.title}
-            </h3>
-
-            <p className="mt-4 text-secondaryText leading-relaxed">
-              {service.shortDescription}
-            </p>
-
-            <ul className="mt-6 space-y-3 border-t border-stone-100 pt-6">
-              {service.details.map((detail, index) => (
-                <li
-                  key={index}
-                  className="flex items-center text-sm font-medium text-secondaryText/70"
-                >
-                  <span className="mr-3 h-1.5 w-1.5 rounded-full bg-stone-300 group-hover:bg-amber-800 transition-colors" />
-                  {detail}
-                </li>
-              ))}
-            </ul>
-
-            {/* Subtle Hover Decoration */}
-            <div className="absolute top-4 right-4 text-xs font-mono text-secondaryText-200 opacity-0 transition-opacity group-hover:opacity-100 uppercase">
-              {service.id.replace("-", " ")}
-            </div>
+          <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            {services.map((service) => (
+              <ServiceCard
+                key={service.id}
+                id={service.id}
+                title={service.title}
+                shortDescription={service.shortDescription}
+                details={service.details}
+                icon={service.icon}
+              />
+            ))}
           </div>
-        ))}
-      </div>
-    </div>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-4 pb-16 sm:px-6 lg:px-8 lg:pb-20">
+        <div className="grid gap-6 md:grid-cols-3">
+          {[
+            {
+              title: "Consultation & Space Review",
+              description: "We evaluate your layout, style, and functional needs before design finalization.",
+            },
+            {
+              title: "Design & Material Selection",
+              description: "Choose curated materials, finishes, and dimensions with our expert guidance.",
+            },
+            {
+              title: "Build, Delivery & Setup",
+              description: "Precision production, premium finishing, and careful on-site installation.",
+            },
+          ].map((step, index) => (
+            <article key={step.title} className="rounded-3xl border border-[#E8DCCF] bg-[#FFFCF8] p-6">
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#C6A77D]">Step {index + 1}</p>
+              <h3 className="mt-3 text-xl font-semibold text-[#3B241A]">{step.title}</h3>
+              <p className="mt-2 text-sm leading-relaxed text-[#6B7280]">{step.description}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-4 pb-16 sm:px-6 lg:px-8 lg:pb-20">
+        <div className="rounded-[2rem] border border-[#C6A77D]/30 bg-gradient-to-br from-[#5B3A29] via-[#4A2F22] to-[#3B241A] p-10 text-[#F7F3EE] sm:p-12">
+          <p className="text-xs font-semibold uppercase tracking-[0.25em] text-[#E8DCCF]">Custom Projects</p>
+          <h2 className="mt-4 text-3xl font-bold sm:text-4xl">Need A Bespoke Furniture Solution?</h2>
+          <p className="mt-4 max-w-3xl text-[#F7F3EE]/85">
+            Share your ideas, dimensions, and style references. Our team will craft a personalized
+            proposal tailored for your home or commercial space.
+          </p>
+          <PremiumButton
+            href="/contact"
+            variant="secondary"
+            size="lg"
+            className="mt-8 inline-flex bg-white/10 text-[#F7F3EE] hover:bg-white/20"
+          >
+            Start A Service Request
+            <ArrowRight className="ml-1 h-4 w-4" />
+          </PremiumButton>
+        </div>
+      </section>
+    </main>
   );
 }
