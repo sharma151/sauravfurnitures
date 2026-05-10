@@ -118,13 +118,14 @@ h4 {
 }
 
 .glass-surface {
-  background: linear-gradient(
+  /* background: linear-gradient(
     180deg,
     rgb(255 252 248 / 82%) 0%,
     rgb(247 243 238 / 70%) 100%
-  );
+  ); */
+  background: rgb(255 252 248 );
   border: 1px solid rgb(198 167 125 / 28%);
-  backdrop-filter: blur(14px);
+  /* backdrop-filter: blur(14px); */
 }
 
 .gold-ring {

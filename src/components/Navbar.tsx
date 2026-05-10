@@ -55,7 +55,7 @@ function CategoryDropdown({
     >
       <button
         className={cn(
-          "group flex h-full items-center gap-1 border-b-2 border-transparent px-4 text-sm font-medium text-[#3B241A] transition-all outline-none",
+          "group flex h-full items-center gap-1  py-4 border-transparent px-4 text-sm font-medium text-[#3B241A] transition-all outline-none",
           open ? "border-[#C6A77D] text-[#5B3A29]" : "hover:border-[#C6A77D]/80 hover:text-[#5B3A29]",
         )}
         aria-expanded={open}
