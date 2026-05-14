@@ -19,10 +19,14 @@ export default function ContactForm() {
   });
   const [submitted, setSubmitted] = useState(false);
 
+  console.log("Contact Form Data:", form);
+
   if (submitted) {
     return (
       <div className="rounded-2xl border border-[#E8DCCF] bg-[#FFFCF8] p-8 text-center animate-in fade-in duration-500">
-        <p className="text-xl font-semibold text-[#5B3A29]">Thank you for reaching out.</p>
+        <p className="text-xl font-semibold text-[#5B3A29]">
+          Thank you for reaching out.
+        </p>
         <p className="mt-2 text-[#6B7280]">
           Our design team will contact you shortly with personalized assistance.
         </p>
@@ -93,8 +97,8 @@ export default function ContactForm() {
         </label>
       </div>
 
-      <label className="space-y-2 text-sm font-medium text-[#3B241A]">
-        Project Details
+      <label className="space-y-2 text-sm  font-medium text-[#3B241A]">
+        Project Details :
         <textarea
           placeholder="Tell us about your space, preferred style, timeline, and budget expectations."
           rows={5}
@@ -105,7 +109,7 @@ export default function ContactForm() {
       </label>
 
       <PremiumButton type="submit" size="lg" className="w-full">
-        Send Luxury Inquiry
+        Send Inquiry
       </PremiumButton>
     </form>
   );

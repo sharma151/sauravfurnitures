@@ -17,7 +17,7 @@ const services = [
     shortDescription:
       "Custom timber furniture and antique restoration with a focus on grain and durability.",
     details: [
-      "Bespoke Tables & Chairs",
+      "Bespoke Tables, Chairs & Cabinets",
       "Premium Wood Polishing",
       "Structural Wood Repair",
     ],
@@ -74,6 +74,43 @@ const services = [
     ),
   },
   {
+    id: "furniture-restoration",
+    title: "Furniture Restoration",
+    shortDescription:
+      "Expert revival of vintage and heirloom pieces through meticulous stripping, staining, and structural repair.",
+    details: [
+      "Antique Wood Refinishing",
+      "Structural Joint Repair",
+      "Custom Upholstery",
+    ],
+    // activeColor: "group-hover:text-amber-700",
+    icon: (
+      <svg
+        className="h-10 w-10 transition-colors duration-300"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        {/* Table/Workbench Icon representing furniture */}
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth={1.5}
+          d="M4 7h16M4 7v10a1 1 0 001 1h14a1 1 0 001-1V7M4 7l2-4h12l2 4M10 12h4m-2 6v.01"
+        />
+        {/* Hand-crafted sparkle/detail indicator */}
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth={1.5}
+          d="M17 12l2 2m0-2l-2 2"
+          className="animate-pulse"
+        />
+      </svg>
+    ),
+  },
+  {
     id: "iron-welding",
     title: "Iron Welding",
     shortDescription:
@@ -110,10 +147,10 @@ export default function ServicesPage() {
   return (
     <main>
       <section className="relative overflow-hidden px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_#EFE4D7_0%,_#FAF8F5_45%,_#FAF8F5_100%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,#EFE4D7_0%,#FAF8F5_45%,#FAF8F5_100%)]" />
         <div className="relative mx-auto max-w-7xl">
           <SectionHeading
-            eyebrow="Luxury Services"
+            eyebrow=" Our Services"
             title="End-To-End Furniture Services For Refined Interiors."
             description="From bespoke wood pieces to premium upholstery and precision metal detailing, we deliver complete solutions designed around your space."
           />
@@ -138,33 +175,50 @@ export default function ServicesPage() {
           {[
             {
               title: "Consultation & Space Review",
-              description: "We evaluate your layout, style, and functional needs before design finalization.",
+              description:
+                "We evaluate your layout, style, and functional needs before design finalization.",
             },
             {
               title: "Design & Material Selection",
-              description: "Choose curated materials, finishes, and dimensions with our expert guidance.",
+              description:
+                "Choose curated materials, finishes, and dimensions with our expert guidance.",
             },
             {
               title: "Build, Delivery & Setup",
-              description: "Precision production, premium finishing, and careful on-site installation.",
+              description:
+                "Precision production, premium finishing, and careful on-site installation.",
             },
           ].map((step, index) => (
-            <article key={step.title} className="rounded-3xl border border-[#E8DCCF] bg-[#FFFCF8] p-6">
-              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#C6A77D]">Step {index + 1}</p>
-              <h3 className="mt-3 text-xl font-semibold text-[#3B241A]">{step.title}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-[#6B7280]">{step.description}</p>
+            <article
+              key={step.title}
+              className="rounded-3xl border border-[#E8DCCF] bg-[#FFFCF8] p-6"
+            >
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#C6A77D]">
+                Step {index + 1}
+              </p>
+              <h3 className="mt-3 text-xl font-semibold text-[#3B241A]">
+                {step.title}
+              </h3>
+              <p className="mt-2 text-sm leading-relaxed text-[#6B7280]">
+                {step.description}
+              </p>
             </article>
           ))}
         </div>
       </section>
 
       <section className="mx-auto max-w-7xl px-4 pb-16 sm:px-6 lg:px-8 lg:pb-20">
-        <div className="rounded-[2rem] border border-[#C6A77D]/30 bg-gradient-to-br from-[#5B3A29] via-[#4A2F22] to-[#3B241A] p-10 text-[#F7F3EE] sm:p-12">
-          <p className="text-xs font-semibold uppercase tracking-[0.25em] text-[#E8DCCF]">Custom Projects</p>
-          <h2 className="mt-4 text-3xl font-bold sm:text-4xl">Need A Bespoke Furniture Solution?</h2>
+        <div className="rounded-[2rem] border border-[#C6A77D]/30 bg-linear-to-br from-[#5B3A29] via-[#4A2F22] to-[#3B241A] p-10 text-[#F7F3EE] sm:p-12">
+          <p className="text-xs font-semibold uppercase tracking-[0.25em] text-[#E8DCCF]">
+            Custom Projects
+          </p>
+          <h2 className="mt-4 text-3xl font-bold sm:text-4xl">
+            Need A Bespoke Furniture Solution?
+          </h2>
           <p className="mt-4 max-w-3xl text-[#F7F3EE]/85">
-            Share your ideas, dimensions, and style references. Our team will craft a personalized
-            proposal tailored for your home or commercial space.
+            Share your ideas, dimensions, and style references. Our team will
+            craft a personalized proposal tailored for your home or commercial
+            space.
           </p>
           <PremiumButton
             href="/contact"

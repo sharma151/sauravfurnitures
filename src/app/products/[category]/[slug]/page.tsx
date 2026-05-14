@@ -159,7 +159,7 @@ export default async function SlugPage({ params }: PageProps) {
               </div>
               <button
                 type="button"
-                className="mt-8 w-full rounded-xl rounded-lg bg-cta px-6 py-4 font-semibold text-white transition-all duration-300 ease-in-out hover:bg-ctaHover"
+                className="mt-8 w-full rounded-lg bg-cta px-6 py-4 font-semibold text-white transition-all duration-300 ease-in-out hover:bg-ctaHover"
               >
                 Add to Cart
               </button>
