@@ -1,40 +1,5 @@
-// import productsData from "@/data/products.json";
-// import HomeProduct from "@/app/HomeProducts";
-// import { getFeaturedProducts } from "@/lib/data";
 
-// export default function ourWorks() {
-//   const products = productsData;
-//   const featuredProducts = getFeaturedProducts();
-
-//   return (
-//     <main className="min-h-screen bg-inherit font-inherit py-12 px-4 md:px-8 ">
-//       <header className="mb-12 text-center">
-//         <h1 className="text-4xl font-bold mb-4">Our Featured Products</h1>
-//         <p className="text-muted-foreground max-w-2xl mx-auto">
-//           Explore our collection of premium furniture designed for comfort,
-//           durability, and style.
-//         </p>
-//       </header>
-
-//       {/* Product Grid */}
-//       <div className="grid grid-cols-1 gap-8">
-//         {products.map((product) => (
-//           <div key={product.id} className="flex justify-center">
-//             <HomeProduct products={featuredProducts} />
-//           </div>
-//         ))}
-//       </div>
-
-//       {products.length === 0 && (
-//         <div className="text-center py-20">
-//           <p className="text-xl text-gray-500">No products found.</p>
-//         </div>
-//       )}
-//     </main>
-//   );
-// }
-
-"use client"; // Required for useState and click handlers
+"use client"; 
 
 import { useState } from "react";
 import productsData from "@/data/products.json";
