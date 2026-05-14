@@ -15,10 +15,10 @@ import type { Category } from "@/types";
 
 const mainLinks = [
   { href: "/", label: "Home" },
-  { href: "/products/bedroom", label: "Collections" },
   { href: "/services", label: "Services" },
   { href: "/about", label: "About" },
   { href: "/contact", label: "Contact" },
+  { href: "/ourworks", label: "Our Works" },
 ];
 
 function getCategoryHref(categorySlug: string, subSlug: string) {
