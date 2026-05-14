@@ -6,14 +6,15 @@ import { Clock3, Mail, MapPin, Phone } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Contact",
-  description: "Contact Saurav Furnitures for luxury custom furniture and interior consultation.",
+  description:
+    "Contact Saurav Furnitures for luxury custom furniture and interior consultation.",
 };
 
 export default function ContactPage() {
   return (
     <main>
       <section className="relative overflow-hidden px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_#EFE4D7_0%,_#FAF8F5_45%,_#FAF8F5_100%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,#EFE4D7_0%,#FAF8F5_45%,#FAF8F5_100%)]" />
         <div className="relative mx-auto max-w-7xl">
           <SectionHeading
             eyebrow="Contact Us"
@@ -26,13 +27,13 @@ export default function ContactPage() {
               {[
                 {
                   icon: MapPin,
-                  title: "Showroom",
+                  title: "Workshop",
                   content: "Thasikhel, Lalitpur\nNear Hospice Nepal",
                 },
                 {
                   icon: Phone,
                   title: "Phone",
-                  content: "+977-9841469014\n+977-9763200683",
+                  content: "+977-9841469013\n+977-9803002432\n+977-9763200683",
                 },
                 {
                   icon: Mail,
@@ -42,19 +43,27 @@ export default function ContactPage() {
                 {
                   icon: Clock3,
                   title: "Hours",
-                  content: "Sun - Fri: 9:00 AM - 7:00 PM\nSaturday: By Appointment",
+                  content:
+                    "Sun - Fri: 9:00 AM - 7:00 PM\nSaturday: 9:00 AM - 3:00 PM",
                 },
               ].map((item) => {
                 const Icon = item.icon;
                 return (
-                  <article key={item.title} className="rounded-3xl border border-[#E8DCCF] bg-[#FFFCF8] p-6">
+                  <article
+                    key={item.title}
+                    className="rounded-3xl border border-[#E8DCCF] bg-[#FFFCF8] p-6"
+                  >
                     <div className="flex items-start gap-4">
                       <div className="inline-flex rounded-2xl border border-[#C6A77D]/35 bg-[#F7F3EE] p-3 text-[#5B3A29]">
                         <Icon className="h-5 w-5" />
                       </div>
                       <div>
-                        <h3 className="text-sm font-semibold uppercase tracking-[0.18em] text-[#6B7280]">{item.title}</h3>
-                        <p className="mt-1 whitespace-pre-line text-[#3B241A]">{item.content}</p>
+                        <h3 className="text-sm font-semibold uppercase tracking-[0.18em] text-[#6B7280]">
+                          {item.title}
+                        </h3>
+                        <p className="mt-1 whitespace-pre-line text-[#3B241A]">
+                          {item.content}
+                        </p>
                       </div>
                     </div>
                   </article>
@@ -75,19 +84,25 @@ export default function ContactPage() {
 
             <div className="space-y-6">
               <div className="rounded-[2rem] border border-[#E8DCCF] bg-[#FFFCF8] p-8 shadow-[0_28px_60px_-50px_rgba(59,36,26,0.92)]">
-                <h2 className="text-2xl font-semibold text-[#3B241A]">Send A Luxury Inquiry</h2>
+                <h2 className="text-2xl font-semibold text-[#3B241A]">
+                  Send A  Inquiry
+                </h2>
                 <p className="mt-2 text-sm text-[#6B7280]">
-                  Tell us about your project and we’ll share tailored design recommendations.
+                  Tell us about your project and we’ll share tailored design
+                  recommendations.
                 </p>
                 <div className="mt-6">
                   <ContactForm />
                 </div>
               </div>
 
-              <div className="rounded-[2rem] border border-[#C6A77D]/35 bg-gradient-to-br from-[#5B3A29] via-[#4A2F22] to-[#3B241A] p-8 text-[#F7F3EE]">
-                <h3 className="text-2xl font-semibold">Need Immediate Assistance?</h3>
+              <div className="rounded-[2rem] border border-[#C6A77D]/35 bg-linear-to-br from-[#5B3A29] via-[#4A2F22] to-[#3B241A] p-8 text-[#F7F3EE]">
+                <h3 className="text-2xl font-semibold">
+                  Need Immediate Assistance?
+                </h3>
                 <p className="mt-2 text-sm text-[#F7F3EE]/80">
-                  Connect with our team for urgent project timelines and quick expert guidance.
+                  Connect with our team for urgent project timelines and quick
+                  expert guidance.
                 </p>
                 <PremiumButton
                   href="tel:9841469014"
@@ -95,7 +110,7 @@ export default function ContactPage() {
                   size="lg"
                   className="mt-6 inline-flex bg-white/10 text-[#F7F3EE] hover:bg-white/20"
                 >
-                  Call Now: 98414-69014
+                  Call Now: 98414-69013
                 </PremiumButton>
               </div>
             </div>

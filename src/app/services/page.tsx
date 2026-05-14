@@ -208,7 +208,7 @@ export default function ServicesPage() {
       </section>
 
       <section className="mx-auto max-w-7xl px-4 pb-16 sm:px-6 lg:px-8 lg:pb-20">
-        <div className="rounded-[2rem] border border-[#C6A77D]/30 bg-gradient-to-br from-[#5B3A29] via-[#4A2F22] to-[#3B241A] p-10 text-[#F7F3EE] sm:p-12">
+        <div className="rounded-[2rem] border border-[#C6A77D]/30 bg-linear-to-br from-[#5B3A29] via-[#4A2F22] to-[#3B241A] p-10 text-[#F7F3EE] sm:p-12">
           <p className="text-xs font-semibold uppercase tracking-[0.25em] text-[#E8DCCF]">
             Custom Projects
           </p>
