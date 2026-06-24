@@ -24,24 +24,25 @@ export default function Footer() {
       <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
         <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-5">
           <div className="lg:col-span-2">
-            <Link
+            <Link href="/" className="inline-block">
+              <Image
+                src="/images/logo.jpg"
+                alt="Saurav Furnitures logo"
+                width={220}
+                height={90}
+                className="w-32 h-auto sm:w-40 md:w-48 lg:w-52 object-contain"
+              />
+            </Link>
+            {/* <Link
               href="/"
               className="font-serif text-2xl font-semibold tracking-tight text-[#3B241A]"
             >
               Saurav Furnitures
-            </Link>
+            </Link> */}
             <p className="mt-4 max-w-sm text-sm leading-relaxed text-[#6B7280]">
               A modern luxury furniture house blending artisanal craftsmanship,
               timeless silhouettes, and warm contemporary living.
             </p>
-            <div className="relative h-24 max-w-50 shrink-0 overflow-hidden rounded-lg border border-border">
-              <Image
-                src="../../public/images/logo.jpg"
-                alt={`logo`}
-                fill
-                // className="object-cover"
-              />
-            </div>
             <div className="mt-6 flex gap-3">
               <a
                 href="https://facebook.com"

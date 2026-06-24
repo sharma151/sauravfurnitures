@@ -2,6 +2,7 @@
 
 import * as React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { ChevronDown, Menu, Phone, X } from "lucide-react";
 import {
   Sheet,
@@ -99,9 +100,19 @@ export default function Navbar() {
         <div className="flex h-20 items-center justify-between">
           <Link
             href="/"
-            className="font-serif text-2xl font-semibold tracking-tight text-[#3B241A]"
+            className="flex items-center"
           >
-            Saurav Furnitures
+            <div className="relative h-14 w-44 shrink-0 overflow-hidden">
+              <Image
+                src="/images/logo.jpg"
+                alt="Saurav Furnitures logo"
+                fill
+                className="object-cover"
+              />
+            </div>
+            {/* <span className="font-serif text-2xl font-semibold tracking-tight text-[#3B241A]">
+              Saurav Furnitures
+            </span> */}
           </Link>
 
           <nav className="hidden h-full items-center gap-1 lg:flex">
