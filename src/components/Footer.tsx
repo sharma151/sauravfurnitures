@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { getCategories } from "@/lib/data";
+import Image from "next/image";
 import { Facebook, Instagram, Linkedin } from "lucide-react";
 
 const services = [
@@ -23,13 +24,24 @@ export default function Footer() {
       <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
         <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-5">
           <div className="lg:col-span-2">
-            <Link href="/" className="font-serif text-2xl font-semibold tracking-tight text-[#3B241A]">
+            <Link
+              href="/"
+              className="font-serif text-2xl font-semibold tracking-tight text-[#3B241A]"
+            >
               Saurav Furnitures
             </Link>
             <p className="mt-4 max-w-sm text-sm leading-relaxed text-[#6B7280]">
-              A modern luxury furniture house blending artisanal craftsmanship, timeless silhouettes,
-              and warm contemporary living.
+              A modern luxury furniture house blending artisanal craftsmanship,
+              timeless silhouettes, and warm contemporary living.
             </p>
+            <div className="relative h-24 max-w-50 shrink-0 overflow-hidden rounded-lg border border-border">
+              <Image
+                src="../../public/images/logo.jpg"
+                alt={`logo`}
+                fill
+                // className="object-cover"
+              />
+            </div>
             <div className="mt-6 flex gap-3">
               <a
                 href="https://facebook.com"
@@ -111,7 +123,8 @@ export default function Footer() {
         </div>
 
         <div className="mt-12 border-t border-[#E8DCCF] pt-8 text-center text-sm text-[#6B7280]">
-          © 2026 Saurav Furnitures. Curated comfort. Crafted luxury.
+          © {new Date().getFullYear()} Saurav Furnitures. Curated comfort.
+          Crafted luxury.
         </div>
       </div>
     </footer>
