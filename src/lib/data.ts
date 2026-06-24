@@ -1,9 +1,24 @@
 import categoriesData from "@/data/categories.json";
-import productsData from "@/data/products.json";
+import bedroomData from "@/data/products/bedroom.json";
+import livingRoomData from "@/data/products/living-room.json";
+import diningData from "@/data/products/dining.json";
+import officeData from "@/data/products/office.json";
+import newArrivalsData from "@/data/products/new-arrivals.json";
 import type { Category, Product } from "@/types";
 
 export const categories: Category[] = categoriesData as Category[];
-export const products: Product[] = productsData as Product[];
+
+/**
+ * All products merged from individual category JSON files.
+ * To add products to a category, edit the corresponding file in src/data/products/.
+ */
+export const products: Product[] = [
+  ...(bedroomData as unknown as Product[]),
+  ...(livingRoomData as unknown as Product[]),
+  ...(diningData as unknown as Product[]),
+  ...(officeData as unknown as Product[]),
+  ...(newArrivalsData as unknown as Product[]),
+];
 
 export function getCategories(): Category[] {
   return categories;
