@@ -9,7 +9,12 @@
     "currency": "NPR",
     "shortDescription": "Complete luxury set including King Bed, 2 Side Tables, and a 4-Door Wardrobe.",
     "description": "Crafted from seasoned Sissau wood with traditional hand-carvings by local artisans. A perfect blend of culture and comfort.",
-    "features": ["Solid Sissau Wood", "Hand-carved Headboard", "High Gloss Finish", "10 Year Warranty"],
+    "features": [
+      "Solid Sissau Wood",
+      "Hand-carved Headboard",
+      "High Gloss Finish",
+      "10 Year Warranty"
+    ],
     "dimensions": { "bed": "72x78 inches", "wardrobe": "72x84 inches" },
     "materials": ["Sissau Wood", "Premium Polish"],
     "careInstructions": "Dust with a dry soft cloth. Periodically polish with wood wax.",
@@ -30,7 +35,12 @@
     "currency": "NPR",
     "shortDescription": "Sleek 4-piece set for contemporary urban homes.",
     "description": "Includes a queen bed, sliding wardrobe, and matching nightstands with a matte finish.",
-    "features": ["Minimalist Design", "Matte Finish", "Space Saving", "5 Year Warranty"],
+    "features": [
+      "Minimalist Design",
+      "Matte Finish",
+      "Space Saving",
+      "5 Year Warranty"
+    ],
     "dimensions": { "bed": "60x78 inches", "wardrobe": "60x84 inches" },
     "materials": ["Engineering Wood", "Laminate"],
     "careInstructions": "Wipe with a damp cloth. Avoid harsh chemicals.",
@@ -52,7 +62,11 @@
     "shortDescription": "Minimalist low-profile bed for a modern aesthetic.",
     "description": "Simple, clean lines and a sturdy wooden frame. Ideal for small apartments in Kathmandu.",
     "features": ["Space-saving", "Sturdy Slats", "Eco-friendly Paint"],
-    "dimensions": { "length": "78 inches", "width": "60 inches", "height": "12 inches" },
+    "dimensions": {
+      "length": "78 inches",
+      "width": "60 inches",
+      "height": "12 inches"
+    },
     "materials": ["Plywood", "Veneer Finish"],
     "careInstructions": "Wipe with a damp cloth.",
     "stock": 10,
@@ -73,7 +87,11 @@
     "shortDescription": "Heavy-duty queen bed made from authentic Sal wood.",
     "description": "Traditional design focused on ultimate longevity and structural strength.",
     "features": ["100% Sal Wood", "Anti-Termite Treatment", "Classic Finish"],
-    "dimensions": { "length": "78 inches", "width": "60 inches", "height": "35 inches" },
+    "dimensions": {
+      "length": "78 inches",
+      "width": "60 inches",
+      "height": "35 inches"
+    },
     "materials": ["Sal Wood"],
     "careInstructions": "Clean with a dry cloth.",
     "stock": 4,
@@ -94,7 +112,11 @@
     "shortDescription": "Spacious wooden wardrobe with traditional latch locks.",
     "description": "Ample hanging space and integrated drawers for organized storage.",
     "features": ["Solid Wood Frame", "Internal Safe Locker", "Hanging Rod"],
-    "dimensions": { "length": "48 inches", "width": "22 inches", "height": "72 inches" },
+    "dimensions": {
+      "length": "48 inches",
+      "width": "22 inches",
+      "height": "72 inches"
+    },
     "materials": ["Plywood", "Solid Wood Door Panels"],
     "careInstructions": "Keep away from moisture.",
     "stock": 6,
@@ -115,7 +137,11 @@
     "shortDescription": "Space-saving sliding door wardrobe with glass accents.",
     "description": "Smooth sliding mechanism perfect for narrow rooms.",
     "features": ["Sliding Mechanism", "Full Mirror Side", "Adjustable Shelves"],
-    "dimensions": { "length": "60 inches", "width": "24 inches", "height": "80 inches" },
+    "dimensions": {
+      "length": "60 inches",
+      "width": "24 inches",
+      "height": "80 inches"
+    },
     "materials": ["MDF", "Laminate"],
     "careInstructions": "Lubricate sliding tracks annually.",
     "stock": 3,
@@ -135,8 +161,16 @@
     "currency": "NPR",
     "shortDescription": "Elegant dressing table with full-length mirror and hidden storage.",
     "description": "Functional and stylish, featuring a dedicated jewelry drawer and light-colored finish.",
-    "features": ["Full Length Mirror", "Soft-close Drawers", "Integrated Stool"],
-    "dimensions": { "length": "36 inches", "width": "16 inches", "height": "72 inches" },
+    "features": [
+      "Full Length Mirror",
+      "Soft-close Drawers",
+      "Integrated Stool"
+    ],
+    "dimensions": {
+      "length": "36 inches",
+      "width": "16 inches",
+      "height": "72 inches"
+    },
     "materials": ["Teak Wood", "Silver Mirror"],
     "careInstructions": "Wipe mirror with glass cleaner.",
     "stock": 12,
@@ -157,7 +191,11 @@
     "shortDescription": "Minimalist wall-mounted dressing unit with shelf.",
     "description": "Ideal for small bedrooms where floor space is limited.",
     "features": ["Wall-Mounted", "Hidden Shelves", "Slim Profile"],
-    "dimensions": { "length": "24 inches", "width": "6 inches", "height": "48 inches" },
+    "dimensions": {
+      "length": "24 inches",
+      "width": "6 inches",
+      "height": "48 inches"
+    },
     "materials": ["Engineered Wood", "Glass"],
     "careInstructions": "Check wall brackets regularly.",
     "stock": 20,
@@ -178,7 +216,11 @@
     "shortDescription": "Compact 2-drawer bedside table with a natural oak finish.",
     "description": "Simple design that fits into tight spaces, perfect for keeping your essentials within reach.",
     "features": ["Compact Design", "Smooth Gliding Drawers"],
-    "dimensions": { "length": "18 inches", "width": "15 inches", "height": "20 inches" },
+    "dimensions": {
+      "length": "18 inches",
+      "width": "15 inches",
+      "height": "20 inches"
+    },
     "materials": ["Oak Wood", "Metal Handles"],
     "careInstructions": "Avoid direct sunlight.",
     "stock": 25,
@@ -199,7 +241,11 @@
     "shortDescription": "Handcrafted Sissau wood night table with drawer.",
     "description": "Matches perfectly with heritage beds and traditional decor.",
     "features": ["Solid Sissau Wood", "Hand-finished", "Brass Hardware"],
-    "dimensions": { "length": "20 inches", "width": "18 inches", "height": "22 inches" },
+    "dimensions": {
+      "length": "20 inches",
+      "width": "18 inches",
+      "height": "22 inches"
+    },
     "materials": ["Sissau Wood"],
     "careInstructions": "Dust regularly.",
     "stock": 15,
@@ -220,7 +266,11 @@
     "shortDescription": "Small wooden bed with side guard rails for toddlers.",
     "description": "Designed for transitions from cribs to beds with a low height for safety.",
     "features": ["Safety Rails", "Low Height", "Nontoxic Paint"],
-    "dimensions": { "length": "54 inches", "width": "30 inches", "height": "24 inches" },
+    "dimensions": {
+      "length": "54 inches",
+      "width": "30 inches",
+      "height": "24 inches"
+    },
     "materials": ["Pine Wood"],
     "careInstructions": "Wipe with a soft damp cloth regularly.",
     "stock": 12,
@@ -241,7 +291,11 @@
     "shortDescription": "Colorful study desk and chair set for children.",
     "description": "Height-adjustable desk to grow with your child.",
     "features": ["Adjustable Height", "Book Shelf", "Anti-Scratch Surface"],
-    "dimensions": { "length": "36 inches", "width": "20 inches", "height": "40 inches" },
+    "dimensions": {
+      "length": "36 inches",
+      "width": "20 inches",
+      "height": "40 inches"
+    },
     "materials": ["Plastic", "Metal Frame"],
     "careInstructions": "Wipe spills immediately.",
     "stock": 8,
