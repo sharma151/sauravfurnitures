@@ -1,7 +1,6 @@
 "use client";
 import { useState, useRef, useEffect } from "react";
 import PremiumButton from "@/components/luxury/PremiumButton";
-import emailjs from "@emailjs/browser";
 import { ChevronDown } from "lucide-react";
 
 const inquiryTypes = [
@@ -83,10 +82,6 @@ export default function ContactForm() {
     return `${baseStyle} ${error ? errorStyle : normalStyle}`;
   };
 
-  const serviceID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || "";
-  const templateID = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || "";
-  const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || "";
-
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (!validate()) return;
@@ -95,15 +90,17 @@ export default function ContactForm() {
     setSubmitError("");
 
     try {
-      const templateParams = {
-        name: form.name,
-        email: form.email,
-        phone: form.phone,
-        inquiry_type: form.inquiryType,
-        project_description: form.message,
-      };
-      emailjs.init(publicKey);
-      await emailjs.send(serviceID, templateID, templateParams);
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(form),
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to send message");
+      }
       setSubmitted(true);
     } catch (error) {
       console.error("Error sending email:", error);
