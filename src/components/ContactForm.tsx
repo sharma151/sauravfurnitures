@@ -28,7 +28,10 @@ export default function ContactForm() {
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+      if (
+        dropdownRef.current &&
+        !dropdownRef.current.contains(event.target as Node)
+      ) {
         setDropdownOpen(false);
       }
     };
@@ -80,8 +83,9 @@ export default function ContactForm() {
     return `${baseStyle} ${error ? errorStyle : normalStyle}`;
   };
 
-  const serviceID = "service_mc4btoa";
-  const templateID = "template_x761hro";
+  const serviceID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || "";
+  const templateID = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || "";
+  const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || "";
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -98,7 +102,7 @@ export default function ContactForm() {
         inquiry_type: form.inquiryType,
         project_description: form.message,
       };
-      emailjs.init("CjVBedcC8mWbXFWy3");
+      emailjs.init(publicKey);
       await emailjs.send(serviceID, templateID, templateParams);
       setSubmitted(true);
     } catch (error) {
@@ -165,21 +169,21 @@ export default function ContactForm() {
               onClick={() => setDropdownOpen(!dropdownOpen)}
             >
               <span className="truncate">{form.inquiryType}</span>
-              <ChevronDown 
-                className={`text-[#3B241A] transition-transform duration-200 ${dropdownOpen ? 'rotate-180' : ''}`} 
-                size={20} 
+              <ChevronDown
+                className={`text-[#3B241A] transition-transform duration-200 ${dropdownOpen ? "rotate-180" : ""}`}
+                size={20}
               />
             </div>
-            
+
             {dropdownOpen && (
               <div className="absolute z-10 w-full mt-2 overflow-hidden bg-white border border-[#E8DCCF] rounded-xl shadow-lg animate-in fade-in zoom-in-95 duration-200">
                 {inquiryTypes.map((type) => (
                   <div
                     key={type}
                     className={`px-4 py-3 cursor-pointer transition-colors ${
-                      form.inquiryType === type 
-                        ? 'bg-[#F7F3EE] text-[#5B3A29] font-medium' 
-                        : 'text-[#2B2B2B] hover:bg-gray-50'
+                      form.inquiryType === type
+                        ? "bg-[#F7F3EE] text-[#5B3A29] font-medium"
+                        : "text-[#2B2B2B] hover:bg-gray-50"
                     }`}
                     onClick={() => {
                       setForm({ ...form, inquiryType: type });
