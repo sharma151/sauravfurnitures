@@ -9,11 +9,12 @@ export interface Category {
   subcategories: Subcategory[];
 }
 
-export interface ProductDimensions {
-  length: string;
-  width: string;
-  height: string;
-}
+/**
+ * Dimensions vary widely across product types (beds, round tables, bookshelves, etc.).
+ * Use a flexible record so each product can describe its own dimension keys.
+ * Examples: { length, width, height } | { diameter, height } | { width, depth } | { height }
+ */
+export type ProductDimensions = Record<string, string>;
 
 export interface Product {
   id: string;
