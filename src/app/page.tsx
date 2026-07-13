@@ -6,6 +6,17 @@ import SectionHeading from "@/components/luxury/SectionHeading";
 import TestimonialCard from "@/components/luxury/TestimonialCard";
 import CTABanner from "@/components/luxury/CTABanner";
 import { homeFeatures, homeTestimonials } from "@/lib/constants";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Saurav Furnitures | Custom Furniture & Restoration",
+  description: "Discover bespoke custom furniture, expert restoration, and interior design solutions. Handcrafted by experienced manufacturers.",
+  openGraph: {
+    title: "Saurav Furnitures | Custom Furniture & Restoration",
+    description: "Discover bespoke custom furniture, expert restoration, and interior design solutions.",
+    url: "https://sauravfurniture.com",
+  },
+};
 
 export default function HomePage() {
   const featuredProducts = getFeaturedProducts();

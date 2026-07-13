@@ -8,24 +8,38 @@ const playfair = Playfair_Display({ subsets: ["latin"], variable: "--font-playfa
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://sauravfurniture.com"),
   title: {
-    default: "Saurav Furnitures | Trust, Comfort & Experience",
+    default: "Saurav Furnitures | Custom Furniture & Restoration",
     template: "%s | Saurav Furnitures",
   },
   description:
-    "Premium furniture crafted with 20+ years of expertise. Bedroom, Living Room, Dining, Mattress, Bedding & Office furniture. Trust, Comfort & Experience.",
+    "Custom furniture manufacturers & restoration experts with 20+ years of expertise. Specializing in bespoke woodwork, sofa repair, and commercial orders.",
   keywords: [
-    "furniture",
+    "custom furniture",
+    "furniture manufacturers",
+    "furniture restoration",
+    "interior consultation",
+    "commercial orders",
     "bedroom",
     "living room",
     "dining",
-    "mattress",
     "office furniture",
+    "custom wood works",
   ],
   authors: [{ name: "Saurav Furnitures" }],
   openGraph: {
+    title: "Saurav Furnitures | Custom Furniture & Restoration",
+    description: "Custom furniture manufacturers & restoration experts with 20+ years of expertise. Discover our bespoke collections.",
+    url: "https://sauravfurniture.com",
+    siteName: "Saurav Furnitures",
     type: "website",
     locale: "en_US",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Saurav Furnitures",
+    description: "Custom furniture manufacturers & restoration experts with 20+ years of expertise.",
   },
 };
 

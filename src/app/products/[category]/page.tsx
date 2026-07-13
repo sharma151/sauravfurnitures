@@ -20,7 +20,11 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   if (!cat) return { title: "Products" };
   return {
     title: cat.name,
-    description: `Explore our ${cat.name} collection. Premium furniture with Trust, Comfort & Experience.`,
+    description: `Explore our custom ${cat.name} collection. Handcrafted furniture manufacturing and restoration services.`,
+    openGraph: {
+      title: `${cat.name} | Saurav Furnitures`,
+      description: `Explore our custom ${cat.name} collection. Handcrafted furniture manufacturing and restoration services.`,
+    },
   };
 }
 
