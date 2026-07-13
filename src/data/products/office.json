@@ -16,7 +16,7 @@
     "stock": 5,
     "rating": 4.9,
     "reviews": 8,
-    "images": ["/images/products/exec-desk.jpg"],
+    "images": ["/images/office/ExecutiveManagementDesk.webp"],
     "isNewArrival": true,
     "deliveryTime": "10-15 days"
   },
@@ -37,7 +37,7 @@
     "stock": 25,
     "rating": 4.7,
     "reviews": 62,
-    "images": ["/images/products/home-desk.jpg"],
+    "images": ["/images/office/HomeMetalOfficeDesk.webp"],
     "isNewArrival": false,
     "deliveryTime": "3-5 days"
   },
@@ -58,7 +58,7 @@
     "stock": 25,
     "rating": 4.8,
     "reviews": 45,
-    "images": ["/images/products/mesh-chair.jpg"],
+    "images": ["/images/office/MeshChair.webp"],
     "isNewArrival": true,
     "deliveryTime": "2-3 days"
   },
@@ -79,14 +79,14 @@
     "stock": 10,
     "rating": 4.9,
     "reviews": 21,
-    "images": ["/images/products/leather-chair.jpg"],
+    "images": ["/images/office/BlackBossChair.avif"],
     "isNewArrival": false,
     "deliveryTime": "3-5 days"
   },
   {
     "id": "offdesk-001",
-    "name": "Lumbini Study Desk",
-    "slug": "lumbini-study-desk",
+    "name": "Study Desk",
+    "slug": "study-desk",
     "category": "office",
     "subcategory": "study-table",
     "price": 12500,
@@ -100,7 +100,7 @@
     "stock": 50,
     "rating": 4.6,
     "reviews": 110,
-    "images": ["/images/products/study-desk.jpg"],
+    "images": ["/images/office/StudyDesk.avif"],
     "isNewArrival": false,
     "deliveryTime": "3-5 days"
   },
@@ -121,7 +121,7 @@
     "stock": 12,
     "rating": 4.7,
     "reviews": 24,
-    "images": ["/images/products/sissau-study.jpg"],
+    "images": ["/images/office/TraditionalWoodenDesk.webp"],
     "isNewArrival": true,
     "deliveryTime": "5-7 days"
   },
@@ -142,7 +142,7 @@
     "stock": 15,
     "rating": 4.5,
     "reviews": 8,
-    "images": ["/images/products/filing-cabinet.jpg"],
+    "images": ["/images/office/3FileCabinet_1.webp"],
     "isNewArrival": true,
     "deliveryTime": "5-7 days"
   },
@@ -163,7 +163,7 @@
     "stock": 7,
     "rating": 4.6,
     "reviews": 11,
-    "images": ["/images/products/office-cupboard.jpg"],
+    "images": ["/images/office/OfficeStorageCupboard_1.avif","/images/office/OfficeStorageCupboard_2.avif"],
     "isNewArrival": false,
     "deliveryTime": "7-10 days"
   },
@@ -177,14 +177,14 @@
     "currency": "NPR",
     "shortDescription": "High-capacity tall bookshelf with glass doors.",
     "description": "Keep office books dust-free with beautiful glass doors.",
-    "features": ["Glass Doors", "Heavy Load Shelves", "Elegant Finish"],
+    "features": ["Wooden Doors", "Heavy Load Shelves", "Elegant Finish"],
     "dimensions": { "length": "36 inches", "width": "12 inches", "height": "72 inches" },
     "materials": ["Veneered Particle Board", "Glass"],
     "careInstructions": "Clean glass with window cleaner.",
     "stock": 10,
     "rating": 4.7,
     "reviews": 22,
-    "images": ["/images/products/office-bookshelf.jpg"],
+    "images": ["/images/office/TallOfficeBookshelf_2.avif","/images/office/TallOfficeBookshelf_1.avif"],
     "isNewArrival": true,
     "deliveryTime": "5-8 days"
   },
@@ -205,7 +205,7 @@
     "stock": 40,
     "rating": 4.4,
     "reviews": 56,
-    "images": ["/images/products/floating-shelves.jpg"],
+    "images": ["/images/office/WallMountedShelf.avif"],
     "isNewArrival": false,
     "deliveryTime": "2-4 days"
   }
