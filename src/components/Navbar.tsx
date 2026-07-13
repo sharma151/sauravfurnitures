@@ -19,7 +19,7 @@ const mainLinks = [
   { href: "/services", label: "Services" },
   { href: "/about", label: "About" },
   { href: "/contact", label: "Contact" },
-  { href: "/ourworks", label: "Our Works" },
+  // { href: "/ourworks", label: "Our Works" },
 ];
 
 function getCategoryHref(categorySlug: string, subSlug: string) {
@@ -131,7 +131,7 @@ export default function Navbar() {
               className="ml-4 inline-flex items-center gap-2 rounded-full border border-[#C6A77D]/65 bg-white px-5 py-2.5 text-sm font-semibold text-[#5B3A29] transition-all hover:border-[#C6A77D] hover:bg-[#F7F3EE]"
             >
               <Phone className="h-4 w-4" />
-              Book Showroom Visit
+              Book workshop Visit
             </Link>
           </nav>
 

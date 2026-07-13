@@ -4,8 +4,10 @@ import PremiumButton from "@/components/luxury/PremiumButton";
 import { ChevronDown } from "lucide-react";
 
 const inquiryTypes = [
+  "Workshop Visit",
+  "Product Inquiry",
   "Custom Furniture",
-  "Showroom Visit",
+  "Restoration / Repair",
   "Interior Consultation",
   "Bulk / Commercial Order",
 ];
