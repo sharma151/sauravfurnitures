@@ -16,7 +16,7 @@
     "stock": 4,
     "rating": 4.9,
     "reviews": 12,
-    "images": ["/images/products/dining-table-mh.jpg"],
+    "images": ["/images/dining/Mahagony6SeaterDiningTable.avif"],
     "isNewArrival": false,
     "deliveryTime": "7-10 days"
   },
@@ -37,7 +37,7 @@
     "stock": 15,
     "rating": 4.5,
     "reviews": 38,
-    "images": ["/images/products/dining-table-rd.jpg"],
+    "images": ["/images/dining/Round4-SeaterGlassTable.webp"],
     "isNewArrival": true,
     "deliveryTime": "3-5 days"
   },
@@ -58,7 +58,7 @@
     "stock": 40,
     "rating": 4.3,
     "reviews": 18,
-    "images": ["/images/products/dining-chair.jpg"],
+    "images": ["/images/dining/Ergo-ComfortDiningChair.avif"],
     "isNewArrival": true,
     "deliveryTime": "2-4 days"
   },
@@ -79,7 +79,7 @@
     "stock": 30,
     "rating": 4.6,
     "reviews": 25,
-    "images": ["/images/products/dining-chair-padded.jpg"],
+    "images": ["/images/dining/PaddedWoodDiningChair.webp"],
     "isNewArrival": false,
     "deliveryTime": "3-5 days"
   },
@@ -100,7 +100,7 @@
     "stock": 10,
     "rating": 4.7,
     "reviews": 29,
-    "images": ["/images/products/dining-set.jpg"],
+    "images": ["/images/dining/Bhojan6-SeaterDiningSet.webp"],
     "isNewArrival": false,
     "deliveryTime": "7-10 days"
   },
@@ -121,7 +121,7 @@
     "stock": 2,
     "rating": 5.0,
     "reviews": 5,
-    "images": ["/images/products/dining-set-large.jpg"],
+    "images": ["/images/dining/Premium8-SeaterFeastSet.webp"],
     "isNewArrival": true,
     "deliveryTime": "15-20 days"
   },
@@ -142,7 +142,7 @@
     "stock": 40,
     "rating": 4.3,
     "reviews": 12,
-    "images": ["/images/products/bar-stool.jpg"],
+    "images": ["/images/dining/SwivelWoodBarStool.avif"],
     "isNewArrival": true,
     "deliveryTime": "2-4 days"
   },
@@ -163,7 +163,7 @@
     "stock": 14,
     "rating": 4.6,
     "reviews": 19,
-    "images": ["/images/products/bar-stool-leather.jpg"],
+    "images": ["/images/dining/LeatheretteBackBarStool.avif"],
     "isNewArrival": false,
     "deliveryTime": "3-5 days"
   }
