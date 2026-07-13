@@ -1,14 +1,14 @@
 [
   {
     "id": "sofa-002",
-    "name": "Pokhara L-Shaped Sectional Sofa",
-    "slug": "pokhara-l-shaped-sectional-sofa",
+    "name": "Pokhara-L-Shaped Sectional Sofa",
+    "slug": "pokhara-L-shaped-sectional-sofa",
     "category": "living-room",
     "subcategory": "sofa-set",
     "price": 95000,
     "currency": "NPR",
-    "shortDescription": "Spacious L-shaped sofa with velvet upholstery.",
-    "description": "Designed for the modern Nepali home. Seats 5-6 people comfortably.",
+    "shortDescription": "Spacious W-shaped sofa with velvet upholstery.",
+    "description": "Designed for the modern Nepali home. Seats people comfortably.",
     "features": ["High-Density Foam", "Velvet Fabric", "Solid Sal Wood Frame"],
     "dimensions": { "length": "102 inches", "width": "65 inches", "height": "32 inches" },
     "materials": ["Sal Wood", "Velvet Fabric"],
@@ -142,7 +142,7 @@
     "stock": 18,
     "rating": 4.8,
     "reviews": 45,
-    "images": ["/images/products/bookshelf-5t.jpg"],
+    "images": ["/images/livingroom/LibraryTieredBookshelf.jpeg"],
     "isNewArrival": true,
     "deliveryTime": "3-5 days"
   },
@@ -163,7 +163,7 @@
     "stock": 12,
     "rating": 4.5,
     "reviews": 14,
-    "images": ["/images/products/bookshelf-corner.jpg"],
+    "images": ["/images/livingroom/CompactCornerBookshelf_1.avif","/images/livingroom/CompactCornerBookshelf_2.avif"],
     "isNewArrival": false,
     "deliveryTime": "4-6 days"
   },
@@ -184,7 +184,7 @@
     "stock": 20,
     "rating": 4.4,
     "reviews": 15,
-    "images": ["/images/products/center-table.jpg"],
+    "images": ["/images/livingroom/MarbleGlassCenterTable_1.avif","/images/livingroom/MarbleGlassCenterTable_2.avif"],
     "isNewArrival": false,
     "deliveryTime": "3-5 days"
   },
@@ -205,7 +205,7 @@
     "stock": 9,
     "rating": 4.7,
     "reviews": 28,
-    "images": ["/images/products/wood-center.jpg"],
+    "images": ["/images/livingroom/SolidWoodRectangularCenterTable_1.webp","/images/livingroom/SolidWoodRectangularCentreTable_2.avif"],
     "isNewArrival": true,
     "deliveryTime": "5-7 days"
   }
