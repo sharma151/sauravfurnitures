@@ -11,11 +11,11 @@ const premiumButtonVariants = cva(
     variants: {
       variant: {
         primary:
-          "bg-gradient-to-r from-[#5B3A29] to-[#3B241A] text-[#F7F3EE] shadow-[0_14px_30px_-20px_rgba(59,36,26,0.95)] hover:scale-[1.02] hover:shadow-[0_18px_36px_-18px_rgba(59,36,26,0.85)]",
+          "bg-gradient-to-r from-primary to-secondary-foreground text-secondary shadow-[0_14px_30px_-20px_rgba(59,36,26,0.95)] hover:scale-[1.02] hover:shadow-[0_18px_36px_-18px_rgba(59,36,26,0.85)]",
         secondary:
-          "border border-[#C6A77D]/65 bg-white/70 text-[#3B241A] hover:border-[#C6A77D] hover:bg-[#F7F3EE]",
+          "border border-accent/65 bg-white/70 text-secondary-foreground hover:border-accent hover:bg-secondary",
         ghost:
-          "text-[#3B241A] hover:bg-[#F7F3EE] hover:text-[#5B3A29]",
+          "text-secondary-foreground hover:bg-secondary hover:text-primary",
       },
       size: {
         sm: "h-10 px-5",

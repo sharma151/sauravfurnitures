@@ -51,17 +51,17 @@ export default function ContactPage() {
                 return (
                   <article
                     key={item.title}
-                    className="rounded-3xl border border-[#E8DCCF] bg-[#FFFCF8] p-6"
+                    className="rounded-3xl border border-border bg-card p-6"
                   >
                     <div className="flex items-start gap-4">
-                      <div className="inline-flex rounded-2xl border border-[#C6A77D]/35 bg-[#F7F3EE] p-3 text-[#5B3A29]">
+                      <div className="inline-flex rounded-2xl border border-accent/35 bg-secondary p-3 text-primary">
                         <Icon className="h-5 w-5" />
                       </div>
                       <div>
-                        <h3 className="text-sm font-semibold uppercase tracking-[0.18em] text-[#6B7280]">
+                        <h3 className="text-sm font-semibold uppercase tracking-[0.18em] text-muted-foreground">
                           {item.title}
                         </h3>
-                        <p className="mt-1 whitespace-pre-line text-[#3B241A]">
+                        <p className="mt-1 whitespace-pre-line text-secondary-foreground">
                           {item.content}
                         </p>
                       </div>
@@ -70,7 +70,7 @@ export default function ContactPage() {
                 );
               })}
 
-              <div className="overflow-hidden rounded-3xl border border-[#E8DCCF] shadow-[0_26px_55px_-45px_rgba(59,36,26,0.9)]">
+              <div className="overflow-hidden rounded-3xl border border-border shadow-[0_26px_55px_-45px_rgba(59,36,26,0.9)]">
                 <iframe
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2691.68477762213!2d85.3151873740512!3d27.664780027370202!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb19be7eb9c70d%3A0xc780a9c5fe60cec7!2sSaurav%20Furniture%20Udyog%20Pvt.%20Ltd.!5e1!3m2!1sen!2snp!4v1772463998962!5m2!1sen!2snp"
                   width="100%"
@@ -83,11 +83,11 @@ export default function ContactPage() {
             </div>
 
             <div className="space-y-6">
-              <div className="rounded-[2rem] border border-[#E8DCCF] bg-[#FFFCF8] p-8 shadow-[0_28px_60px_-50px_rgba(59,36,26,0.92)]">
-                <h2 className="text-2xl font-semibold text-[#3B241A]">
+              <div className="rounded-[2rem] border border-border bg-card p-8 shadow-[0_28px_60px_-50px_rgba(59,36,26,0.92)]">
+                <h2 className="text-2xl font-semibold text-secondary-foreground">
                   Send A  Inquiry
                 </h2>
-                <p className="mt-2 text-sm text-[#6B7280]">
+                <p className="mt-2 text-sm text-muted-foreground">
                   Tell us about your project and we’ll share tailored design
                   recommendations.
                 </p>
@@ -96,11 +96,11 @@ export default function ContactPage() {
                 </div>
               </div>
 
-              <div className="rounded-[2rem] border border-[#C6A77D]/35 bg-linear-to-br from-[#5B3A29] via-[#4A2F22] to-[#3B241A] p-8 text-[#F7F3EE]">
+              <div className="rounded-[2rem] border border-accent/35 bg-linear-to-br from-primary via-[#4A2F22] to-secondary-foreground p-8 text-secondary">
                 <h3 className="text-2xl font-semibold">
                   Need Immediate Assistance?
                 </h3>
-                <p className="mt-2 text-sm text-[#F7F3EE]/80">
+                <p className="mt-2 text-sm text-secondary/80">
                   Connect with our team for urgent project timelines and quick
                   expert guidance.
                 </p>
@@ -108,7 +108,7 @@ export default function ContactPage() {
                   href="tel:9841469014"
                   variant="secondary"
                   size="lg"
-                  className="mt-6 inline-flex bg-white/10 text-[#F7F3EE] hover:bg-white/20"
+                  className="mt-6 inline-flex bg-white/10 text-secondary hover:bg-white/20"
                 >
                   Call Now: 98414-69013
                 </PremiumButton>

@@ -23,7 +23,7 @@ export default function HomeProducts({ products }: HomeProductsProps) {
       {loading ? (
         <div className="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {Array.from({ length: 6 }).map((_, index) => (
-            <div key={index} className="overflow-hidden rounded-3xl border border-[#E8DCCF] bg-[#FFFCF8] p-4">
+            <div key={index} className="overflow-hidden rounded-3xl border border-border bg-card p-4">
               <div className="luxury-shimmer h-56 rounded-2xl" />
               <div className="mt-4 space-y-3">
                 <div className="luxury-shimmer h-3 w-24 rounded-full" />

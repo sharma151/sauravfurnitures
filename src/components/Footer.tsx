@@ -20,7 +20,7 @@ export default function Footer() {
   const categories = getCategories().filter((c) => c.slug !== "new-arrival");
 
   return (
-    <footer className="border-t border-[#E8DCCF] bg-[#F7F3EE]">
+    <footer className="border-t border-border bg-secondary">
       <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
         <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-5">
           <div className="lg:col-span-2">
@@ -35,11 +35,11 @@ export default function Footer() {
             </Link>
             {/* <Link
               href="/"
-              className="font-serif text-2xl font-semibold tracking-tight text-[#3B241A]"
+              className="font-serif text-2xl font-semibold tracking-tight text-secondary-foreground"
             >
               Saurav Furnitures
             </Link> */}
-            <p className="mt-4 max-w-sm text-sm leading-relaxed text-[#6B7280]">
+            <p className="mt-4 max-w-sm text-sm leading-relaxed text-muted-foreground">
               A modern luxury furniture house blending artisanal craftsmanship,
               timeless silhouettes, and warm contemporary living.
             </p>
@@ -48,7 +48,7 @@ export default function Footer() {
                 href="https://facebook.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="rounded-full border border-[#E8DCCF] bg-white p-2.5 text-[#3B241A] transition-all hover:border-[#C6A77D] hover:text-[#5B3A29]"
+                className="rounded-full border border-border bg-white p-2.5 text-secondary-foreground transition-all hover:border-accent hover:text-primary"
                 aria-label="Facebook"
               >
                 <Facebook className="h-4 w-4" />
@@ -57,7 +57,7 @@ export default function Footer() {
                 href="https://instagram.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="rounded-full border border-[#E8DCCF] bg-white p-2.5 text-[#3B241A] transition-all hover:border-[#C6A77D] hover:text-[#5B3A29]"
+                className="rounded-full border border-border bg-white p-2.5 text-secondary-foreground transition-all hover:border-accent hover:text-primary"
                 aria-label="Instagram"
               >
                 <Instagram className="h-4 w-4" />
@@ -66,7 +66,7 @@ export default function Footer() {
                 href="https://linkedin.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="rounded-full border border-[#E8DCCF] bg-white p-2.5 text-[#3B241A] transition-all hover:border-[#C6A77D] hover:text-[#5B3A29]"
+                className="rounded-full border border-border bg-white p-2.5 text-secondary-foreground transition-all hover:border-accent hover:text-primary"
                 aria-label="LinkedIn"
               >
                 <Linkedin className="h-4 w-4" />
@@ -75,13 +75,13 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="font-semibold text-[#3B241A]">Quick Links</h3>
+            <h3 className="font-semibold text-secondary-foreground">Quick Links</h3>
             <ul className="mt-4 space-y-2">
               {quickLinks.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-sm text-[#6B7280] transition-colors hover:text-[#5B3A29]"
+                    className="text-sm text-muted-foreground transition-colors hover:text-primary"
                   >
                     {link.name}
                   </Link>
@@ -91,13 +91,13 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="font-semibold text-[#3B241A]">Categories</h3>
+            <h3 className="font-semibold text-secondary-foreground">Categories</h3>
             <ul className="mt-4 space-y-2">
               {categories.slice(0, 6).map((cat) => (
                 <li key={cat.slug}>
                   <Link
                     href={`/products/${cat.slug}`}
-                    className="text-sm text-[#6B7280] transition-colors hover:text-[#5B3A29]"
+                    className="text-sm text-muted-foreground transition-colors hover:text-primary"
                   >
                     {cat.name}
                   </Link>
@@ -107,13 +107,13 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="font-semibold text-[#3B241A]">Services</h3>
+            <h3 className="font-semibold text-secondary-foreground">Services</h3>
             <ul className="mt-4 space-y-2">
               {services.map((service) => (
                 <li key={service.href}>
                   <Link
                     href={service.href}
-                    className="text-sm text-[#6B7280] transition-colors hover:text-[#5B3A29]"
+                    className="text-sm text-muted-foreground transition-colors hover:text-primary"
                   >
                     {service.name}
                   </Link>
@@ -123,7 +123,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-12 border-t border-[#E8DCCF] pt-8 text-center text-sm text-[#6B7280]">
+        <div className="mt-12 border-t border-border pt-8 text-center text-sm text-muted-foreground">
           © {new Date().getFullYear()} Saurav Furnitures. Curated comfort.
           Crafted luxury.
         </div>

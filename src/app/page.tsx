@@ -69,7 +69,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="bg-[#F7F3EE] py-16 sm:py-20">
+      <section className="bg-secondary py-16 sm:py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <SectionHeading
             eyebrow="Best Sellers"
@@ -90,25 +90,25 @@ export default function HomePage() {
           {features.map((f) => (
             <div
               key={f.title}
-              className="group rounded-3xl border border-[#E8DCCF] bg-[#FFFCF8] p-7 shadow-[0_22px_42px_-38px_rgba(59,36,26,0.85)] transition-all duration-300 hover:-translate-y-1 hover:border-[#C6A77D]/55"
+              className="group rounded-3xl border border-border bg-card p-7 shadow-[0_22px_42px_-38px_rgba(59,36,26,0.85)] transition-all duration-300 hover:-translate-y-1 hover:border-accent/55"
             >
-              <div className="inline-flex rounded-2xl border border-[#C6A77D]/40 bg-[#F7F3EE] p-3 text-[#5B3A29]">
+              <div className="inline-flex rounded-2xl border border-accent/40 bg-secondary p-3 text-primary">
                 {f.icon}
               </div>
-              <h3 className="mt-5 text-xl font-semibold text-[#3B241A]">{f.title}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-[#6B7280]">{f.description}</p>
+              <h3 className="mt-5 text-xl font-semibold text-secondary-foreground">{f.title}</h3>
+              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{f.description}</p>
             </div>
           ))}
         </div>
       </section>
 
       <section className="mx-auto max-w-7xl px-4 pb-16 sm:px-6 lg:px-8">
-        <div className="relative overflow-hidden rounded-[2rem] border border-[#E8DCCF] bg-[linear-gradient(125deg,#FAF8F5_0%,#F3E8DC_52%,#E8DCCF_100%)] p-10 shadow-[0_26px_55px_-46px_rgba(59,36,26,0.95)] sm:p-14">
-          <p className="text-xs font-semibold uppercase tracking-[0.25em] text-[#5B3A29]">Luxury Craft Narrative</p>
-          <h2 className="mt-4 max-w-3xl text-3xl font-bold leading-tight text-[#3B241A] sm:text-4xl lg:text-5xl">
+        <div className="relative overflow-hidden rounded-[2rem] border border-border bg-[linear-gradient(125deg,#FAF8F5_0%,#F3E8DC_52%,#E8DCCF_100%)] p-10 shadow-[0_26px_55px_-46px_rgba(59,36,26,0.95)] sm:p-14">
+          <p className="text-xs font-semibold uppercase tracking-[0.25em] text-primary">Luxury Craft Narrative</p>
+          <h2 className="mt-4 max-w-3xl text-3xl font-bold leading-tight text-secondary-foreground sm:text-4xl lg:text-5xl">
             Where Contemporary Design Meets Timeless Craftsmanship.
           </h2>
-          <p className="mt-4 max-w-2xl text-[#6B7280]">
+          <p className="mt-4 max-w-2xl text-muted-foreground">
             We create immersive furniture experiences that feel like a private high-end showroom:
             warm tones, rich materials, and elegant forms with practical comfort.
           </p>

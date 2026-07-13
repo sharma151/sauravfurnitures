@@ -1,16 +1,20 @@
 import { NextResponse } from "next/server";
+import { contactSchema } from "@/lib/schemas";
 
 export async function POST(request: Request) {
   try {
     const body = await request.json();
-    const { name, email, phone, inquiryType, message } = body;
-
-    if (!name || !email || !message) {
+    
+    // Validate with Zod
+    const result = contactSchema.safeParse(body);
+    if (!result.success) {
       return NextResponse.json(
-        { error: "Missing required fields" },
+        { error: "Invalid data", details: result.error.format() },
         { status: 400 }
       );
     }
+    
+    const { name, email, phone, inquiryType, message } = result.data;
 
     const data = {
       service_id: process.env.EMAILJS_SERVICE_ID,
