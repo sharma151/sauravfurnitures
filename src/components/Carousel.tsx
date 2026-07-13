@@ -3,22 +3,14 @@
 import Image from "next/image";
 import { useState, useEffect } from "react";
 
-const slides = [
-  { src: "/images/carousel/carousel-1.svg", alt: "Premium Bedroom Collection" },
-  { src: "/images/carousel/carousel-2.svg", alt: "Living Room Furniture" },
-  { src: "/images/carousel/carousel-3.svg", alt: "Dining & Office Solutions" },
-  {
-    src: "/images/carousel/carousel-4.svg",
-    alt: "Trust, Comfort & Experience",
-  },
-];
+import { carouselSlides } from "@/lib/constants";
 
 export default function Carousel() {
   const [current, setCurrent] = useState(0);
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setCurrent((prev) => (prev + 1) % slides.length);
+      setCurrent((prev) => (prev + 1) % carouselSlides.length);
     }, 4000);
     return () => clearInterval(timer);
   }, []);
@@ -29,7 +21,7 @@ export default function Carousel() {
       aria-label="Featured furniture collection"
     >
       <div className="relative aspect-21/9 w-full overflow-hidden rounded-xl border border-border bg-section shadow-md">
-        {slides.map((slide, i) => (
+        {carouselSlides.map((slide, i) => (
           <div
             key={i}
             className={`absolute inset-0 transition-opacity duration-500 ease-in-out ${
@@ -50,7 +42,7 @@ export default function Carousel() {
         <button
           type="button"
           onClick={() =>
-            setCurrent((prev) => (prev - 1 + slides.length) % slides.length)
+            setCurrent((prev) => (prev - 1 + carouselSlides.length) % carouselSlides.length)
           }
           className="absolute left-4 top-1/2 -translate-y-1/2 rounded-full bg-card/90 p-2 text-primaryText shadow-md transition-colors hover:bg-section"
           aria-label="Previous slide"
@@ -71,7 +63,7 @@ export default function Carousel() {
         </button>
         <button
           type="button"
-          onClick={() => setCurrent((prev) => (prev + 1) % slides.length)}
+          onClick={() => setCurrent((prev) => (prev + 1) % carouselSlides.length)}
           className="absolute right-4 top-1/2 -translate-y-1/2 rounded-full bg-card/90 p-2 text-primaryText shadow-md transition-colors hover:bg-section"
           aria-label="Next slide"
         >
@@ -94,7 +86,7 @@ export default function Carousel() {
           className="absolute bottom-4 left-1/2 flex -translate-x-1/2 gap-2"
           role="tablist"
         >
-          {slides.map((_, i) => (
+          {carouselSlides.map((_, i) => (
             <button
               key={i}
               type="button"

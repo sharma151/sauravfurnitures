@@ -14,13 +14,7 @@ import { getCategories } from "@/lib/data";
 import { cn } from "@/lib/utils";
 import type { Category } from "@/types";
 
-const mainLinks = [
-  { href: "/", label: "Home" },
-  { href: "/services", label: "Services" },
-  { href: "/about", label: "About" },
-  { href: "/contact", label: "Contact" },
-  // { href: "/ourworks", label: "Our Works" },
-];
+import { mainLinks } from "@/lib/constants";
 
 function getCategoryHref(categorySlug: string, subSlug: string) {
   if (categorySlug === "new-arrival") return `/products/new-arrival/${subSlug}`;

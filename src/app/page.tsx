@@ -5,51 +5,7 @@ import HomeProducts from "./HomeProducts";
 import SectionHeading from "@/components/luxury/SectionHeading";
 import TestimonialCard from "@/components/luxury/TestimonialCard";
 import CTABanner from "@/components/luxury/CTABanner";
-import { BadgeCheck, Leaf, ShieldCheck, Sparkles } from "lucide-react";
-
-const features = [
-  {
-    title: "Heritage Craftsmanship",
-    description: "Built by skilled artisans with decades of woodworking expertise.",
-    icon: <BadgeCheck className="h-6 w-6" />,
-  },
-  {
-    title: "Premium Material Selection",
-    description: "Engineered wood, solid hardwood, and luxe upholstery sourced responsibly.",
-    icon: <ShieldCheck className="h-6 w-6" />,
-  },
-  {
-    title: "Elegant Modern Design",
-    description: "Refined silhouettes crafted to complement contemporary interiors.",
-    icon: <Sparkles className="h-6 w-6" />,
-  },
-  {
-    title: "Sustainable Production",
-    description: "Thoughtful production with eco-conscious methods and long-lasting quality.",
-    icon: <Leaf className="h-6 w-6" />,
-  },
-];
-
-const testimonials = [
-  {
-    quote:
-      "The design team transformed our space with furniture that feels warm, elegant, and incredibly premium.",
-    author: "Aakriti Sharma",
-    role: "Interior Client, Kathmandu",
-  },
-  {
-    quote:
-      "From finish quality to delivery experience, everything felt high-end and deeply professional.",
-    author: "Ritvik Thapa",
-    role: "Homeowner",
-  },
-  {
-    quote:
-      "A rare blend of modern aesthetics and handcrafted details. Every piece looks timeless in our home.",
-    author: "Nina Gurung",
-    role: "Architect",
-  },
-];
+import { homeFeatures, homeTestimonials } from "@/lib/constants";
 
 export default function HomePage() {
   const featuredProducts = getFeaturedProducts();
@@ -87,7 +43,7 @@ export default function HomePage() {
           description="Every interaction is designed for convenience, confidence, and elevated design quality."
         />
         <div className="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
-          {features.map((f) => (
+          {homeFeatures.map((f) => (
             <div
               key={f.title}
               className="group rounded-3xl border border-border bg-card p-7 shadow-[0_22px_42px_-38px_rgba(59,36,26,0.85)] transition-all duration-300 hover:-translate-y-1 hover:border-accent/55"
@@ -123,7 +79,7 @@ export default function HomePage() {
           align="center"
         />
         <div className="mt-10 grid gap-6 lg:grid-cols-3">
-          {testimonials.map((testimonial) => (
+          {homeTestimonials.map((testimonial) => (
             <TestimonialCard key={testimonial.author} {...testimonial} />
           ))}
         </div>

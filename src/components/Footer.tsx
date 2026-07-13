@@ -3,18 +3,7 @@ import { getCategories } from "@/lib/data";
 import Image from "next/image";
 import { Facebook, Instagram, Linkedin } from "lucide-react";
 
-const services = [
-  { name: "Wood Works", href: "/services#wood-works" },
-  { name: "Sofa Works", href: "/services#sofa-works" },
-  { name: "Iron Welding Works", href: "/services#iron-welding" },
-];
-
-const quickLinks = [
-  { name: "Home", href: "/" },
-  { name: "About Us", href: "/about" },
-  { name: "Services", href: "/services" },
-  { name: "Contact", href: "/contact" },
-];
+import { footerServices, quickLinks } from "@/lib/constants";
 
 export default function Footer() {
   const categories = getCategories().filter((c) => c.slug !== "new-arrival");
@@ -109,7 +98,7 @@ export default function Footer() {
           <div>
             <h3 className="font-semibold text-secondary-foreground">Services</h3>
             <ul className="mt-4 space-y-2">
-              {services.map((service) => (
+              {footerServices.map((service) => (
                 <li key={service.href}>
                   <Link
                     href={service.href}

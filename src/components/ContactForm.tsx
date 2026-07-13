@@ -12,14 +12,7 @@ import { useForm, Controller } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { contactSchema, ContactFormData } from "@/lib/schemas";
 
-const inquiryTypes = [
-  "Workshop Visit",
-  "Product Inquiry",
-  "Custom Furniture",
-  "Restoration / Repair",
-  "Interior Consultation",
-  "Bulk / Commercial Order",
-];
+import { inquiryTypes } from "@/lib/constants";
 
 export default function ContactForm() {
   const {

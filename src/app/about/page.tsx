@@ -1,14 +1,5 @@
 import type { Metadata } from "next";
-import {
-  ArrowRight,
-  Award,
-  Clock3,
-  Leaf,
-  ShieldCheck,
-  Sparkles,
-  TreePine,
-  Users,
-} from "lucide-react";
+import { ArrowRight, Users, Clock3, Leaf } from "lucide-react";
 import SectionHeading from "@/components/luxury/SectionHeading";
 import PremiumButton from "@/components/luxury/PremiumButton";
 
@@ -18,32 +9,7 @@ export const metadata: Metadata = {
     "Discover the story, craftsmanship, and design philosophy behind Saurav Furnitures.",
 };
 
-const values = [
-  {
-    title: "Heritage Craftsmanship",
-    icon: Award,
-    content:
-      "For over two decades, our artisans have crafted furniture with a timeless blend of precision, soul, and enduring quality.",
-  },
-  {
-    title: "Material Excellence",
-    icon: TreePine,
-    content:
-      "From premium hardwood to high-grade upholstery and metal details, every material is selected for beauty, durability, and performance.",
-  },
-  {
-    title: "Design-Led Process",
-    icon: Sparkles,
-    content:
-      "Each piece balances  aesthetics with practical comfort, ensuring your home feels both elevated and truly livable.",
-  },
-  {
-    title: "Trusted Quality Promise",
-    icon: ShieldCheck,
-    content:
-      "Our quality checks span every phase from design and sourcing to finishing, so every furniture piece leaves with confidence.",
-  },
-];
+import { aboutValues, aboutStats, aboutPhilosophyItems } from "@/lib/constants";
 
 export default function AboutPage() {
   return (
@@ -58,12 +24,7 @@ export default function AboutPage() {
               description="Our journey started as a family workshop and evolved into a modern  furniture manufacturer trusted by homeowners, architects, and interior designers."
             />
             <div className="grid grid-cols-2 gap-4 sm:grid-cols-4">
-              {[
-                { label: "Years Legacy", value: "25+" },
-                { label: "Projects Delivered", value: "5,000+" },
-                // { label: "Designers & Artisans", value: "45+" },
-                // { label: "Client Satisfaction", value: "98%" },
-              ].map((stat) => (
+              {aboutStats.map((stat) => (
                 <div
                   key={stat.label}
                   className="rounded-2xl border border-border bg-white/80 p-4"
@@ -97,25 +58,7 @@ export default function AboutPage() {
               your home feels curated yet deeply comfortable.
             </p>
             <div className="mt-8 space-y-4">
-              {[
-                {
-                  icon: Users,
-                  title: "Collaborative Design",
-                  description: "Your lifestyle guides each furniture concept.",
-                },
-                {
-                  icon: Clock3,
-                  title: "Long-Term Value",
-                  description:
-                    "Built to last in style and structure for years.",
-                },
-                {
-                  icon: Leaf,
-                  title: "Responsible Sourcing",
-                  description:
-                    "Thoughtful material choices with sustainability in mind.",
-                },
-              ].map((item) => {
+              {aboutPhilosophyItems.map((item) => {
                 const Icon = item.icon;
                 return (
                   <div
@@ -146,7 +89,7 @@ export default function AboutPage() {
           description="Quality restoration for every budget. We combine traditional techniques with modern durability to fix, refinish, and renew your furniture."
         />
         <div className="mt-10 grid gap-6 md:grid-cols-2">
-          {values.map((section) => {
+          {aboutValues.map((section) => {
             const Icon = section.icon;
             return (
               <article
