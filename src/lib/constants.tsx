@@ -7,6 +7,10 @@ import {
   TreePine,
   Users,
   Clock3,
+  Hammer,
+  Armchair,
+  Wrench,
+  Anvil,
 } from "lucide-react";
 
 // --- Navbar & Footer ---
@@ -113,27 +117,7 @@ export const serviceCardsData = [
       "Premium Wood Polishing",
       "Structural Wood Repair",
     ],
-    icon: (
-      <svg
-        className="h-10 w-10 transition-colors duration-300"
-        fill="none"
-        stroke="currentColor"
-        viewBox="0 0 24 24"
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth={1.5}
-          d="M11 8l2-2V3m4 4l-2 2h-3m-6 3l-2 2a2 2 0 002 2h10a2 2 0 002-2l-2-2m-8 0V7a2 2 0 012-2h2a2 2 0 012 2v3m-6 0h6"
-        />
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth={1.5}
-          d="M3 21h18"
-        />
-      </svg>
-    ),
+    icon: <Hammer className="h-10 w-10 transition-colors duration-300" />,
   },
   {
     id: "sofa-works",
@@ -145,21 +129,7 @@ export const serviceCardsData = [
       "Premium Fabric Selection",
       "Deep Comfort Cushioning",
     ],
-    icon: (
-      <svg
-        className="h-10 w-10 transition-colors duration-300"
-        fill="none"
-        stroke="currentColor"
-        viewBox="0 0 24 24"
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth={1.5}
-          d="M4 11V7a2 2 0 012-2h12a2 2 0 012 2v4m-16 0a2 2 0 00-2 2v4a2 2 0 002 2h16a2 2 0 002-2v-4a2 2 0 00-2-2m-16 0h16M7 19v2m10-2v2"
-        />
-      </svg>
-    ),
+    icon: <Armchair className="h-10 w-10 transition-colors duration-300" />,
   },
   {
     id: "furniture-restoration",
@@ -171,29 +141,7 @@ export const serviceCardsData = [
       "Structural Joint Repair",
       "Custom Upholstery",
     ],
-    icon: (
-      <svg
-        className="h-10 w-10 transition-colors duration-300"
-        fill="none"
-        stroke="currentColor"
-        viewBox="0 0 24 24"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth={1.5}
-          d="M4 7h16M4 7v10a1 1 0 001 1h14a1 1 0 001-1V7M4 7l2-4h12l2 4M10 12h4m-2 6v.01"
-        />
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth={1.5}
-          d="M17 12l2 2m0-2l-2 2"
-          className="animate-pulse"
-        />
-      </svg>
-    ),
+    icon: <Wrench className="h-10 w-10 transition-colors duration-300" />,
   },
   {
     id: "iron-welding",
@@ -201,28 +149,7 @@ export const serviceCardsData = [
     shortDescription:
       "Precision metal fabrication for industrial frames, gates, and minimalist decor.",
     details: ["Iron Bed Frames", "Architectural Gates", "Steel Shelving Units"],
-    icon: (
-      <svg
-        className="h-10 w-10 transition-colors duration-300"
-        fill="none"
-        stroke="currentColor"
-        viewBox="0 0 24 24"
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth={1.5}
-          d="M21 7V5a2 2 0 00-2-2H5a2 2 0 00-2 2v2m18 0h-4M3 7h4m0 0v11a2 2 0 002 2h6a2 2 0 002-2V7m-8 0h8m-5 7h2"
-        />
-        <circle
-          cx="12"
-          cy="12"
-          r="1"
-          strokeWidth={2}
-          className="animate-pulse"
-        />
-      </svg>
-    ),
+    icon: <Anvil className="h-10 w-10 transition-colors duration-300" />,
   },
 ];
 

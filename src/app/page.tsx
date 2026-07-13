@@ -1,7 +1,7 @@
 import HeroSection from "@/components/HeroSection";
 import CategoryGrid from "@/components/CategoryGrid";
+import ProductGrid from "@/components/ProductGrid";
 import { getFeaturedProducts } from "@/lib/data";
-import HomeProducts from "./HomeProducts";
 import SectionHeading from "@/components/luxury/SectionHeading";
 import TestimonialCard from "@/components/luxury/TestimonialCard";
 import CTABanner from "@/components/luxury/CTABanner";
@@ -43,7 +43,7 @@ export default function HomePage() {
             title="Furniture Loved By Modern Homes."
             description="Top-rated picks that combine comfort, statement design, and durable craftsmanship."
           />
-          <HomeProducts products={featuredProducts} />
+          <ProductGrid products={featuredProducts} />
         </div>
       </section>
 
