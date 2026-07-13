@@ -1,9 +1,12 @@
+import type { ReactNode } from "react";
+
 export interface Subcategory {
   name: string;
   slug: string;
 }
 
 export interface Category {
+  description: ReactNode;
   name: string;
   slug: string;
   subcategories: Subcategory[];

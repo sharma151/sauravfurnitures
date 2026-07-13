@@ -10,138 +10,7 @@ export const metadata: Metadata = {
     "Explore premium furniture services including custom woodwork, luxury upholstery, and metal fabrication.",
 };
 
-const services = [
-  {
-    id: "wood-works",
-    title: "Wood Works",
-    shortDescription:
-      "Custom timber furniture and antique restoration with a focus on grain and durability.",
-    details: [
-      "Bespoke Tables, Chairs & Cabinets",
-      "Premium Wood Polishing",
-      "Structural Wood Repair",
-    ],
-    // activeColor: "group-hover:text-amber-600",
-    icon: (
-      <svg
-        className="h-10 w-10 transition-colors duration-300"
-        fill="none"
-        stroke="currentColor"
-        viewBox="0 0 24 24"
-      >
-        {/* Custom Woodworking Plane/Chisel Icon */}
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth={1.5}
-          d="M11 8l2-2V3m4 4l-2 2h-3m-6 3l-2 2a2 2 0 002 2h10a2 2 0 002-2l-2-2m-8 0V7a2 2 0 012-2h2a2 2 0 012 2v3m-6 0h6"
-        />
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth={1.5}
-          d="M3 21h18"
-        />
-      </svg>
-    ),
-  },
-  {
-    id: "sofa-works",
-    title: "Sofa Works",
-    shortDescription:
-      "Luxurious reupholstery and ergonomic foam replacement for modern living rooms.",
-    details: [
-      "Custom Sofa Design",
-      "Premium Fabric Selection",
-      "Deep Comfort Cushioning",
-    ],
-    // activeColor: "group-hover:text-orange-500",
-    icon: (
-      <svg
-        className="h-10 w-10 transition-colors duration-300"
-        fill="none"
-        stroke="currentColor"
-        viewBox="0 0 24 24"
-      >
-        {/* Custom Armchair/Sofa Icon */}
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth={1.5}
-          d="M4 11V7a2 2 0 012-2h12a2 2 0 012 2v4m-16 0a2 2 0 00-2 2v4a2 2 0 002 2h16a2 2 0 002-2v-4a2 2 0 00-2-2m-16 0h16M7 19v2m10-2v2"
-        />
-      </svg>
-    ),
-  },
-  {
-    id: "furniture-restoration",
-    title: "Furniture Restoration",
-    shortDescription:
-      "Expert revival of vintage and heirloom pieces through meticulous stripping, staining, and structural repair.",
-    details: [
-      "Antique Wood Refinishing",
-      "Structural Joint Repair",
-      "Custom Upholstery",
-    ],
-    // activeColor: "group-hover:text-amber-700",
-    icon: (
-      <svg
-        className="h-10 w-10 transition-colors duration-300"
-        fill="none"
-        stroke="currentColor"
-        viewBox="0 0 24 24"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        {/* Table/Workbench Icon representing furniture */}
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth={1.5}
-          d="M4 7h16M4 7v10a1 1 0 001 1h14a1 1 0 001-1V7M4 7l2-4h12l2 4M10 12h4m-2 6v.01"
-        />
-        {/* Hand-crafted sparkle/detail indicator */}
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth={1.5}
-          d="M17 12l2 2m0-2l-2 2"
-          className="animate-pulse"
-        />
-      </svg>
-    ),
-  },
-  {
-    id: "iron-welding",
-    title: "Iron Welding",
-    shortDescription:
-      "Precision metal fabrication for industrial frames, gates, and minimalist decor.",
-    details: ["Iron Bed Frames", "Architectural Gates", "Steel Shelving Units"],
-    // activeColor: "group-hover:text-indigo-600",
-    icon: (
-      <svg
-        className="h-10 w-10 transition-colors duration-300"
-        fill="none"
-        stroke="currentColor"
-        viewBox="0 0 24 24"
-      >
-        {/* Custom Welding/Spark/Metal Frame Icon */}
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth={1.5}
-          d="M21 7V5a2 2 0 00-2-2H5a2 2 0 00-2 2v2m18 0h-4M3 7h4m0 0v11a2 2 0 002 2h6a2 2 0 002-2V7m-8 0h8m-5 7h2"
-        />
-        <circle
-          cx="12"
-          cy="12"
-          r="1"
-          strokeWidth={2}
-          className="animate-pulse"
-        />
-      </svg>
-    ),
-  },
-];
+import { serviceCardsData, serviceSteps } from "@/lib/constants";
 
 export default function ServicesPage() {
   return (
@@ -156,7 +25,7 @@ export default function ServicesPage() {
           />
 
           <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {services.map((service) => (
+            {serviceCardsData.map((service) => (
               <ServiceCard
                 key={service.id}
                 id={service.id}
@@ -172,34 +41,18 @@ export default function ServicesPage() {
 
       <section className="mx-auto max-w-7xl px-4 pb-16 sm:px-6 lg:px-8 lg:pb-20">
         <div className="grid gap-6 md:grid-cols-3">
-          {[
-            {
-              title: "Consultation & Space Review",
-              description:
-                "We evaluate your layout, style, and functional needs before design finalization.",
-            },
-            {
-              title: "Design & Material Selection",
-              description:
-                "Choose curated materials, finishes, and dimensions with our expert guidance.",
-            },
-            {
-              title: "Build, Delivery & Setup",
-              description:
-                "Precision production, premium finishing, and careful on-site installation.",
-            },
-          ].map((step, index) => (
+          {serviceSteps.map((step, index) => (
             <article
               key={step.title}
-              className="rounded-3xl border border-[#E8DCCF] bg-[#FFFCF8] p-6"
+              className="rounded-3xl border border-border bg-card p-6"
             >
-              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#C6A77D]">
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent">
                 Step {index + 1}
               </p>
-              <h3 className="mt-3 text-xl font-semibold text-[#3B241A]">
+              <h3 className="mt-3 text-xl font-semibold text-secondary-foreground">
                 {step.title}
               </h3>
-              <p className="mt-2 text-sm leading-relaxed text-[#6B7280]">
+              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
                 {step.description}
               </p>
             </article>
@@ -208,14 +61,14 @@ export default function ServicesPage() {
       </section>
 
       <section className="mx-auto max-w-7xl px-4 pb-16 sm:px-6 lg:px-8 lg:pb-20">
-        <div className="rounded-[2rem] border border-[#C6A77D]/30 bg-linear-to-br from-[#5B3A29] via-[#4A2F22] to-[#3B241A] p-10 text-[#F7F3EE] sm:p-12">
-          <p className="text-xs font-semibold uppercase tracking-[0.25em] text-[#E8DCCF]">
+        <div className="rounded-[2rem] border border-accent/30 bg-linear-to-br from-primary via-[#4A2F22] to-secondary-foreground p-10 text-secondary sm:p-12">
+          <p className="text-xs font-semibold uppercase tracking-[0.25em] text-border">
             Custom Projects
           </p>
           <h2 className="mt-4 text-3xl font-bold sm:text-4xl">
             Need A Bespoke Furniture Solution?
           </h2>
-          <p className="mt-4 max-w-3xl text-[#F7F3EE]/85">
+          <p className="mt-4 max-w-3xl text-secondary/85">
             Share your ideas, dimensions, and style references. Our team will
             craft a personalized proposal tailored for your home or commercial
             space.
@@ -224,7 +77,7 @@ export default function ServicesPage() {
             href="/contact"
             variant="secondary"
             size="lg"
-            className="mt-8 inline-flex bg-white/10 text-[#F7F3EE] hover:bg-white/20"
+            className="mt-8 inline-flex bg-white/10 text-secondary hover:bg-white/20"
           >
             Start A Service Request
             <ArrowRight className="ml-1 h-4 w-4" />

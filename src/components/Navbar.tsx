@@ -14,13 +14,7 @@ import { getCategories } from "@/lib/data";
 import { cn } from "@/lib/utils";
 import type { Category } from "@/types";
 
-const mainLinks = [
-  { href: "/", label: "Home" },
-  { href: "/services", label: "Services" },
-  { href: "/about", label: "About" },
-  { href: "/contact", label: "Contact" },
-  { href: "/ourworks", label: "Our Works" },
-];
+import { mainLinks } from "@/lib/constants";
 
 function getCategoryHref(categorySlug: string, subSlug: string) {
   if (categorySlug === "new-arrival") return `/products/new-arrival/${subSlug}`;
@@ -56,8 +50,8 @@ function CategoryDropdown({
     >
       <button
         className={cn(
-          "group flex h-full items-center gap-1  py-4 border-transparent px-4 text-sm font-medium text-[#3B241A] transition-all outline-none",
-          open ? "border-[#C6A77D] text-[#5B3A29]" : "hover:border-[#C6A77D]/80 hover:text-[#5B3A29]",
+          "group flex h-full items-center gap-1  py-4 border-transparent px-4 text-sm font-medium text-secondary-foreground transition-all outline-none",
+          open ? "border-accent text-primary" : "hover:border-accent/80 hover:text-primary",
         )}
         aria-expanded={open}
         aria-haspopup="menu"
@@ -78,7 +72,7 @@ function CategoryDropdown({
               <li key={sub.slug}>
                 <Link
                   href={getCategoryHref(category.slug, sub.slug)}
-                  className="block rounded-xl px-4 py-3 text-sm font-medium text-[#3B241A] transition-all hover:bg-[#5B3A29] hover:text-[#F7F3EE]"
+                  className="block rounded-xl px-4 py-3 text-sm font-medium text-secondary-foreground transition-all hover:bg-primary hover:text-secondary"
                 >
                   {sub.name}
                 </Link>
@@ -95,7 +89,7 @@ export default function Navbar() {
   const categories = getCategories();
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-[#E8DCCF]/80 bg-[#FAF8F5]/70 backdrop-blur-xl">
+    <header className="sticky top-0 z-50 w-full border-b border-border/80 bg-background/70 backdrop-blur-xl">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-20 items-center justify-between">
           <Link
@@ -110,7 +104,7 @@ export default function Navbar() {
                 className="object-cover"
               />
             </div>
-            {/* <span className="font-serif text-2xl font-semibold tracking-tight text-[#3B241A]">
+            {/* <span className="font-serif text-2xl font-semibold tracking-tight text-secondary-foreground">
               Saurav Furnitures
             </span> */}
           </Link>
@@ -120,18 +114,18 @@ export default function Navbar() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="group relative flex h-full items-center px-4 text-sm font-medium text-[#3B241A] transition-colors hover:text-[#5B3A29]"
+                className="group relative flex h-full items-center px-4 text-sm font-medium text-secondary-foreground transition-colors hover:text-primary"
               >
                 {link.label}
-                <span className="absolute bottom-5 left-4 h-0.5 w-0 rounded-full bg-[#C6A77D] transition-all duration-300 group-hover:w-[calc(100%-2rem)]" />
+                <span className="absolute bottom-5 left-4 h-0.5 w-0 rounded-full bg-accent transition-all duration-300 group-hover:w-[calc(100%-2rem)]" />
               </Link>
             ))}
             <Link
               href="/contact"
-              className="ml-4 inline-flex items-center gap-2 rounded-full border border-[#C6A77D]/65 bg-white px-5 py-2.5 text-sm font-semibold text-[#5B3A29] transition-all hover:border-[#C6A77D] hover:bg-[#F7F3EE]"
+              className="ml-4 inline-flex items-center gap-2 rounded-full border border-accent/65 bg-white px-5 py-2.5 text-sm font-semibold text-primary transition-all hover:border-accent hover:bg-secondary"
             >
               <Phone className="h-4 w-4" />
-              Book Showroom Visit
+              Book workshop Visit
             </Link>
           </nav>
 
@@ -141,7 +135,7 @@ export default function Navbar() {
         </div>
       </div>
 
-      <nav className="hidden h-14 border-t border-[#E8DCCF]/70 lg:block">
+      <nav className="hidden h-14 border-t border-border/70 lg:block">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex h-full items-center gap-2">
             {categories.map((category) => (
@@ -163,26 +157,26 @@ function MobileNav({ categories }: { categories: Category[] }) {
         <Button
           variant="ghost"
           size="icon"
-          className="hover:bg-[#F7F3EE]"
+          className="hover:bg-secondary"
           aria-label="Open menu"
         >
-          <Menu className="h-6 w-6 text-[#3B241A]" />
+          <Menu className="h-6 w-6 text-secondary-foreground" />
         </Button>
       </SheetTrigger>
-      <SheetContent side="left" className="w-[88vw] max-w-sm border-r border-[#E8DCCF] bg-[#FAF8F5] p-0">
+      <SheetContent side="left" className="w-[88vw] max-w-sm border-r border-border bg-background p-0">
         <div className="flex flex-col h-full">
-          <div className="flex items-center justify-between border-b border-[#E8DCCF] p-5">
-            <p className="font-serif text-xl font-semibold text-[#3B241A]">
+          <div className="flex items-center justify-between border-b border-border p-5">
+            <p className="font-serif text-xl font-semibold text-secondary-foreground">
               Saurav Furnitures
             </p>
             <Button variant="ghost" size="icon-sm" onClick={() => setOpen(false)} aria-label="Close menu">
-              <X className="h-5 w-5 text-[#3B241A]" />
+              <X className="h-5 w-5 text-secondary-foreground" />
             </Button>
           </div>
 
           <div className="flex-1 space-y-8 overflow-y-auto p-6">
             <div className="space-y-3">
-              <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-[#6B7280]">
+              <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-muted-foreground">
                 Company
               </p>
               <div className="grid gap-2">
@@ -191,7 +185,7 @@ function MobileNav({ categories }: { categories: Category[] }) {
                     key={link.href}
                     href={link.href}
                     onClick={() => setOpen(false)}
-                    className="rounded-xl px-3 py-2 text-base font-medium text-[#3B241A] transition-colors hover:bg-[#F7F3EE]"
+                    className="rounded-xl px-3 py-2 text-base font-medium text-secondary-foreground transition-colors hover:bg-secondary"
                   >
                     {link.label}
                   </Link>
@@ -200,25 +194,25 @@ function MobileNav({ categories }: { categories: Category[] }) {
             </div>
 
             <div className="space-y-6">
-              <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-[#6B7280]">
+              <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-muted-foreground">
                 Shop Categories
               </p>
               {categories.map((category) => (
-                <div key={category.slug} className="space-y-2 rounded-2xl border border-[#E8DCCF] bg-white/50 p-4">
+                <div key={category.slug} className="space-y-2 rounded-2xl border border-border bg-white/50 p-4">
                   <Link
                     href={`/products/${category.slug}`}
                     onClick={() => setOpen(false)}
-                    className="block text-base font-semibold text-[#3B241A]"
+                    className="block text-base font-semibold text-secondary-foreground"
                   >
                     {category.name}
                   </Link>
-                  <div className="ml-2 flex flex-col gap-2 border-l-2 border-[#E8DCCF] pl-4">
+                  <div className="ml-2 flex flex-col gap-2 border-l-2 border-border pl-4">
                     {category.subcategories.map((sub) => (
                       <Link
                         key={sub.slug}
                         href={getCategoryHref(category.slug, sub.slug)}
                         onClick={() => setOpen(false)}
-                        className="text-sm text-[#6B7280] transition-colors hover:text-[#5B3A29]"
+                        className="text-sm text-muted-foreground transition-colors hover:text-primary"
                       >
                         {sub.name}
                       </Link>

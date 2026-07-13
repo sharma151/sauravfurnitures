@@ -1,8 +1,7 @@
-
-"use client"; 
+"use client";
 
 import { useState } from "react";
-import productsData from "@/data/products.json";
+import productsData from "@/data/ourworks-data.json";
 import Image from "next/image";
 
 export default function OurWorks() {

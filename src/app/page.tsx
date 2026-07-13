@@ -1,55 +1,22 @@
 import HeroSection from "@/components/HeroSection";
 import CategoryGrid from "@/components/CategoryGrid";
+import ProductGrid from "@/components/ProductGrid";
 import { getFeaturedProducts } from "@/lib/data";
-import HomeProducts from "./HomeProducts";
 import SectionHeading from "@/components/luxury/SectionHeading";
 import TestimonialCard from "@/components/luxury/TestimonialCard";
 import CTABanner from "@/components/luxury/CTABanner";
-import { BadgeCheck, Leaf, ShieldCheck, Sparkles } from "lucide-react";
+import { homeFeatures, homeTestimonials } from "@/lib/constants";
+import type { Metadata } from "next";
 
-const features = [
-  {
-    title: "Heritage Craftsmanship",
-    description: "Built by skilled artisans with decades of woodworking expertise.",
-    icon: <BadgeCheck className="h-6 w-6" />,
+export const metadata: Metadata = {
+  title: "Saurav Furnitures | Custom Furniture & Restoration",
+  description: "Discover bespoke custom furniture, expert restoration, and interior design solutions. Handcrafted by experienced manufacturers.",
+  openGraph: {
+    title: "Saurav Furnitures | Custom Furniture & Restoration",
+    description: "Discover bespoke custom furniture, expert restoration, and interior design solutions.",
+    url: "https://sauravfurniture.com",
   },
-  {
-    title: "Premium Material Selection",
-    description: "Engineered wood, solid hardwood, and luxe upholstery sourced responsibly.",
-    icon: <ShieldCheck className="h-6 w-6" />,
-  },
-  {
-    title: "Elegant Modern Design",
-    description: "Refined silhouettes crafted to complement contemporary interiors.",
-    icon: <Sparkles className="h-6 w-6" />,
-  },
-  {
-    title: "Sustainable Production",
-    description: "Thoughtful production with eco-conscious methods and long-lasting quality.",
-    icon: <Leaf className="h-6 w-6" />,
-  },
-];
-
-const testimonials = [
-  {
-    quote:
-      "The design team transformed our space with furniture that feels warm, elegant, and incredibly premium.",
-    author: "Aakriti Sharma",
-    role: "Interior Client, Kathmandu",
-  },
-  {
-    quote:
-      "From finish quality to delivery experience, everything felt high-end and deeply professional.",
-    author: "Ritvik Thapa",
-    role: "Homeowner",
-  },
-  {
-    quote:
-      "A rare blend of modern aesthetics and handcrafted details. Every piece looks timeless in our home.",
-    author: "Nina Gurung",
-    role: "Architect",
-  },
-];
+};
 
 export default function HomePage() {
   const featuredProducts = getFeaturedProducts();
@@ -69,14 +36,14 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="bg-[#F7F3EE] py-16 sm:py-20">
+      <section className="bg-secondary py-16 sm:py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <SectionHeading
             eyebrow="Best Sellers"
             title="Furniture Loved By Modern Homes."
             description="Top-rated picks that combine comfort, statement design, and durable craftsmanship."
           />
-          <HomeProducts products={featuredProducts} />
+          <ProductGrid products={featuredProducts} />
         </div>
       </section>
 
@@ -87,28 +54,28 @@ export default function HomePage() {
           description="Every interaction is designed for convenience, confidence, and elevated design quality."
         />
         <div className="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
-          {features.map((f) => (
+          {homeFeatures.map((f) => (
             <div
               key={f.title}
-              className="group rounded-3xl border border-[#E8DCCF] bg-[#FFFCF8] p-7 shadow-[0_22px_42px_-38px_rgba(59,36,26,0.85)] transition-all duration-300 hover:-translate-y-1 hover:border-[#C6A77D]/55"
+              className="group rounded-3xl border border-border bg-card p-7 shadow-[0_22px_42px_-38px_rgba(59,36,26,0.85)] transition-all duration-300 hover:-translate-y-1 hover:border-accent/55"
             >
-              <div className="inline-flex rounded-2xl border border-[#C6A77D]/40 bg-[#F7F3EE] p-3 text-[#5B3A29]">
+              <div className="inline-flex rounded-2xl border border-accent/40 bg-secondary p-3 text-primary">
                 {f.icon}
               </div>
-              <h3 className="mt-5 text-xl font-semibold text-[#3B241A]">{f.title}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-[#6B7280]">{f.description}</p>
+              <h3 className="mt-5 text-xl font-semibold text-secondary-foreground">{f.title}</h3>
+              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{f.description}</p>
             </div>
           ))}
         </div>
       </section>
 
       <section className="mx-auto max-w-7xl px-4 pb-16 sm:px-6 lg:px-8">
-        <div className="relative overflow-hidden rounded-[2rem] border border-[#E8DCCF] bg-[linear-gradient(125deg,#FAF8F5_0%,#F3E8DC_52%,#E8DCCF_100%)] p-10 shadow-[0_26px_55px_-46px_rgba(59,36,26,0.95)] sm:p-14">
-          <p className="text-xs font-semibold uppercase tracking-[0.25em] text-[#5B3A29]">Luxury Craft Narrative</p>
-          <h2 className="mt-4 max-w-3xl text-3xl font-bold leading-tight text-[#3B241A] sm:text-4xl lg:text-5xl">
+        <div className="relative overflow-hidden rounded-[2rem] border border-border bg-[linear-gradient(125deg,#FAF8F5_0%,#F3E8DC_52%,#E8DCCF_100%)] p-10 shadow-[0_26px_55px_-46px_rgba(59,36,26,0.95)] sm:p-14">
+          <p className="text-xs font-semibold uppercase tracking-[0.25em] text-primary">Luxury Craft Narrative</p>
+          <h2 className="mt-4 max-w-3xl text-3xl font-bold leading-tight text-secondary-foreground sm:text-4xl lg:text-5xl">
             Where Contemporary Design Meets Timeless Craftsmanship.
           </h2>
-          <p className="mt-4 max-w-2xl text-[#6B7280]">
+          <p className="mt-4 max-w-2xl text-muted-foreground">
             We create immersive furniture experiences that feel like a private high-end showroom:
             warm tones, rich materials, and elegant forms with practical comfort.
           </p>
@@ -123,7 +90,7 @@ export default function HomePage() {
           align="center"
         />
         <div className="mt-10 grid gap-6 lg:grid-cols-3">
-          {testimonials.map((testimonial) => (
+          {homeTestimonials.map((testimonial) => (
             <TestimonialCard key={testimonial.author} {...testimonial} />
           ))}
         </div>

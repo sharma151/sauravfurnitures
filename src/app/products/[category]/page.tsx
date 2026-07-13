@@ -8,19 +8,25 @@ import {
   getCategoryBySlug,
   getCategories,
 } from "@/lib/data";
-import CategoryProducts from "./CategoryProducts";
+import ProductGrid from "@/components/ProductGrid";
 
 interface PageProps {
   params: Promise<{ category: string }>;
 }
 
-export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+export async function generateMetadata({
+  params,
+}: PageProps): Promise<Metadata> {
   const { category } = await params;
   const cat = getCategoryBySlug(category);
   if (!cat) return { title: "Products" };
   return {
     title: cat.name,
-    description: `Explore our ${cat.name} collection. Premium furniture with Trust, Comfort & Experience.`,
+    description: `Explore our custom ${cat.name} collection. Handcrafted furniture manufacturing and restoration services.`,
+    openGraph: {
+      title: `${cat.name} | Saurav Furnitures`,
+      description: `Explore our custom ${cat.name} collection. Handcrafted furniture manufacturing and restoration services.`,
+    },
   };
 }
 
@@ -42,13 +48,27 @@ export default async function CategoryPage({ params }: PageProps) {
   ];
 
   return (
-    <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
-      <Breadcrumb items={breadcrumbs} />
-      <h1 className="text-3xl font-bold text-primaryText">{cat.name}</h1>
-      <p className="mt-2 text-secondaryText">
-        {products.length} {products.length === 1 ? "product" : "products"} found
-      </p>
-      <CategoryProducts products={products} categorySlug={category} />
-    </div>
+    <main className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
+      <header className="mb-12 border-b border-border pb-8">
+        <Breadcrumb items={breadcrumbs} />
+        <div className="mt-6 flex flex-col sm:flex-row sm:items-end sm:justify-between">
+          <div>
+            <h1 className="text-4xl font-bold tracking-tight text-secondary-foreground sm:text-5xl">
+              {cat.name}
+            </h1>
+            <p className="mt-3 max-w-2xl text-lg text-muted-foreground">
+              {cat?.description}
+            </p>
+          </div>
+          <div className="mt-6 sm:mt-0">
+            <span className="inline-flex items-center rounded-full border border-border bg-card px-3 py-1 text-sm font-medium text-secondary-foreground">
+              {products.length} Products
+            </span>
+          </div>
+        </div>
+      </header>
+
+      <ProductGrid products={products} />
+    </main>
   );
 }

@@ -11,6 +11,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${baseUrl}/about`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
     { url: `${baseUrl}/services`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
     { url: `${baseUrl}/contact`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
+    { url: `${baseUrl}/ourworks`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
+    { url: `${baseUrl}/helpdesk`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.7 },
   ];
 
   const categoryPages: MetadataRoute.Sitemap = categories.map((cat) => ({
