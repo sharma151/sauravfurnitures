@@ -1,7 +1,13 @@
 "use client";
-import { useState, useRef, useEffect } from "react";
+import { useState } from "react";
 import PremiumButton from "@/components/luxury/PremiumButton";
 import { ChevronDown } from "lucide-react";
+import {
+  DropdownMenu,
+  DropdownMenuTrigger,
+  DropdownMenuContent,
+  DropdownMenuItem,
+} from "@/components/ui/dropdown-menu";
 
 const inquiryTypes = [
   "Workshop Visit",
@@ -25,20 +31,6 @@ export default function ContactForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitError, setSubmitError] = useState("");
   const [dropdownOpen, setDropdownOpen] = useState(false);
-  const dropdownRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      if (
-        dropdownRef.current &&
-        !dropdownRef.current.contains(event.target as Node)
-      ) {
-        setDropdownOpen(false);
-      }
-    };
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
-  }, []);
 
   const validate = () => {
     const newErrors: Record<string, string> = {};
@@ -162,39 +154,39 @@ export default function ContactForm() {
 
         <label className="flex flex-col gap-2 text-sm font-medium text-[#3B241A]">
           Inquiry Type
-          <div className="relative" ref={dropdownRef}>
-            <div
-              className={`${getInputStyle()} flex items-center justify-between cursor-pointer`}
-              onClick={() => setDropdownOpen(!dropdownOpen)}
+          <DropdownMenu open={dropdownOpen} onOpenChange={setDropdownOpen}>
+            <DropdownMenuTrigger asChild>
+              <button
+                type="button"
+                className={`${getInputStyle()} flex items-center justify-between cursor-pointer w-full text-left`}
+              >
+                <span className="truncate">{form.inquiryType}</span>
+                <ChevronDown
+                  className={`text-[#3B241A] transition-transform duration-200 ${dropdownOpen ? "rotate-180" : ""}`}
+                  size={20}
+                />
+              </button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent 
+              className="bg-white border border-[#E8DCCF] rounded-xl shadow-lg p-0" 
+              align="start"
+              style={{ width: "var(--radix-dropdown-menu-trigger-width)", minWidth: "16rem" }}
             >
-              <span className="truncate">{form.inquiryType}</span>
-              <ChevronDown
-                className={`text-[#3B241A] transition-transform duration-200 ${dropdownOpen ? "rotate-180" : ""}`}
-                size={20}
-              />
-            </div>
-
-            {dropdownOpen && (
-              <div className="absolute z-10 w-full mt-2 overflow-hidden bg-white border border-[#E8DCCF] rounded-xl shadow-lg animate-in fade-in zoom-in-95 duration-200">
-                {inquiryTypes.map((type) => (
-                  <div
-                    key={type}
-                    className={`px-4 py-3 cursor-pointer transition-colors ${
-                      form.inquiryType === type
-                        ? "bg-[#F7F3EE] text-[#5B3A29] font-medium"
-                        : "text-[#2B2B2B] hover:bg-gray-50"
-                    }`}
-                    onClick={() => {
-                      setForm({ ...form, inquiryType: type });
-                      setDropdownOpen(false);
-                    }}
-                  >
-                    {type}
-                  </div>
-                ))}
-              </div>
-            )}
-          </div>
+              {inquiryTypes.map((type) => (
+                <DropdownMenuItem
+                  key={type}
+                  className={`px-4 py-3 cursor-pointer transition-colors m-0 rounded-none border-b border-[#F7F3EE] last:border-none ${
+                    form.inquiryType === type
+                      ? "bg-[#F7F3EE] text-[#5B3A29] font-medium focus:bg-[#F7F3EE]"
+                      : "text-[#2B2B2B] hover:bg-gray-50 focus:bg-gray-50"
+                  }`}
+                  onClick={() => setForm({ ...form, inquiryType: type })}
+                >
+                  {type}
+                </DropdownMenuItem>
+              ))}
+            </DropdownMenuContent>
+          </DropdownMenu>
         </label>
       </div>
 
