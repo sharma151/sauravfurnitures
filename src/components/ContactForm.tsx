@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import PremiumButton from "@/components/luxury/PremiumButton";
 import { ChevronDown } from "lucide-react";
 import {
@@ -38,6 +38,26 @@ export default function ContactForm() {
   const [dropdownOpen, setDropdownOpen] = useState(false);
 
   const inquiryTypeWatch = watch("inquiryType");
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const params = new URLSearchParams(window.location.search);
+      const type = params.get("type");
+      const category = params.get("category");
+      const subcategory = params.get("subcategory");
+      const product = params.get("product");
+
+      if (type && inquiryTypes.includes(type)) {
+        setValue("inquiryType", type);
+      }
+      if (product) {
+        const formatStr = (str: string) => str.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
+        const details = [category, subcategory].filter(Boolean).map(s => formatStr(s as string));
+        const prefix = details.length > 0 ? `[${details.join(" - ")}] ` : "";
+        setValue("message", `I would like to enquire about the following product: ${prefix}${product}\n\n`);
+      }
+    }
+  }, [setValue]);
 
   if (submitted) {
     return (
