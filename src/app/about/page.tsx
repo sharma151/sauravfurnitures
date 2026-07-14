@@ -38,11 +38,11 @@ export default function AboutPage() {
                 </div>
               ))}
             </div>
-            <div className="flex flex-wrap gap-4">
-              <PremiumButton href="/contact" size="lg">
+            <div className="flex flex-row items-center gap-2 sm:gap-4 w-full">
+              <PremiumButton href="/contact" size="lg" className="flex-1 whitespace-nowrap px-2 text-[11px] sm:px-9 sm:text-base">
                 Talk To Our Team
               </PremiumButton>
-              <PremiumButton href="/services" variant="secondary" size="lg">
+              <PremiumButton href="/services" variant="secondary" size="lg" className="flex-1 whitespace-nowrap px-2 text-[11px] sm:px-9 sm:text-base">
                 Explore Services
               </PremiumButton>
             </div>

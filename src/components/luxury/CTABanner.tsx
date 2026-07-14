@@ -21,14 +21,14 @@ export default function CTABanner() {
             proportions.
           </p>
           <div className="mt-8 flex flex-wrap gap-4">
-            <PremiumButton href="/contact" size="lg">
+            <PremiumButton href="/contact" size="lg" className="whitespace-nowrap px-6 text-[13px] sm:px-9 sm:text-base">
               Book A Design Consultation
             </PremiumButton>
             <PremiumButton
               href="/services"
               variant="secondary"
               size="lg"
-              className="bg-white/10 text-secondary hover:bg-white/20"
+              className="bg-white/10 text-secondary hover:bg-white/20 whitespace-nowrap px-6 text-[13px] sm:px-9 sm:text-base"
             >
               Explore Services
             </PremiumButton>
