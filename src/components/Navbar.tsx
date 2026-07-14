@@ -197,6 +197,21 @@ function MobileNav({ categories }: { categories: Category[] }) {
           </div>
 
           <div className="flex-1 space-y-8 overflow-y-auto p-6">
+            <form action="/search" className="relative flex items-center" onSubmit={() => setOpen(false)}>
+              <Search className="absolute left-3 h-4 w-4 text-muted-foreground" />
+              <React.Suspense fallback={
+                <input
+                  type="search"
+                  name="q"
+                  placeholder="Search category, product..."
+                  className="h-9 w-full rounded-full border border-secondary-foreground/20 bg-secondary/50 pl-9 pr-10 text-sm outline-none transition-colors focus:border-accent focus:bg-background [&::-webkit-search-cancel-button]:appearance-none"
+                  required
+                />
+              }>
+                <SearchInput className="w-full" />
+              </React.Suspense>
+            </form>
+
             <div className="space-y-3">
               <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-muted-foreground">
                 Company
@@ -253,7 +268,7 @@ function MobileNav({ categories }: { categories: Category[] }) {
   );
 }
 
-function SearchInput() {
+function SearchInput({ className }: { className?: string }) {
   const searchParams = useSearchParams();
   const q = searchParams.get("q") || "";
   const [value, setValue] = React.useState(q);
@@ -277,7 +292,10 @@ function SearchInput() {
         value={value}
         onChange={(e) => setValue(e.target.value)}
         placeholder="Search category, product..."
-        className="h-9 w-64 xl:w-80 rounded-full border border-border bg-card/50 pl-9 pr-10 text-sm outline-none transition-colors focus:border-accent focus:bg-background [&::-webkit-search-cancel-button]:appearance-none"
+        className={cn(
+          "h-9 rounded-full border border-secondary-foreground/20 bg-secondary/50 pl-9 pr-10 text-sm outline-none transition-colors focus:border-accent focus:bg-background [&::-webkit-search-cancel-button]:appearance-none",
+          className || "w-64 xl:w-80"
+        )}
         required
       />
       {value && (
