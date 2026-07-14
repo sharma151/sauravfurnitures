@@ -42,11 +42,11 @@ export default function HeroSection() {
               </p>
             </div>
           </div>
-          <div className="flex flex-wrap gap-4">
-            <PremiumButton href="/products/bedroom" size="lg">
+          <div className="flex flex-row items-center gap-2 sm:gap-4 w-full">
+            <PremiumButton href="/products/bedroom" size="lg" className="flex-1 px-2 sm:px-9 text-[11px] sm:text-base">
               Explore Collection
             </PremiumButton>
-            <PremiumButton href="/about" variant="secondary" size="lg">
+            <PremiumButton href="/about" variant="secondary" size="lg" className="flex-1 px-2 sm:px-9 text-[11px] sm:text-base">
               Discover Our Story
             </PremiumButton>
           </div>

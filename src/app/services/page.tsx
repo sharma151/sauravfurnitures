@@ -77,10 +77,10 @@ export default function ServicesPage() {
             href="/contact"
             variant="secondary"
             size="lg"
-            className="mt-8 inline-flex bg-white/10 text-secondary hover:bg-white/20"
+            className="mt-8 inline-flex items-center bg-white/10 text-secondary hover:bg-white/20 whitespace-nowrap px-5 text-[13px] sm:px-9 sm:text-base"
           >
             Start A Service Request
-            <ArrowRight className="ml-1 h-4 w-4" />
+            <ArrowRight className="ml-1 h-4 w-4 shrink-0" />
           </PremiumButton>
         </div>
       </section>
