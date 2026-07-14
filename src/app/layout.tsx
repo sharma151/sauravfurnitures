@@ -53,8 +53,9 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${inter.variable} ${playfair.variable} font-sans`}>
         <Navbar />
-        <main className="min-h-screen">{children}<Analytics /></main>
+        <main className="min-h-screen">{children}</main>
         <Footer />
+        <Analytics />
       </body>
     </html>
   );

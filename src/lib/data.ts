@@ -30,9 +30,11 @@ export function getProducts(): Product[] {
 
 export function getProductsByCategory(category: string, subcategory?: string): Product[] {
   if (category === "new-arrival") {
-    if (subcategory === "fast-delivery") {
-      return products.filter((p) => p.isNewArrival && p.deliveryTime.includes("5-7"));
+    if (subcategory === "kitchen") {
+      // Only show kitchen items for the kitchen subcategory
+      return products.filter((p) => p.isNewArrival && p.category === "kitchen");
     }
+    // Show all new arrival products across the entire store
     return products.filter((p) => p.isNewArrival);
   }
   return products.filter((p) => {
