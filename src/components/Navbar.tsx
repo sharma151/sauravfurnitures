@@ -3,12 +3,9 @@
 import * as React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { ChevronDown, Menu, Phone, X } from "lucide-react";
-import {
-  Sheet,
-  SheetContent,
-  SheetTrigger,
-} from "@/components/ui/sheet";
+import { useSearchParams } from "next/navigation";
+import { ChevronDown, Menu, Phone, X, Search } from "lucide-react";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
 import { getCategories } from "@/lib/data";
 import { cn } from "@/lib/utils";
@@ -51,7 +48,9 @@ function CategoryDropdown({
       <button
         className={cn(
           "group flex h-full items-center gap-1  py-4 border-transparent px-4 text-sm font-medium text-secondary-foreground transition-all outline-none",
-          open ? "border-accent text-primary" : "hover:border-accent/80 hover:text-primary",
+          open
+            ? "border-accent text-primary"
+            : "hover:border-accent/80 hover:text-primary",
         )}
         aria-expanded={open}
         aria-haspopup="menu"
@@ -92,10 +91,7 @@ export default function Navbar() {
     <header className="sticky top-0 z-50 w-full border-b border-border/80 bg-background/70 backdrop-blur-xl">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-20 items-center justify-between">
-          <Link
-            href="/"
-            className="flex items-center"
-          >
+          <Link href="/" className="flex items-center">
             <div className="relative h-14 w-44 shrink-0 overflow-hidden">
               <Image
                 src="/images/logo.jpg"
@@ -136,11 +132,29 @@ export default function Navbar() {
       </div>
 
       <nav className="hidden h-14 border-t border-border/70 lg:block">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="flex h-full items-center gap-2">
-            {categories.map((category) => (
-              <CategoryDropdown key={category.slug} category={category} />
-            ))}
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-full">
+          <div className="flex h-full items-center justify-between">
+            <div className="flex h-full items-center gap-2">
+              {categories.map((category) => (
+                <CategoryDropdown key={category.slug} category={category} />
+              ))}
+            </div>
+            <form action="/search" className="relative flex items-center">
+              <Search className="absolute left-3 h-4 w-4 text-muted-foreground" />
+              <React.Suspense
+                fallback={
+                  <input
+                    type="search"
+                    name="q"
+                    placeholder="Search category, product..."
+                    className="h-9 w-64 xl:w-80 rounded-full border border-border bg-card/50 pl-9 pr-10 text-sm outline-none transition-colors focus:border-accent focus:bg-background [&::-webkit-search-cancel-button]:appearance-none"
+                    required
+                  />
+                }
+              >
+                <SearchInput />
+              </React.Suspense>
+            </form>
           </div>
         </div>
       </nav>
@@ -163,13 +177,21 @@ function MobileNav({ categories }: { categories: Category[] }) {
           <Menu className="h-6 w-6 text-secondary-foreground" />
         </Button>
       </SheetTrigger>
-      <SheetContent side="left" className="w-[88vw] max-w-sm border-r border-border bg-background p-0">
+      <SheetContent
+        side="left"
+        className="w-[88vw] max-w-sm border-r border-border bg-background p-0"
+      >
         <div className="flex flex-col h-full">
           <div className="flex items-center justify-between border-b border-border p-5">
             <p className="font-serif text-xl font-semibold text-secondary-foreground">
               Saurav Furnitures
             </p>
-            <Button variant="ghost" size="icon-sm" onClick={() => setOpen(false)} aria-label="Close menu">
+            <Button
+              variant="ghost"
+              size="icon-sm"
+              onClick={() => setOpen(false)}
+              aria-label="Close menu"
+            >
               <X className="h-5 w-5 text-secondary-foreground" />
             </Button>
           </div>
@@ -198,7 +220,10 @@ function MobileNav({ categories }: { categories: Category[] }) {
                 Shop Categories
               </p>
               {categories.map((category) => (
-                <div key={category.slug} className="space-y-2 rounded-2xl border border-border bg-white/50 p-4">
+                <div
+                  key={category.slug}
+                  className="space-y-2 rounded-2xl border border-border bg-white/50 p-4"
+                >
                   <Link
                     href={`/products/${category.slug}`}
                     onClick={() => setOpen(false)}
@@ -225,5 +250,46 @@ function MobileNav({ categories }: { categories: Category[] }) {
         </div>
       </SheetContent>
     </Sheet>
+  );
+}
+
+function SearchInput() {
+  const searchParams = useSearchParams();
+  const q = searchParams.get("q") || "";
+  const [value, setValue] = React.useState(q);
+  const inputRef = React.useRef<HTMLInputElement>(null);
+
+  React.useEffect(() => {
+    setValue(searchParams.get("q") || "");
+  }, [searchParams]);
+
+  const handleClear = () => {
+    setValue("");
+    inputRef.current?.focus();
+  };
+
+  return (
+    <>
+      <input
+        ref={inputRef}
+        type="search"
+        name="q"
+        value={value}
+        onChange={(e) => setValue(e.target.value)}
+        placeholder="Search category, product..."
+        className="h-9 w-64 xl:w-80 rounded-full border border-border bg-card/50 pl-9 pr-10 text-sm outline-none transition-colors focus:border-accent focus:bg-background [&::-webkit-search-cancel-button]:appearance-none"
+        required
+      />
+      {value && (
+        <button
+          type="button"
+          onClick={handleClear}
+          className="absolute right-3 flex items-center justify-center text-muted-foreground hover:text-foreground transition-colors"
+          aria-label="Clear search"
+        >
+          <X className="h-4 w-4" />
+        </button>
+      )}
+    </>
   );
 }
