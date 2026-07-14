@@ -29,7 +29,7 @@ export default function HomePage() {
         <SectionHeading
           eyebrow="Featured Categories"
           title="Curated Collections For Sophisticated Living."
-          description="Discover premium bedroom, dining, living, and workspace solutions with refined textures and warm contemporary detailing."
+          description="Discover custom bedroom, dining, living, and workspace solutions with refined textures and warm contemporary detailing."
         />
         <div className="mt-10">
           <CategoryGrid />
@@ -50,7 +50,7 @@ export default function HomePage() {
       <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
         <SectionHeading
           eyebrow="Why Choose Us"
-          title="Luxury Service, Built Around Your Lifestyle."
+          title="Quality Service, Built Around Your Lifestyle."
           description="Every interaction is designed for convenience, confidence, and elevated design quality."
         />
         <div className="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
@@ -71,7 +71,7 @@ export default function HomePage() {
 
       <section className="mx-auto max-w-7xl px-4 pb-16 sm:px-6 lg:px-8">
         <div className="relative overflow-hidden rounded-[2rem] border border-border bg-[linear-gradient(125deg,#FAF8F5_0%,#F3E8DC_52%,#E8DCCF_100%)] p-10 shadow-[0_26px_55px_-46px_rgba(59,36,26,0.95)] sm:p-14">
-          <p className="text-xs font-semibold uppercase tracking-[0.25em] text-primary">Luxury Craft Narrative</p>
+          <p className="text-xs font-semibold uppercase tracking-[0.25em] text-primary">Our Craft Narrative</p>
           <h2 className="mt-4 max-w-3xl text-3xl font-bold leading-tight text-secondary-foreground sm:text-4xl lg:text-5xl">
             Where Contemporary Design Meets Timeless Craftsmanship.
           </h2>

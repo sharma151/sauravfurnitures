@@ -4,7 +4,7 @@
     "slug": "new-arrival",
     "subcategories": [
       { "name": "All New Arrivals", "slug": "all" },
-      { "name": "Kitchen items", "slug": "fast-delivery" }
+      { "name": "Kitchen items", "slug": "kitchen" }
     ]
   },
   {
