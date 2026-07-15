@@ -34,7 +34,7 @@ export default function Footer() {
             </p>
             <div className="mt-6 flex gap-3">
               <a
-                href="https://facebook.com"
+                href="https://www.facebook.com/profile.php?id=61582617441183"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="rounded-full border border-border bg-white p-2.5 text-secondary-foreground transition-all hover:border-accent hover:text-primary"
@@ -43,7 +43,7 @@ export default function Footer() {
                 <Facebook className="h-4 w-4" />
               </a>
               <a
-                href="https://instagram.com"
+                href="https://www.instagram.com/sauravfurnitures"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="rounded-full border border-border bg-white p-2.5 text-secondary-foreground transition-all hover:border-accent hover:text-primary"
@@ -51,20 +51,13 @@ export default function Footer() {
               >
                 <Instagram className="h-4 w-4" />
               </a>
-              <a
-                href="https://linkedin.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="rounded-full border border-border bg-white p-2.5 text-secondary-foreground transition-all hover:border-accent hover:text-primary"
-                aria-label="LinkedIn"
-              >
-                <Linkedin className="h-4 w-4" />
-              </a>
             </div>
           </div>
 
           <div>
-            <h3 className="font-semibold text-secondary-foreground">Quick Links</h3>
+            <h3 className="font-semibold text-secondary-foreground">
+              Quick Links
+            </h3>
             <ul className="mt-4 space-y-2">
               {quickLinks.map((link) => (
                 <li key={link.href}>
@@ -80,7 +73,9 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="font-semibold text-secondary-foreground">Categories</h3>
+            <h3 className="font-semibold text-secondary-foreground">
+              Categories
+            </h3>
             <ul className="mt-4 space-y-2">
               {categories.slice(0, 6).map((cat) => (
                 <li key={cat.slug}>
@@ -96,7 +91,9 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="font-semibold text-secondary-foreground">Services</h3>
+            <h3 className="font-semibold text-secondary-foreground">
+              Services
+            </h3>
             <ul className="mt-4 space-y-2">
               {footerServices.map((service) => (
                 <li key={service.href}>
