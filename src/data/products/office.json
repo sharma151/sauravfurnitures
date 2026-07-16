@@ -17,7 +17,7 @@
     "rating": 4.9,
     "reviews": 8,
     "images": ["/images/office/ExecutiveManagementDesk.webp"],
-    "isNewArrival": true,
+    "isNewArrival": false,
     "deliveryTime": "10-15 days"
   },
   {
@@ -59,7 +59,7 @@
     "rating": 4.8,
     "reviews": 45,
     "images": ["/images/office/MeshChair.webp"],
-    "isNewArrival": true,
+    "isNewArrival": false,
     "deliveryTime": "2-3 days"
   },
   {
@@ -79,7 +79,7 @@
     "stock": 10,
     "rating": 4.9,
     "reviews": 21,
-    "images": ["/images/office/BlackBossChair.avif"],
+    "images": ["/images/office/BlackBossChair.webp"],
     "isNewArrival": false,
     "deliveryTime": "3-5 days"
   },
@@ -122,7 +122,7 @@
     "rating": 4.7,
     "reviews": 24,
     "images": ["/images/office/TraditionalWoodenDesk.webp"],
-    "isNewArrival": true,
+    "isNewArrival": false,
     "deliveryTime": "5-7 days"
   },
   {
@@ -142,8 +142,8 @@
     "stock": 15,
     "rating": 4.5,
     "reviews": 8,
-    "images": ["/images/office/3FileCabinet_1.webp"],
-    "isNewArrival": true,
+    "images": ["/images/office/Vertical3-DrawerFilingCabinet.jpeg"],
+    "isNewArrival": false,
     "deliveryTime": "5-7 days"
   },
   {
@@ -163,7 +163,7 @@
     "stock": 7,
     "rating": 4.6,
     "reviews": 11,
-    "images": ["/images/office/OfficeStorageCupboard_1.avif","/images/office/OfficeStorageCupboard_2.avif"],
+    "images": ["/images/office/OfficeStorageCupboard_1.png","/images/office/OfficeStorageCupboard_2.png"],
     "isNewArrival": false,
     "deliveryTime": "7-10 days"
   },
@@ -185,7 +185,7 @@
     "rating": 4.7,
     "reviews": 22,
     "images": ["/images/office/TallOfficeBookshelf_2.avif","/images/office/TallOfficeBookshelf_1.avif"],
-    "isNewArrival": true,
+    "isNewArrival": false,
     "deliveryTime": "5-8 days"
   },
   {

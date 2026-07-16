@@ -16,7 +16,7 @@
     "stock": 4,
     "rating": 4.9,
     "reviews": 12,
-    "images": ["/images/dining/Mahagony6SeaterDiningTable.avif"],
+    "images": ["/images/dining/Mahogany6-SeaterTable.avif"],
     "isNewArrival": false,
     "deliveryTime": "7-10 days"
   },
@@ -37,8 +37,8 @@
     "stock": 15,
     "rating": 4.5,
     "reviews": 38,
-    "images": ["/images/dining/Round4-SeaterGlassTable.webp"],
-    "isNewArrival": true,
+    "images": ["/images/dining/Round4-SeaterGlassTable.avif"],
+    "isNewArrival": false,
     "deliveryTime": "3-5 days"
   },
   {
@@ -58,8 +58,8 @@
     "stock": 40,
     "rating": 4.3,
     "reviews": 18,
-    "images": ["/images/dining/Ergo-ComfortDiningChair.avif"],
-    "isNewArrival": true,
+    "images": ["/images/dining/ErgoComfortDoningChair.avif"],
+    "isNewArrival": false,
     "deliveryTime": "2-4 days"
   },
   {
@@ -79,7 +79,7 @@
     "stock": 30,
     "rating": 4.6,
     "reviews": 25,
-    "images": ["/images/dining/PaddedWoodDiningChair.webp"],
+    "images": ["/images/dining/PaddedWoodDiningChair.avif"],
     "isNewArrival": false,
     "deliveryTime": "3-5 days"
   },
@@ -100,7 +100,7 @@
     "stock": 10,
     "rating": 4.7,
     "reviews": 29,
-    "images": ["/images/dining/Bhojan6-SeaterDiningSet.webp"],
+    "images": ["/images/dining/Bhojan6-SeaterDiningSet.avif"],
     "isNewArrival": false,
     "deliveryTime": "7-10 days"
   },
@@ -121,8 +121,8 @@
     "stock": 2,
     "rating": 5.0,
     "reviews": 5,
-    "images": ["/images/dining/Premium8-SeaterFeastSet.webp"],
-    "isNewArrival": true,
+    "images": ["/images/dining/Premium8-SeaterFeastSet.avif"],
+    "isNewArrival": false,
     "deliveryTime": "15-20 days"
   },
   {
@@ -143,7 +143,7 @@
     "rating": 4.3,
     "reviews": 12,
     "images": ["/images/dining/SwivelWoodBarStool.avif"],
-    "isNewArrival": true,
+    "isNewArrival": false,
     "deliveryTime": "2-4 days"
   },
   {
@@ -163,7 +163,7 @@
     "stock": 14,
     "rating": 4.6,
     "reviews": 19,
-    "images": ["/images/dining/LeatheretteBackBarStool.avif"],
+    "images": ["/images/dining/BackLeatheratteBarStool.avif"],
     "isNewArrival": false,
     "deliveryTime": "3-5 days"
   }
