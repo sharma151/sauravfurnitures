@@ -14,7 +14,10 @@
       "Hand-carved Headboard",
       "High Gloss Finish"
     ],
-    "dimensions": { "bed": "72x78 inches", "wardrobe": "72x84 inches" },
+    "dimensions": {
+      "bed": "72x78 inches",
+      "wardrobe": "72x84 inches"
+    },
     "materials": ["Sissau Wood", "Premium Polish"],
     "careInstructions": "Dust with a dry soft cloth. Periodically polish with wood wax.",
     "stock": 5,
@@ -40,7 +43,10 @@
       "Space Saving",
       "5 Year Warranty"
     ],
-    "dimensions": { "bed": "60x78 inches", "wardrobe": "60x84 inches" },
+    "dimensions": {
+      "bed": "60x78 inches",
+      "wardrobe": "60x84 inches"
+    },
     "materials": ["Engineering Wood", "Laminate"],
     "careInstructions": "Wipe with a damp cloth. Avoid harsh chemicals.",
     "stock": 8,
@@ -106,7 +112,7 @@
     "slug": "three-door-classic-almirah",
     "category": "bedroom",
     "subcategory": "wardrobes",
-    "price": 42000,
+    "price": 35000,
     "currency": "NPR",
     "shortDescription": "Spacious wooden wardrobe with traditional latch locks.",
     "description": "Ample hanging space and integrated drawers for organized storage.",
@@ -185,7 +191,7 @@
     "slug": "compact-wall-mount-vanity",
     "category": "bedroom",
     "subcategory": "dressing-table",
-    "price": 12500,
+    "price": 8999,
     "currency": "NPR",
     "shortDescription": "Minimalist wall-mounted dressing unit with shelf.",
     "description": "Ideal for small bedrooms where floor space is limited.",
@@ -220,7 +226,7 @@
       "width": "15 inches",
       "height": "20 inches"
     },
-    "materials": ["Oak Wood", "Metal Handles"],
+    "materials": ["Oak Wood"],
     "careInstructions": "Avoid direct sunlight.",
     "stock": 25,
     "rating": 4.5,
@@ -245,7 +251,7 @@
       "width": "18 inches",
       "height": "22 inches"
     },
-    "materials": ["Sissau Wood"],
+    "materials": ["Sissau Wood", "Brass Hardware"],
     "careInstructions": "Dust regularly.",
     "stock": 15,
     "rating": 4.8,
@@ -288,14 +294,14 @@
     "price": 18500,
     "currency": "NPR",
     "shortDescription": "Colorful study desk and chair set for children.",
-    "description": "Height-adjustable desk to grow with your child.",
-    "features": ["Adjustable Height", "Book Shelf", "Anti-Scratch Surface"],
+    "description": "A classic study desk built to inspire  child for years to come.",
+    "features": ["Book Shelf","Soft-close Drawers", "Anti-Scratch Surface"],
     "dimensions": {
       "length": "36 inches",
       "width": "20 inches",
       "height": "40 inches"
     },
-    "materials": ["Plastic", "Metal Frame"],
+    "materials": ["Wood", "Metal Frame"],
     "careInstructions": "Wipe spills immediately.",
     "stock": 8,
     "rating": 4.7,
