@@ -2,7 +2,7 @@
   {
     "id": "kitch-002",
     "name": "Knife Hanger",
-    "slug": "Knife Hanger",
+    "slug": "knife-hanger",
     "category": "kitchen",
     "subcategory": "kitchen",
     "price": 2500,
@@ -53,7 +53,7 @@
   {
     "id": "kitch-003",
     "name": "Wooden Spices Holder",
-    "slug": "Wooden Spices Holder",
+    "slug": "wooden-spices-holder",
     "category": "kitchen",
     "subcategory": "kitchen",
     "price": 2500,

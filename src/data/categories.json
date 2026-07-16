@@ -1,13 +1,5 @@
 [
   {
-    "name": "New Arrivals",
-    "slug": "new-arrival",
-    "subcategories": [
-      { "name": "All New Arrivals", "slug": "all" },
-      { "name": "Kitchen items", "slug": "kitchen" }
-    ]
-  },
-  {
     "name": "Bedroom",
     "slug": "bedroom",
     "subcategories": [
@@ -30,6 +22,15 @@
       { "name": "TV Unit", "slug": "tv-unit" },
       { "name": "Bookshelf", "slug": "bookshelf" },
       { "name": "Center Table", "slug": "center-table" }
+    ]
+  },
+  {
+    "name": "Kitchen",
+    "slug": "kitchen",
+    "subcategories": [
+      { "name": "Kitchen All", "slug": "all" },
+      { "name": "Kitchen Accessories", "slug": "kitchen-accessories" },
+      { "name": "Serveware", "slug": "serveware" }
     ]
   },
   {
