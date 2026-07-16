@@ -29,7 +29,7 @@ export default function Footer() {
               Saurav Furnitures
             </Link> */}
             <p className="mt-4 max-w-sm text-sm leading-relaxed text-muted-foreground">
-              A modern luxury furniture house blending artisanal craftsmanship,
+              A modern furniture manufacturer house blending artisanal craftsmanship,
               timeless silhouettes, and warm contemporary living.
             </p>
             <div className="mt-6 flex gap-3">

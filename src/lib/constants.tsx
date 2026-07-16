@@ -200,8 +200,9 @@ export const aboutValues = [
 ];
 
 export const aboutStats = [
-  { label: "Years Legacy", value: "25+" },
-  { label: "Projects Delivered", value: "5,000+" },
+  { label: "Years Experience", value: "25+" },
+  { label: "Items Restored", value: "3K+" },
+  { label: "Projects Delivered", value: "5K+" },
 ];
 
 export const aboutPhilosophyItems = [
