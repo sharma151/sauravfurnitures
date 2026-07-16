@@ -1,8 +1,4 @@
-"use client";
-
-import { useState } from "react";
 import ProductCard from "@/components/ProductCard";
-import ProductModal from "@/components/ProductModal";
 import type { Product } from "@/types";
 
 interface CategoryProductsProps {
@@ -14,8 +10,6 @@ export default function CategoryProducts({
   products,
   categorySlug,
 }: CategoryProductsProps) {
-  const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
-
   if (products.length === 0) {
     return (
       <div className="mt-16 rounded-2xl border border-border bg-section p-12 text-center">
@@ -30,21 +24,14 @@ export default function CategoryProducts({
   }
 
   return (
-    <>
-      <div className="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-        {products.map((product) => (
-          <ProductCard
-            key={product.id}
-            product={product}
-            onClick={() => setSelectedProduct(product)}
-          />
-        ))}
-      </div>
-
-      <ProductModal
-        product={selectedProduct}
-        onClose={() => setSelectedProduct(null)}
-      />
-    </>
+    <div className="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+      {products.map((product) => (
+        <ProductCard
+          key={product.id}
+          product={product}
+        />
+      ))}
+    </div>
   );
 }
+
