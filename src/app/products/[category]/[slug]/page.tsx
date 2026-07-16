@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 import Breadcrumb, { type BreadcrumbItem } from "@/components/Breadcrumb";
+import ProductGallery from "@/components/ProductGallery";
 import {
   getProductBySlug,
   getProductsByCategory,
@@ -14,7 +15,9 @@ interface PageProps {
   params: Promise<{ category: string; slug: string }>;
 }
 
-export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+export async function generateMetadata({
+  params,
+}: PageProps): Promise<Metadata> {
   const { category, slug } = await params;
   const product = getProductBySlug(category, slug);
   const cat = getCategoryBySlug(category);
@@ -47,18 +50,25 @@ export default async function SlugPage({ params }: PageProps) {
   // Product detail page
   if (product) {
     const subcategoryName =
-      cat.subcategories.find((s) => s.slug === product.subcategory)?.name || product.subcategory;
+      cat.subcategories.find((s) => s.slug === product.subcategory)?.name ||
+      product.subcategory;
 
     const breadcrumbs: BreadcrumbItem[] = [
       { label: "Home", href: "/" },
       { label: cat.name, href: `/products/${category}` },
       ...(product.subcategory !== "all"
-        ? [{ label: subcategoryName, href: `/products/${category}/${product.subcategory}` }]
+        ? [
+            {
+              label: subcategoryName,
+              href: `/products/${category}/${product.subcategory}`,
+            },
+          ]
         : []),
       { label: product.name, href: undefined },
     ];
 
-    const images = product.images.length > 0 ? product.images : ["/images/placeholder.svg"];
+    const images =
+      product.images.length > 0 ? product.images : ["/images/placeholder.svg"];
     const jsonLd = {
       "@context": "https://schema.org",
       "@type": "Product",
@@ -70,7 +80,9 @@ export default async function SlugPage({ params }: PageProps) {
         price: product.price,
         priceCurrency: product.currency,
         availability:
-          product.stock > 0 ? "https://schema.org/InStock" : "https://schema.org/OutOfStock",
+          product.stock > 0
+            ? "https://schema.org/InStock"
+            : "https://schema.org/OutOfStock",
       },
       aggregateRating: {
         "@type": "AggregateRating",
@@ -87,38 +99,17 @@ export default async function SlugPage({ params }: PageProps) {
         />
         <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8 pb-24 lg:pb-8">
           <Breadcrumb items={breadcrumbs} />
-          
+
           <div className="mt-8 flex flex-col lg:grid lg:grid-cols-[1fr_1fr] gap-12 lg:items-start">
-            {/* 🖼 IMAGE SECTION - Sticky on Desktop */}
-            <div className="space-y-4 lg:sticky lg:top-24">
-              <div className="relative aspect-square overflow-hidden rounded-lg bg-section">
-                <Image
-                  src={images[0]}
-                  alt={product.name}
-                  fill
-                  className="object-cover"
-                  priority
-                  sizes="(max-width: 1024px) 100vw, 50vw"
-                />
-              </div>
-              {images.length > 1 && (
-                <div className="flex gap-2 overflow-x-auto pb-2">
-                  {images.slice(1, 5).map((img, i) => (
-                    <div
-                      key={i}
-                      className="relative h-24 w-24 shrink-0 overflow-hidden rounded-lg border border-border"
-                    >
-                      <Image src={img} alt={`${product.name} ${i + 2}`} fill className="object-cover" />
-                    </div>
-                  ))}
-                </div>
-              )}
-            </div>
+            {/* 🖼 IMAGE SECTION */}
+            <ProductGallery images={images} productName={product.name} />
 
             {/* 📄 CONTENT SECTION */}
             <div className="relative flex flex-col h-full">
               <div className="flex-1 pb-12">
-                <h1 className="text-3xl font-bold text-primaryText">{product.name}</h1>
+                <h1 className="text-3xl font-bold text-primaryText">
+                  {product.name}
+                </h1>
                 <div className="mt-4 flex items-center gap-4">
                   <span className="flex items-center gap-1 text-amber-600">
                     <svg className="h-5 w-5 fill-amber-400" viewBox="0 0 20 20">
@@ -126,13 +117,15 @@ export default async function SlugPage({ params }: PageProps) {
                     </svg>
                     {product.rating} ({product.reviews} reviews)
                   </span>
-                  <span className="text-sm text-secondaryText">{product.deliveryTime} delivery</span>
+                  <span className="text-sm text-secondaryText">
+                    {product.deliveryTime} delivery
+                  </span>
                 </div>
                 <p className="mt-6 text-2xl font-semibold text-cta">
                   ${product.price.toLocaleString()}
                 </p>
                 <p className="mt-6 text-secondaryText">{product.description}</p>
-                
+
                 <div className="mt-8 space-y-6">
                   <div>
                     <h3 className="font-semibold text-primaryText">Features</h3>
@@ -148,38 +141,63 @@ export default async function SlugPage({ params }: PageProps) {
                     </ul>
                   </div>
                   <div>
-                    <h3 className="font-semibold text-primaryText">Dimensions</h3>
+                    <h3 className="font-semibold text-primaryText">
+                      Dimensions
+                    </h3>
                     <p className="mt-1 text-secondaryText">
                       {product.dimensions.length} × {product.dimensions.width} ×{" "}
                       {product.dimensions.height}
                     </p>
                   </div>
                   <div>
-                    <h3 className="font-semibold text-primaryText">Materials</h3>
-                    <p className="mt-1 text-secondaryText">{product.materials.join(", ")}</p>
+                    <h3 className="font-semibold text-primaryText">
+                      Materials
+                    </h3>
+                    <p className="mt-1 text-secondaryText">
+                      {product.materials.join(", ")}
+                    </p>
                   </div>
                   <div>
                     <h3 className="font-semibold text-primaryText">Care</h3>
-                    <p className="mt-1 text-secondaryText">{product.careInstructions}</p>
+                    <p className="mt-1 text-secondaryText">
+                      {product.careInstructions}
+                    </p>
                   </div>
                 </div>
 
                 {/* Catalog Note */}
                 <div className="mt-8 flex items-start gap-3 rounded-lg bg-accent/5 border border-accent/20 p-4">
-                  <svg className="w-5 h-5 text-accent shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  <svg
+                    className="w-5 h-5 text-accent shrink-0 mt-0.5"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                    />
                   </svg>
                   <p className="text-sm text-secondaryText leading-relaxed">
-                    <strong className="text-primaryText font-medium">Made to Order:</strong> The products displayed in our catalog showcase our design and manufacturing capabilities. We craft each piece specifically for you. Please contact us to place an order. Customizations in dimensions, materials, and finishes are welcome, and pricing may vary accordingly.
+                    <strong className="text-primaryText font-medium">
+                      Made to Order:
+                    </strong>{" "}
+                    The products displayed in our catalog showcase our design
+                    and manufacturing capabilities. We craft each piece
+                    specifically for you. Please contact us to place an order.
+                    Customizations in dimensions, materials, and finishes are
+                    welcome, and pricing may vary accordingly.
                   </p>
                 </div>
 
-                <Link
+                {/* <Link
                   href={`/products/${category}`}
                   className="mt-6 block text-center text-sm text-secondaryText hover:text-accent pb-6"
                 >
                   ← Back to {cat.name}
-                </Link>
+                </Link> */}
               </div>
 
               {/* STICKY CTA */}
