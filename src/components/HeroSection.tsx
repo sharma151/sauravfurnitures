@@ -1,5 +1,6 @@
 import Image from "next/image";
 import PremiumButton from "@/components/luxury/PremiumButton";
+import { aboutStats } from "@/lib/constants";
 
 export default function HeroSection() {
   return (
@@ -25,35 +26,19 @@ export default function HeroSection() {
 
           <div className="w-full max-w-xl rounded-2xl border border-border/80 bg-white/70 p-4 shadow-sm backdrop-blur-md">
             <div className="grid grid-cols-3 divide-x divide-border/60 text-center">
-              {/* Stat 1 */}
-              <div className="flex flex-col justify-center px-1 first:pl-0">
-                <span className="text-xl font-bold tracking-tight text-secondary-foreground sm:text-3xl">
-                  25+
-                </span>
-                <span className="mt-0.5 text-[10px] font-semibold uppercase tracking-wider text-muted-foreground sm:text-xs">
-                  Years experience
-                </span>
-              </div>
-
-              {/* Stat 2 */}
-              <div className="flex flex-col justify-center px-1">
-                <span className="text-xl font-bold tracking-tight text-secondary-foreground sm:text-3xl">
-                  3K+
-                </span>
-                <span className="mt-0.5 text-[10px] font-semibold uppercase tracking-wider text-muted-foreground sm:text-xs">
-                  Items Restored
-                </span>
-              </div>
-
-              {/* Stat 3 */}
-              <div className="flex flex-col justify-center px-1 last:pr-0">
-                <span className="text-xl font-bold tracking-tight text-secondary-foreground sm:text-3xl">
-                  5K+
-                </span>
-                <span className="mt-0.5 text-[10px] font-semibold uppercase tracking-wider text-muted-foreground sm:text-xs">
-                  Homes Delivered
-                </span>
-              </div>
+              {aboutStats.map((stat) => (
+                <div
+                  key={stat.label}
+                  className="flex flex-col justify-center px-1 first:pl-0 last:pr-0"
+                >
+                  <span className="text-xl font-bold tracking-tight text-secondary-foreground sm:text-3xl">
+                    {stat.value}
+                  </span>
+                  <span className="mt-0.5 text-[10px] font-semibold uppercase tracking-wider text-muted-foreground sm:text-xs">
+                    {stat.label}
+                  </span>
+                </div>
+              ))}
             </div>
           </div>
           <div className="flex flex-row items-center gap-2 sm:gap-4 w-full">

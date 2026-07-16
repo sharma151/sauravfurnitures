@@ -12,7 +12,7 @@ const categoryImages: Record<string, string> = {
 };
 
 export default function CategoryGrid() {
-  const categories = getCategories().filter((c) => c.slug !== "new-arrival");
+  const categories = getCategories().filter((c) => c.slug !== "new-arrival" && c.slug !== "kitchen");
 
   return (
     <div className="grid gap-6 sm:grid-cols-2 xl:grid-cols-4">

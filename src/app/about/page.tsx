@@ -20,29 +20,40 @@ export default function AboutPage() {
           <div className="space-y-7">
             <SectionHeading
               eyebrow="About Saurav Furnitures"
-              title="A Luxury Furniture House Built On Craft, Warmth, And Precision."
+              title="A  Furniture Manufacturer House Built On Craft, Warmth, And Precision."
               description="Our journey started as a family workshop and evolved into a modern  furniture manufacturer trusted by homeowners, architects, and interior designers."
             />
-            <div className="grid grid-cols-2 gap-4 sm:grid-cols-4">
-              {aboutStats.map((stat) => (
-                <div
-                  key={stat.label}
-                  className="rounded-2xl border border-border bg-white/80 p-4"
-                >
-                  <p className="text-2xl font-semibold text-secondary-foreground">
-                    {stat.value}
-                  </p>
-                  <p className="text-xs uppercase tracking-[0.12em] text-muted-foreground">
-                    {stat.label}
-                  </p>
-                </div>
-              ))}
+            <div className="w-full max-w-xl rounded-2xl border border-border/80 bg-white/70 p-4 shadow-sm backdrop-blur-md">
+              <div className="grid grid-cols-3 divide-x divide-border/60 text-center">
+                {aboutStats.map((stat) => (
+                  <div
+                    key={stat.label}
+                    className="flex flex-col justify-center px-1 first:pl-0 last:pr-0"
+                  >
+                    <span className="text-xl font-bold tracking-tight text-secondary-foreground sm:text-3xl">
+                      {stat.value}
+                    </span>
+                    <span className="mt-0.5 text-[10px] font-semibold uppercase tracking-wider text-muted-foreground sm:text-xs">
+                      {stat.label}
+                    </span>
+                  </div>
+                ))}
+              </div>
             </div>
             <div className="flex flex-row items-center gap-2 sm:gap-4 w-full">
-              <PremiumButton href="/contact" size="lg" className="flex-1 whitespace-nowrap px-2 text-[11px] sm:px-9 sm:text-base">
+              <PremiumButton
+                href="/contact"
+                size="lg"
+                className="flex-1 whitespace-nowrap px-2 text-[11px] sm:px-9 sm:text-base"
+              >
                 Talk To Our Team
               </PremiumButton>
-              <PremiumButton href="/services" variant="secondary" size="lg" className="flex-1 whitespace-nowrap px-2 text-[11px] sm:px-9 sm:text-base">
+              <PremiumButton
+                href="/services"
+                variant="secondary"
+                size="lg"
+                className="flex-1 whitespace-nowrap px-2 text-[11px] sm:px-9 sm:text-base"
+              >
                 Explore Services
               </PremiumButton>
             </div>
@@ -117,7 +128,7 @@ export default function AboutPage() {
             Quality Craftsmanship
           </p>
           <h2 className="mt-4 text-3xl font-bold sm:text-4xl">
-            Custom Builds or Classic Restorations—We Do Both.
+            Custom Builds or Classic Restorations — We Do Both.
           </h2>
           <p className="mt-4 max-w-3xl text-secondary/85">
             Whether we are manufacturing a brand-new custom piece to fit your

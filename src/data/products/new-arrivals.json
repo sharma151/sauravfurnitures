@@ -2,23 +2,23 @@
   {
     "id": "kitch-002",
     "name": "Knife Hanger",
-    "slug": "Knife Hanger",
+    "slug": "knife-hanger",
     "category": "kitchen",
     "subcategory": "kitchen",
-    "price": 2500,
+    "price": 699,
     "currency": "NPR",
     "shortDescription": "Wall-mounted magnetic holder for knives.",
     "description": "Keeps knives organized and within reach. Saves counter space.",
-    "features": ["Strong Magnet", "Space Saving"],
+    "features": ["Space Saving"],
     "dimensions": { "length": "15 inches" },
-    "materials": ["Neodymium Magnets", "Plastic"],
+    "materials": ["wood"],
     "careInstructions": "Wipe dry.",
     "stock": 100,
     "rating": 4.7,
     "reviews": 50,
     "images": ["/images/kitchen/KnifeRack.avif"],
     "isNewArrival": true,
-    "deliveryTime": "1-3 days"
+    "deliveryTime": "1-2 days"
   },
   {
     "id": "kitch-003",
@@ -26,10 +26,10 @@
     "slug": "teak-wood-chopping-board",
     "category": "kitchen",
     "subcategory": "kitchen",
-    "price": 1800,
+    "price": 1100,
     "currency": "NPR",
     "shortDescription": "Premium solid teak wood chopping board for daily kitchen use.",
-    "description": "Crafted from highly durable teak wood, this chopping board is gentle on your knives and features a built-in juice groove. It is naturally resistant to moisture and bacteria.",
+    "description": "Crafted from highly durable teak wood, this chopping board is gentle on your knives. It is naturally resistant to moisture and bacteria.",
     "features": [
       "Solid Teak Wood",
       "Juice Groove",
@@ -53,7 +53,7 @@
   {
     "id": "kitch-003",
     "name": "Wooden Spices Holder",
-    "slug": "Wooden Spices Holder",
+    "slug": "wooden-spices-holder",
     "category": "kitchen",
     "subcategory": "kitchen",
     "price": 2500,
@@ -62,7 +62,7 @@
     "description": "Keeps Spices organized and within reach. Saves counter space.",
     "features": ["Strong Build", "Space Saving"],
     "dimensions": { "length": "15 inches" },
-    "materials": ["Wood", "Plastic"],
+    "materials": ["Wood"],
     "careInstructions": "Wipe dry.",
     "stock": 100,
     "rating": 4.7,
@@ -72,100 +72,97 @@
     "deliveryTime": "1-3 days"
   },
   {
-  "id": "kitch-003",
-  "name": "Wooden Kitchen Set",
-  "slug": "wooden-kitchen-set",
-  "category": "kitchen",
-  "subcategory": "kitchen-accessories",
-  "price": 2500,
-  "currency": "NPR",
-  "shortDescription": "Premium wooden kitchen set with essential cooking tools.",
-  "description": "A durable wooden kitchen set that includes a chopping board, wooden spoon, and spatula. Designed for everyday cooking, it is safe for non-stick cookware, easy to clean, and adds a natural touch to your kitchen.",
-  "features": [
-    "Includes Chopping Board",
-    "Wooden Spoon Included",
-    "Wooden Spatula Included",
-    "Food-Safe Material",
-    "Safe for Non-Stick Cookware",
-    "Durable and Long-Lasting"
-  ],
-  "dimensions": {
-    "choppingBoard": "15 x 10 inches",
-    "spoon": "12 inches",
-    "spatula": "12 inches"
+    "id": "kitch-003",
+    "name": "Wooden Kitchen Set",
+    "slug": "wooden-kitchen-set",
+    "category": "kitchen",
+    "subcategory": "kitchen-accessories",
+    "price": 3500,
+    "currency": "NPR",
+    "shortDescription": "Premium wooden kitchen set with essential cooking tools.",
+    "description": "A durable wooden kitchen set that includes a chopping board, wooden spoon, and spatula. Designed for everyday cooking, it is safe for non-stick cookware, easy to clean, and adds a natural touch to your kitchen.",
+    "features": [
+      "Includes Chopping Board",
+      "Wooden Spoon Included",
+      "Wooden Spatula Included",
+      "Food-Safe Material",
+      "Safe for Non-Stick Cookware",
+      "Durable and Long-Lasting"
+    ],
+    "dimensions": {
+      "choppingBoard": "15 x 10 inches",
+      "spoon": "12 inches",
+      "spatula": "12 inches"
+    },
+    "materials": ["Natural Wood"],
+    "careInstructions": "Hand wash with mild soap and water. Wipe dry immediately. Do not soak in water or place in the dishwasher.",
+    "stock": 100,
+    "rating": 4.8,
+    "reviews": 50,
+    "images": ["/images/kitchen/KitchenSets.avif"],
+    "isNewArrival": true,
+    "deliveryTime": "1-3 days"
   },
-  "materials": ["Natural Wood"],
-  "careInstructions": "Hand wash with mild soap and water. Wipe dry immediately. Do not soak in water or place in the dishwasher.",
-  "stock": 100,
-  "rating": 4.8,
-  "reviews": 50,
-  "images": ["/images/kitchen/KitchenSets.avif"],
-  "isNewArrival": true,
-  "deliveryTime": "1-3 days"
-},
-{
-  "id": "kitch-004",
-  "name": "Wooden Chakla Belan Set",
-  "slug": "wooden-chakla-belan-set",
-  "category": "kitchen",
-  "subcategory": "kitchen-accessories",
-  "price": 1800,
-  "currency": "NPR",
-  "shortDescription": "Premium wooden chakla belan set for smooth and easy rolling.",
-  "description": "A durable wooden chakla belan set designed for making rotis, chapatis, parathas, and other flatbreads. The set includes a sturdy wooden rolling board (chakla) and a comfortable rolling pin (belan), providing a smooth rolling experience for everyday cooking.",
-  "features": [
-    "Includes Wooden Chakla",
-    "Includes Wooden Belan",
-    "Smooth Surface for Easy Rolling",
-    "Strong and Durable Build",
-    "Easy to Clean",
-    "Ideal for Everyday Use"
-  ],
-  "dimensions": {
-    "chakla": "10 inches diameter",
-    "belan": "16 inches"
+  {
+    "id": "kitch-004",
+    "name": "Wooden Chakla Belan Set",
+    "slug": "wooden-chakla-belan-set",
+    "category": "kitchen",
+    "subcategory": "kitchen-accessories",
+    "price": 1400,
+    "currency": "NPR",
+    "shortDescription": "Premium wooden chakla belan set for smooth and easy rolling.",
+    "description": "A durable wooden chakla belan set designed for making rotis, chapatis, parathas, and other flatbreads. The set includes a sturdy wooden rolling board (chakla) and a comfortable rolling pin (belan), providing a smooth rolling experience for everyday cooking.",
+    "features": [
+      "Includes Wooden Chakla",
+      "Includes Wooden Belan",
+      "Smooth Surface for Easy Rolling",
+      "Strong and Durable Build",
+      "Easy to Clean",
+      "Ideal for Everyday Use"
+    ],
+    "dimensions": {
+      "chakla": "10 inches diameter",
+      "belan": "16 inches"
+    },
+    "materials": ["Natural Wood"],
+    "careInstructions": "Clean with a damp cloth and wipe dry immediately. Do not soak in water or place in the dishwasher.",
+    "stock": 100,
+    "rating": 4.8,
+    "reviews": 42,
+    "images": ["/images/kitchen/chakla_belan.avif"],
+    "isNewArrival": true,
+    "deliveryTime": "1-3 days"
   },
-  "materials": [
-    "Natural Wood"],
-  "careInstructions": "Clean with a damp cloth and wipe dry immediately. Do not soak in water or place in the dishwasher.",
-  "stock": 100,
-  "rating": 4.8,
-  "reviews": 42,
-  "images": ["/images/kitchen/chakla_belan.avif"],
-  "isNewArrival": true,
-  "deliveryTime": "1-3 days"
-},
-{
-  "id": "kitch-005",
-  "name": "Wooden Bowl",
-  "slug": "wooden-bowl",
-  "category": "kitchen",
-  "subcategory": "serveware",
-  "price": 1200,
-  "currency": "NPR",
-  "shortDescription": "Elegant handcrafted wooden bowl for serving and dining.",
-  "description": "A premium wooden bowl crafted from natural wood, perfect for serving salads, fruits, snacks, dry fruits, or desserts. Its smooth finish and durable construction make it ideal for both everyday use and special occasions.",
-  "features": [
-    "Handcrafted Design",
-    "Natural Wood Finish",
-    "Lightweight and Durable",
-    "Food-Safe Material",
-    "Easy to Clean",
-    "Perfect for Serving Snacks, Fruits, and Salads"
-  ],
-  "dimensions": {
-    "diameter": "8 inches",
-    "height": "3 inches"
-  },
-  "materials": [
-    "Natural Wood"
-  ],
-  "careInstructions": "Hand wash with mild soap and wipe dry immediately. Do not soak in water or place in the dishwasher.",
-  "stock": 100,
-  "rating": 4.8,
-  "reviews": 38,
-  "images": ["/images/kitchen/Bowl_1.avif","/images/kitchen/Bowl_2.avif"],
-  "isNewArrival": true,
-  "deliveryTime": "1-3 days"
-}
+  {
+    "id": "kitch-005",
+    "name": "Wooden Bowl",
+    "slug": "wooden-bowl",
+    "category": "kitchen",
+    "subcategory": "serveware",
+    "price": 1200,
+    "currency": "NPR",
+    "shortDescription": "Elegant handcrafted wooden bowl for serving and dining.",
+    "description": "A premium wooden bowl crafted from natural wood, perfect for serving salads, fruits, snacks, dry fruits, or desserts. Its smooth finish and durable construction make it ideal for both everyday use and special occasions.",
+    "features": [
+      "Handcrafted Design",
+      "Natural Wood Finish",
+      "Lightweight and Durable",
+      "Food-Safe Material",
+      "Easy to Clean",
+      "Perfect for Serving Snacks, Fruits, and Salads"
+    ],
+    "dimensions": {
+      "diameter": "8 inches",
+      "height": "3 inches"
+    },
+    "materials": ["Natural Wood"],
+    "careInstructions": "Hand wash with mild soap and wipe dry immediately. Do not soak in water or place in the dishwasher.",
+    "stock": 100,
+    "rating": 4.8,
+    "reviews": 38,
+    "images": ["/images/kitchen/Bowl_1.avif", "/images/kitchen/Bowl_2.avif"],
+    "isNewArrival": true,
+    "deliveryTime": "1-3 days"
+  }
 ]
