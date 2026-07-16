@@ -1,9 +1,8 @@
 import { notFound } from "next/navigation";
 import { type Metadata } from "next";
 import Breadcrumb, { type BreadcrumbItem } from "@/components/Breadcrumb";
-import ProductCard from "@/components/ProductCard";
-import ProductModal from "@/components/ProductModal";
 import {
+
   getProductsByCategory,
   getCategoryBySlug,
   getCategories,
