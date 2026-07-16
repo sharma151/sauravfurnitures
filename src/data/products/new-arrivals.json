@@ -1,29 +1,8 @@
 [
   {
-    "id": "kitch-001",
-    "name": "Pull-out Spice Rack",
-    "slug": "pull-out-spice-rack",
-    "category": "kitchen",
-    "subcategory": "kitech-accessory",
-    "price": 5500,
-    "currency": "NPR",
-    "shortDescription": "Stainless steel 2-tier pull-out spice rack.",
-    "description": "Maximize your kitchen cabinet efficiency.",
-    "features": ["SS-304 Grade", "Smooth Sliding"],
-    "dimensions": { "width": "6 inches", "depth": "18 inches" },
-    "materials": ["Stainless Steel"],
-    "careInstructions": "Wipe with damp cloth.",
-    "stock": 60,
-    "rating": 4.9,
-    "reviews": 33,
-    "images": ["/images/products/spice-rack.jpg"],
-    "isNewArrival": true,
-    "deliveryTime": "2-4 days"
-  },
-  {
     "id": "kitch-002",
-    "name": "Magnetic Knife Strip",
-    "slug": "magnetic-knife-strip",
+    "name": "Knife Hanger",
+    "slug": "Knife Hanger",
     "category": "kitchen",
     "subcategory": "kitchen",
     "price": 2500,
@@ -37,7 +16,7 @@
     "stock": 100,
     "rating": 4.7,
     "reviews": 50,
-    "images": ["/images/products/knife-strip.jpg"],
+    "images": ["/images/kitchen/KnifeRack.avif"],
     "isNewArrival": true,
     "deliveryTime": "1-3 days"
   },
@@ -67,8 +46,126 @@
     "stock": 45,
     "rating": 4.8,
     "reviews": 85,
-    "images": ["/images/products/chopping-board.jpg"],
+    "images": ["/images/kitchen/TeakWoodChoppingBoard.avif"],
     "isNewArrival": true,
     "deliveryTime": "1-3 days"
-  }
+  },
+  {
+    "id": "kitch-003",
+    "name": "Wooden Spices Holder",
+    "slug": "Wooden Spices Holder",
+    "category": "kitchen",
+    "subcategory": "kitchen",
+    "price": 2500,
+    "currency": "NPR",
+    "shortDescription": "Wooden Spices Holder.",
+    "description": "Keeps Spices organized and within reach. Saves counter space.",
+    "features": ["Strong Build", "Space Saving"],
+    "dimensions": { "length": "15 inches" },
+    "materials": ["Wood", "Plastic"],
+    "careInstructions": "Wipe dry.",
+    "stock": 100,
+    "rating": 4.7,
+    "reviews": 50,
+    "images": ["/images/kitchen/WoodenSpicesHolder.avif"],
+    "isNewArrival": true,
+    "deliveryTime": "1-3 days"
+  },
+  {
+  "id": "kitch-003",
+  "name": "Wooden Kitchen Set",
+  "slug": "wooden-kitchen-set",
+  "category": "kitchen",
+  "subcategory": "kitchen-accessories",
+  "price": 2500,
+  "currency": "NPR",
+  "shortDescription": "Premium wooden kitchen set with essential cooking tools.",
+  "description": "A durable wooden kitchen set that includes a chopping board, wooden spoon, and spatula. Designed for everyday cooking, it is safe for non-stick cookware, easy to clean, and adds a natural touch to your kitchen.",
+  "features": [
+    "Includes Chopping Board",
+    "Wooden Spoon Included",
+    "Wooden Spatula Included",
+    "Food-Safe Material",
+    "Safe for Non-Stick Cookware",
+    "Durable and Long-Lasting"
+  ],
+  "dimensions": {
+    "choppingBoard": "15 x 10 inches",
+    "spoon": "12 inches",
+    "spatula": "12 inches"
+  },
+  "materials": ["Natural Wood"],
+  "careInstructions": "Hand wash with mild soap and water. Wipe dry immediately. Do not soak in water or place in the dishwasher.",
+  "stock": 100,
+  "rating": 4.8,
+  "reviews": 50,
+  "images": ["/images/kitchen/KitchenSets.avif"],
+  "isNewArrival": true,
+  "deliveryTime": "1-3 days"
+},
+{
+  "id": "kitch-004",
+  "name": "Wooden Chakla Belan Set",
+  "slug": "wooden-chakla-belan-set",
+  "category": "kitchen",
+  "subcategory": "kitchen-accessories",
+  "price": 1800,
+  "currency": "NPR",
+  "shortDescription": "Premium wooden chakla belan set for smooth and easy rolling.",
+  "description": "A durable wooden chakla belan set designed for making rotis, chapatis, parathas, and other flatbreads. The set includes a sturdy wooden rolling board (chakla) and a comfortable rolling pin (belan), providing a smooth rolling experience for everyday cooking.",
+  "features": [
+    "Includes Wooden Chakla",
+    "Includes Wooden Belan",
+    "Smooth Surface for Easy Rolling",
+    "Strong and Durable Build",
+    "Easy to Clean",
+    "Ideal for Everyday Use"
+  ],
+  "dimensions": {
+    "chakla": "10 inches diameter",
+    "belan": "16 inches"
+  },
+  "materials": [
+    "Natural Wood"],
+  "careInstructions": "Clean with a damp cloth and wipe dry immediately. Do not soak in water or place in the dishwasher.",
+  "stock": 100,
+  "rating": 4.8,
+  "reviews": 42,
+  "images": ["/images/kitchen/chakla_belan.avif"],
+  "isNewArrival": true,
+  "deliveryTime": "1-3 days"
+},
+{
+  "id": "kitch-005",
+  "name": "Wooden Bowl",
+  "slug": "wooden-bowl",
+  "category": "kitchen",
+  "subcategory": "serveware",
+  "price": 1200,
+  "currency": "NPR",
+  "shortDescription": "Elegant handcrafted wooden bowl for serving and dining.",
+  "description": "A premium wooden bowl crafted from natural wood, perfect for serving salads, fruits, snacks, dry fruits, or desserts. Its smooth finish and durable construction make it ideal for both everyday use and special occasions.",
+  "features": [
+    "Handcrafted Design",
+    "Natural Wood Finish",
+    "Lightweight and Durable",
+    "Food-Safe Material",
+    "Easy to Clean",
+    "Perfect for Serving Snacks, Fruits, and Salads"
+  ],
+  "dimensions": {
+    "diameter": "8 inches",
+    "height": "3 inches"
+  },
+  "materials": [
+    "Natural Wood"
+  ],
+  "careInstructions": "Hand wash with mild soap and wipe dry immediately. Do not soak in water or place in the dishwasher.",
+  "stock": 100,
+  "rating": 4.8,
+  "reviews": 38,
+  "images": ["/images/kitchen/Bowl_1.avif","/images/kitchen/Bowl_2.avif"],
+  "isNewArrival": true,
+  "deliveryTime": "1-3 days"
+}
 ]
