@@ -1,8 +1,8 @@
 [
   {
     "id": "sofa-002",
-    "name": "Pokhara-L-Shaped Sectional Sofa",
-    "slug": "pokhara-L-shaped-sectional-sofa",
+    "name": "L-Shaped Sectional Sofa",
+    "slug": "L-shaped-sectional-sofa",
     "category": "living-room",
     "subcategory": "sofa-set",
     "price": 95000,
@@ -16,8 +16,8 @@
     "stock": 8,
     "rating": 4.8,
     "reviews": 31,
-    "images": ["/images/products/l-sofa.jpg"],
-    "isNewArrival": true,
+    "images": ["/images/livingroom/l-sofa.avif"],
+    "isNewArrival": false,
     "deliveryTime": "10-12 days"
   },
   {
@@ -37,7 +37,7 @@
     "stock": 5,
     "rating": 4.5,
     "reviews": 18,
-    "images": ["/images/products/classic-sofa.jpg"],
+    "images": ["/images/livingroom/3-2-1ClassicSofaSet.avif"],
     "isNewArrival": false,
     "deliveryTime": "7-10 days"
   },
@@ -58,7 +58,7 @@
     "stock": 15,
     "rating": 4.9,
     "reviews": 14,
-    "images": ["/images/products/coffee-table.jpg"],
+    "images": ["/images/livingroom/coffee-table.avif"],
     "isNewArrival": false,
     "deliveryTime": "3-5 days"
   },
@@ -79,14 +79,14 @@
     "stock": 25,
     "rating": 4.6,
     "reviews": 10,
-    "images": ["/images/products/nesting-table.jpg"],
-    "isNewArrival": true,
+    "images": ["/images/livingroom/nesting-table.avif"],
+    "isNewArrival": false,
     "deliveryTime": "2-4 days"
   },
   {
     "id": "tv-002",
-    "name": "Annapurna Floating TV Unit",
-    "slug": "annapurna-floating-tv-unit",
+    "name": " Floating TV Unit",
+    "slug": "floating-tv-unit",
     "category": "living-room",
     "subcategory": "tv-unit",
     "price": 28000,
@@ -100,8 +100,8 @@
     "stock": 15,
     "rating": 4.6,
     "reviews": 56,
-    "images": ["/images/products/tv-unit.jpg"],
-    "isNewArrival": true,
+    "images": ["/images/livingroom/tv-unit.avif"],
+    "isNewArrival": false,
     "deliveryTime": "4-6 days"
   },
   {
@@ -121,7 +121,7 @@
     "stock": 10,
     "rating": 4.4,
     "reviews": 21,
-    "images": ["/images/products/tv-console.jpg"],
+    "images": ["/images/livingroom/FloorStandingMediaConsole.avif"],
     "isNewArrival": false,
     "deliveryTime": "5-7 days"
   },
@@ -142,8 +142,8 @@
     "stock": 18,
     "rating": 4.8,
     "reviews": 45,
-    "images": ["/images/livingroom/LibraryTieredBookshelf.jpeg"],
-    "isNewArrival": true,
+    "images": ["/images/livingroom/LibraryTieredBookshelf.avif"],
+    "isNewArrival": false,
     "deliveryTime": "3-5 days"
   },
   {
@@ -163,7 +163,7 @@
     "stock": 12,
     "rating": 4.5,
     "reviews": 14,
-    "images": ["/images/livingroom/CompactCornerBookshelf_1.avif","/images/livingroom/CompactCornerBookshelf_2.avif"],
+    "images": ["/images/livingroom/CompactCornerBookshelf_2.avif"],
     "isNewArrival": false,
     "deliveryTime": "4-6 days"
   },
@@ -184,7 +184,7 @@
     "stock": 20,
     "rating": 4.4,
     "reviews": 15,
-    "images": ["/images/livingroom/MarbleGlassCenterTable_1.avif","/images/livingroom/MarbleGlassCenterTable_2.avif"],
+    "images": ["/images/livingroom/MarbledGlassCenterTable_1.avif"],
     "isNewArrival": false,
     "deliveryTime": "3-5 days"
   },
@@ -205,8 +205,8 @@
     "stock": 9,
     "rating": 4.7,
     "reviews": 28,
-    "images": ["/images/livingroom/SolidWoodRectangularCenterTable_1.webp","/images/livingroom/SolidWoodRectangularCentreTable_2.avif"],
-    "isNewArrival": true,
+    "images": ["/images/livingroom/SolidWoodRectangularCentreTable_1.avif","/images/livingroom/SolidWoodRectangularCenterTable_2.avif"],
+    "isNewArrival": false,
     "deliveryTime": "5-7 days"
   }
 ]

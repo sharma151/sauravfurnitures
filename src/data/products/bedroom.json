@@ -7,13 +7,12 @@
     "subcategory": "bedroom-set",
     "price": 245000,
     "currency": "NPR",
-    "shortDescription": "Complete luxury set including King Bed, 2 Side Tables, and a 4-Door Wardrobe.",
+    "shortDescription": "Complete luxury King Bed",
     "description": "Crafted from seasoned Sissau wood with traditional hand-carvings by local artisans. A perfect blend of culture and comfort.",
     "features": [
       "Solid Sissau Wood",
       "Hand-carved Headboard",
-      "High Gloss Finish",
-      "10 Year Warranty"
+      "High Gloss Finish"
     ],
     "dimensions": { "bed": "72x78 inches", "wardrobe": "72x84 inches" },
     "materials": ["Sissau Wood", "Premium Polish"],
@@ -21,8 +20,8 @@
     "stock": 5,
     "rating": 4.9,
     "reviews": 18,
-    "images": ["/images/products/heritage-set.jpg"],
-    "isNewArrival": true,
+    "images": ["/images/bedroom/RoyalNepaliHeritageBed.avif"],
+    "isNewArrival": false,
     "deliveryTime": "15-20 days"
   },
   {
@@ -47,8 +46,8 @@
     "stock": 8,
     "rating": 4.7,
     "reviews": 10,
-    "images": ["/images/products/modern-set.jpg"],
-    "isNewArrival": true,
+    "images": ["/images/bedroom/modern-set.avif"],
+    "isNewArrival": false,
     "deliveryTime": "10-14 days"
   },
   {
@@ -72,7 +71,7 @@
     "stock": 10,
     "rating": 4.5,
     "reviews": 12,
-    "images": ["/images/products/low-bed.jpg"],
+    "images": ["/images/bedroom/low-bed.avif"],
     "isNewArrival": false,
     "deliveryTime": "5-7 days"
   },
@@ -97,7 +96,7 @@
     "stock": 4,
     "rating": 4.8,
     "reviews": 22,
-    "images": ["/images/products/sal-bed.jpg"],
+    "images": ["/images/bedroom/ClassicSalWoodQueenBed.avif"],
     "isNewArrival": false,
     "deliveryTime": "7-10 days"
   },
@@ -122,7 +121,7 @@
     "stock": 6,
     "rating": 4.6,
     "reviews": 15,
-    "images": ["/images/products/wardrobe-3d.jpg"],
+    "images": ["/images/bedroom/3DoorClassicAlmirah.avif"],
     "isNewArrival": false,
     "deliveryTime": "7-12 days"
   },
@@ -147,8 +146,8 @@
     "stock": 3,
     "rating": 4.9,
     "reviews": 8,
-    "images": ["/images/products/sliding-wardrobe.jpg"],
-    "isNewArrival": true,
+    "images": ["/images/bedroom/sliding-wardrobe.avif"],
+    "isNewArrival": false,
     "deliveryTime": "10-15 days"
   },
   {
@@ -176,8 +175,8 @@
     "stock": 12,
     "rating": 4.7,
     "reviews": 24,
-    "images": ["/images/products/dressing-table.jpg"],
-    "isNewArrival": true,
+    "images": ["/images/bedroom/dressing-table.avif"],
+    "isNewArrival": false,
     "deliveryTime": "5-7 days"
   },
   {
@@ -201,7 +200,7 @@
     "stock": 20,
     "rating": 4.4,
     "reviews": 32,
-    "images": ["/images/products/vanity-wall.jpg"],
+    "images": ["/images/bedroom/vanity-wall.avif"],
     "isNewArrival": false,
     "deliveryTime": "3-5 days"
   },
@@ -226,8 +225,8 @@
     "stock": 25,
     "rating": 4.5,
     "reviews": 42,
-    "images": ["/images/products/night-table.jpg"],
-    "isNewArrival": true,
+    "images": ["/images/bedroom/night-table.avif"],
+    "isNewArrival": false,
     "deliveryTime": "2-4 days"
   },
   {
@@ -251,14 +250,14 @@
     "stock": 15,
     "rating": 4.8,
     "reviews": 12,
-    "images": ["/images/products/sissau-side.jpg"],
+    "images": ["/images/bedroom/ClassicNightStand.avif"],
     "isNewArrival": false,
     "deliveryTime": "3-5 days"
   },
   {
     "id": "kids-002",
-    "name": "Toddler Nap Bed",
-    "slug": "toddler-nap-bed",
+    "name": "Toddler's Bed",
+    "slug": "toddler's-bed",
     "category": "bedroom",
     "subcategory": "kids",
     "price": 15000,
@@ -276,14 +275,14 @@
     "stock": 12,
     "rating": 4.6,
     "reviews": 25,
-    "images": ["/images/products/kids-bed.jpg"],
+    "images": ["/images/bedroom/kids-bed.avif"],
     "isNewArrival": false,
     "deliveryTime": "5-7 days"
   },
   {
     "id": "kids-003",
-    "name": "Study Corner Kids Desk",
-    "slug": "study-corner-kids-desk",
+    "name": "Corner Kids Desk",
+    "slug": "Corner-kids-desk",
     "category": "bedroom",
     "subcategory": "kids",
     "price": 18500,
@@ -301,8 +300,8 @@
     "stock": 8,
     "rating": 4.7,
     "reviews": 14,
-    "images": ["/images/products/kids-desk.jpg"],
-    "isNewArrival": true,
+    "images": ["/images/bedroom/KidsStudyDesk.avif"],
+    "isNewArrival": false,
     "deliveryTime": "4-6 days"
   }
 ]
