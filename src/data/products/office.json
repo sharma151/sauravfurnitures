@@ -16,7 +16,7 @@
     "stock": 5,
     "rating": 4.9,
     "reviews": 8,
-    "images": ["/images/office/ExecutiveManagementDesk.webp"],
+    "images": ["/images/office/ExecutiveManagementDesk.avif"],
     "isNewArrival": false,
     "deliveryTime": "10-15 days"
   },
@@ -37,7 +37,7 @@
     "stock": 25,
     "rating": 4.7,
     "reviews": 62,
-    "images": ["/images/office/HomeMetalOfficeDesk.webp"],
+    "images": ["/images/office/HomeMetalOfficeDesk.avif"],
     "isNewArrival": false,
     "deliveryTime": "3-5 days"
   },
@@ -58,7 +58,7 @@
     "stock": 25,
     "rating": 4.8,
     "reviews": 45,
-    "images": ["/images/office/MeshChair.webp"],
+    "images": ["/images/office/MeshChair.avif"],
     "isNewArrival": false,
     "deliveryTime": "2-3 days"
   },
@@ -79,10 +79,11 @@
     "stock": 10,
     "rating": 4.9,
     "reviews": 21,
-    "images": ["/images/office/BlackBossChair.webp"],
+    "images": ["/images/office/BlackBossChair.avif"],
     "isNewArrival": false,
     "deliveryTime": "3-5 days"
   },
+  
   {
     "id": "offdesk-001",
     "name": "Study Desk",
@@ -121,7 +122,7 @@
     "stock": 12,
     "rating": 4.7,
     "reviews": 24,
-    "images": ["/images/office/TraditionalWoodenDesk.webp"],
+    "images": ["/images/office/TraditionalWoodenDesk.avif"],
     "isNewArrival": false,
     "deliveryTime": "5-7 days"
   },
@@ -142,8 +143,8 @@
     "stock": 15,
     "rating": 4.5,
     "reviews": 8,
-    "images": ["/images/office/Vertical3-DrawerFilingCabinet.jpeg"],
-    "isNewArrival": false,
+    "images": ["/images/office/Vertical3-DrawerFilingCabinet.avif"],
+    "isNewArrival": true,
     "deliveryTime": "5-7 days"
   },
   {
@@ -163,7 +164,7 @@
     "stock": 7,
     "rating": 4.6,
     "reviews": 11,
-    "images": ["/images/office/OfficeStorageCupboard_1.png","/images/office/OfficeStorageCupboard_2.png"],
+    "images": ["/images/office/OfficeStorageCupboard_1.avif","/images/office/OfficeStorageCupboard_2.avif"],
     "isNewArrival": false,
     "deliveryTime": "7-10 days"
   },
