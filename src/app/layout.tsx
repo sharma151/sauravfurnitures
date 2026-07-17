@@ -54,6 +54,9 @@ export const metadata: Metadata = {
     title: "Saurav Furnitures",
     description: "Saurav Furniture Udhyog is a top custom furniture manufacturer & sofa maker in Kathmandu and Lalitpur, Nepal.",
   },
+  verification: {
+    google: "cvsPVvIf6eatEHMazaInmUkr2RW7K99S2RXyGf54bhs",
+  },
 };
 
 export default function RootLayout({
