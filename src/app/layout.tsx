@@ -20,6 +20,8 @@ export const metadata: Metadata = {
     "Saurav Furniture",
     "Saurav Furnitures",
     "Saurav Furniture Udhyog",
+    "Saurav Furniture Udhyog pvt ltd",
+    "Saurav Furniture Udyog Pvt. Ltd.",
     "custom furniture",
     "furniture manufacturers",
     "furniture maker",
