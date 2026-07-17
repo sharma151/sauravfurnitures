@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
+import ImageWithSkeleton from "@/components/ImageWithSkeleton";
 
 interface ProductGalleryProps {
   images: string[];
@@ -14,8 +14,8 @@ export default function ProductGallery({ images, productName }: ProductGalleryPr
   return (
     <div className="space-y-4 lg:sticky lg:top-24">
       {/* Main Image */}
-      <div className="relative aspect-square overflow-hidden rounded-lg bg-section">
-        <Image
+      <div className="relative aspect-square overflow-hidden rounded-lg bg-section luxury-shimmer">
+        <ImageWithSkeleton
           src={images[activeImageIndex]}
           alt={productName}
           fill
@@ -33,11 +33,11 @@ export default function ProductGallery({ images, productName }: ProductGalleryPr
               key={i}
               onClick={() => setActiveImageIndex(i)}
               aria-label={`View ${productName} image ${i + 1}`}
-              className={`relative h-24 w-24 shrink-0 overflow-hidden rounded-lg border-2 transition-colors ${
+              className={`relative h-24 w-24 shrink-0 overflow-hidden rounded-lg border-2 transition-colors luxury-shimmer ${
                 activeImageIndex === i ? "border-accent" : "border-transparent"
               }`}
             >
-              <Image 
+              <ImageWithSkeleton 
                 src={img} 
                 alt={`${productName} thumbnail ${i + 1}`} 
                 fill 
