@@ -11,14 +11,24 @@ import Footer from "@/components/Footer";
 export const metadata: Metadata = {
   metadataBase: new URL("https://sauravfurniture.com"),
   title: {
-    default: "Saurav Furnitures | Custom Furniture & Restoration",
+    default: "Saurav Furnitures | Custom Furniture Manufacturer in Kathmandu & Lalitpur, Nepal",
     template: "%s | Saurav Furnitures",
   },
   description:
-    "Custom furniture manufacturers & restoration experts with 20+ years of expertise. Specializing in bespoke woodwork, sofa repair, and commercial orders.",
+    "Saurav Furniture Udhyog is a top custom furniture manufacturer & sofa maker in Kathmandu and Lalitpur, Nepal. With 20+ years of expertise, we specialize in bespoke woodwork, sofa repair, and commercial orders.",
   keywords: [
+    "Saurav Furniture",
+    "Saurav Furnitures",
+    "Saurav Furniture Udhyog",
     "custom furniture",
     "furniture manufacturers",
+    "furniture maker",
+    "custom manufacturer",
+    "sofa maker",
+    "sofa maker Kathmandu",
+    "furniture maker Lalitpur",
+    "Kathmandu Nepal",
+    "Lalitpur Nepal",
     "furniture restoration",
     "interior consultation",
     "commercial orders",
@@ -27,11 +37,13 @@ export const metadata: Metadata = {
     "dining",
     "office furniture",
     "custom wood works",
+    "furniture showroom in Kathmandu",
+    "custom sofa maker",
   ],
   authors: [{ name: "Saurav Furnitures" }],
   openGraph: {
-    title: "Saurav Furnitures | Custom Furniture & Restoration",
-    description: "Custom furniture manufacturers & restoration experts with 20+ years of expertise. Discover our bespoke collections.",
+    title: "Saurav Furnitures | Custom Furniture Manufacturer in Kathmandu & Lalitpur",
+    description: "Saurav Furniture Udhyog is a top custom furniture manufacturer & sofa maker in Kathmandu and Lalitpur, Nepal. Discover our bespoke collections.",
     url: "https://sauravfurniture.com",
     siteName: "Saurav Furnitures",
     type: "website",
@@ -40,7 +52,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Saurav Furnitures",
-    description: "Custom furniture manufacturers & restoration experts with 20+ years of expertise.",
+    description: "Saurav Furniture Udhyog is a top custom furniture manufacturer & sofa maker in Kathmandu and Lalitpur, Nepal.",
   },
 };
 
