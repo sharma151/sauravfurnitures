@@ -1,6 +1,6 @@
-import Image from "next/image";
 import Link from "next/link";
 import type { Product } from "@/types";
+import ImageWithSkeleton from "@/components/ImageWithSkeleton";
 
 interface ProductCardProps {
   product: Product;
@@ -15,8 +15,8 @@ export default function ProductCard({ product }: ProductCardProps) {
       aria-label={`View ${product.name}`}
       className="group cursor-pointer overflow-hidden rounded-3xl border border-border bg-card shadow-[0_26px_45px_-40px_rgba(59,36,26,0.9)] transition-all duration-500 hover:-translate-y-1.5 hover:border-accent/60 hover:shadow-[0_34px_70px_-42px_rgba(59,36,26,0.9)] focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 block"
     >
-      <div className="relative aspect-4/3 overflow-hidden bg-secondary">
-        <Image
+      <div className="relative aspect-4/3 overflow-hidden bg-secondary luxury-shimmer">
+        <ImageWithSkeleton
           src={imageSrc}
           alt={product.name}
           fill
