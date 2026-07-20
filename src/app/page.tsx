@@ -96,6 +96,22 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* <section className="mx-auto max-w-7xl px-4 pb-16 sm:px-6 lg:px-8 lg:pb-20">
+        <div className="rounded-2xl border border-border/80 bg-white/60 p-8 shadow-sm backdrop-blur-sm sm:p-12">
+          <h2 className="mb-4 text-2xl font-bold text-secondary-foreground sm:text-3xl">
+            Saurav Furniture Udyog: Custom Furniture Manufacturer in Kathmandu & Lalitpur
+          </h2>
+          <div className="space-y-5 text-base leading-relaxed text-muted-foreground sm:text-lg">
+            <p>
+              Welcome to <strong>Saurav Furniture Udyog Pvt. Ltd.</strong>, the premier custom furniture manufacturer and expert sofa maker in Nepal. Operating from our showroom in Kathmandu and manufacturing hub in Lalitpur, we specialize in crafting bespoke residential and commercial furniture tailored precisely to your lifestyle and aesthetic vision. Whether you are searching for intricate custom wood works, modern bedroom sets, luxurious living room pieces, or elegant dining arrangements, our master craftsmen bring over twenty years of dedicated expertise to every single project.
+            </p>
+            <p>
+              At Saurav Furnitures, we firmly believe that true luxury lies in the details. As a trusted furniture maker in Lalitpur and Kathmandu, Nepal, we go beyond manufacturing to offer professional furniture restoration and comprehensive interior consultation services. From handcrafting a single custom sofa to fulfilling large-scale commercial orders, our unwavering commitment to quality ensures that every piece is built to endure, providing unparalleled comfort, durability, and style to your living spaces. Explore our exclusive collections today and discover why we remain the top choice for discerning homeowners and top interior designers across the region.
+            </p>
+          </div>
+        </div>
+      </section> */}
+
       <CTABanner />
     </>
   );
