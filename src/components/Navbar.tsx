@@ -94,7 +94,7 @@ export default function Navbar() {
           <Link href="/" className="flex items-center">
             <div className="relative h-14 w-44 shrink-0 overflow-hidden">
               <Image
-                src="/images/logo.jpg"
+                src="/images/logo.avif"
                 alt="Saurav Furnitures logo"
                 fill
                 className="object-cover"
@@ -197,17 +197,23 @@ function MobileNav({ categories }: { categories: Category[] }) {
           </div>
 
           <div className="flex-1 space-y-8 overflow-y-auto p-6">
-            <form action="/search" className="relative flex items-center" onSubmit={() => setOpen(false)}>
+            <form
+              action="/search"
+              className="relative flex items-center"
+              onSubmit={() => setOpen(false)}
+            >
               <Search className="absolute left-3 h-4 w-4 text-muted-foreground" />
-              <React.Suspense fallback={
-                <input
-                  type="search"
-                  name="q"
-                  placeholder="Search category, product..."
-                  className="h-9 w-full rounded-full border border-secondary-foreground/20 bg-secondary/50 pl-9 pr-10 text-sm outline-none transition-colors focus:border-accent focus:bg-background [&::-webkit-search-cancel-button]:appearance-none"
-                  required
-                />
-              }>
+              <React.Suspense
+                fallback={
+                  <input
+                    type="search"
+                    name="q"
+                    placeholder="Search category, product..."
+                    className="h-9 w-full rounded-full border border-secondary-foreground/20 bg-secondary/50 pl-9 pr-10 text-sm outline-none transition-colors focus:border-accent focus:bg-background [&::-webkit-search-cancel-button]:appearance-none"
+                    required
+                  />
+                }
+              >
                 <SearchInput className="w-full" />
               </React.Suspense>
             </form>
@@ -294,7 +300,7 @@ function SearchInput({ className }: { className?: string }) {
         placeholder="Search category, product..."
         className={cn(
           "h-9 rounded-full border border-secondary-foreground/20 bg-secondary/50 pl-9 pr-10 text-sm outline-none transition-colors focus:border-accent focus:bg-background [&::-webkit-search-cancel-button]:appearance-none",
-          className || "w-64 xl:w-80"
+          className || "w-64 xl:w-80",
         )}
         required
       />

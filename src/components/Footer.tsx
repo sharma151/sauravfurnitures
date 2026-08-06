@@ -15,22 +15,16 @@ export default function Footer() {
           <div className="lg:col-span-2">
             <Link href="/" className="inline-block">
               <Image
-                src="/images/logo.jpg"
+                src="/images/logo.avif"
                 alt="Saurav Furnitures logo"
                 width={220}
                 height={90}
                 className="w-32 h-auto sm:w-40 md:w-48 lg:w-52 object-contain"
               />
             </Link>
-            {/* <Link
-              href="/"
-              className="font-serif text-2xl font-semibold tracking-tight text-secondary-foreground"
-            >
-              Saurav Furnitures
-            </Link> */}
             <p className="mt-4 max-w-sm text-sm leading-relaxed text-muted-foreground">
-              A modern furniture manufacturer house blending artisanal craftsmanship,
-              timeless silhouettes, and warm contemporary living.
+              A modern furniture manufacturer house blending artisanal
+              craftsmanship, timeless silhouettes, and warm contemporary living.
             </p>
             <div className="mt-6 flex gap-3">
               <a

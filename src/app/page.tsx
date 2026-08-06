@@ -10,10 +10,10 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Saurav Furnitures | Custom Furniture & Restoration",
-  description: "Discover bespoke custom furniture, expert restoration, and interior design solutions. Handcrafted by experienced manufacturers.",
+  description: "A digital showroom and manufacturing platform featuring a dynamic product catalog, custom quotation builder, and interactive consultation scheduling. Discover bespoke custom furniture, expert restoration, and interior design solutions. Handcrafted by experienced manufacturers.",
   openGraph: {
     title: "Saurav Furnitures | Custom Furniture & Restoration",
-    description: "Discover bespoke custom furniture, expert restoration, and interior design solutions.",
+    description: "A digital showroom and manufacturing platform featuring a dynamic product catalog, custom quotation builder, and interactive consultation scheduling. Discover bespoke custom furniture, expert restoration, and interior design solutions. Handcrafted by experienced manufacturers.",
     url: "https://sauravfurniture.com",
   },
 };
