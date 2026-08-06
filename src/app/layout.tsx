@@ -2,17 +2,21 @@ import type { Metadata } from "next";
 import { Inter, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
-import { Analytics } from "@vercel/analytics/next"
-import { SpeedInsights } from "@vercel/speed-insights/next"
+import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
-const playfair = Playfair_Display({ subsets: ["latin"], variable: "--font-playfair" });
+const playfair = Playfair_Display({
+  subsets: ["latin"],
+  variable: "--font-playfair",
+});
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://sauravfurniture.com"),
   title: {
-    default: "Saurav Furnitures | Custom Furniture Manufacturer in Kathmandu & Lalitpur, Nepal",
+    default:
+      "Saurav Furnitures | Custom Furniture Manufacturer in Kathmandu & Lalitpur, Nepal",
     template: "%s | Saurav Furnitures",
   },
   description:
@@ -45,8 +49,10 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Saurav Furnitures" }],
   openGraph: {
-    title: "Saurav Furnitures | Custom Furniture Manufacturer in Kathmandu & Lalitpur",
-    description: "Saurav Furniture Udhyog is a top custom furniture manufacturer & sofa maker in Kathmandu and Lalitpur, Nepal. Discover our bespoke collections.",
+    title:
+      "Saurav Furnitures | Custom Furniture Manufacturer in Kathmandu & Lalitpur",
+    description:
+      "Saurav Furniture Udhyog is a top custom furniture manufacturer & sofa maker in Kathmandu and Lalitpur, Nepal. Discover our bespoke collections.",
     url: "https://sauravfurniture.com",
     siteName: "Saurav Furnitures",
     type: "website",
@@ -55,7 +61,8 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Saurav Furnitures",
-    description: "Saurav Furniture Udhyog is a top custom furniture manufacturer & sofa maker in Kathmandu and Lalitpur, Nepal.",
+    description:
+      "Saurav Furniture Udhyog is a top custom furniture manufacturer & sofa maker in Kathmandu and Lalitpur, Nepal.",
   },
   verification: {
     google: "cvsPVvIf6eatEHMazaInmUkr2RW7K99S2RXyGf54bhs",
@@ -74,7 +81,7 @@ export default function RootLayout({
         <main className="min-h-screen">{children}</main>
         <Footer />
         <Analytics />
-        <SpeedInsights/>
+        <SpeedInsights />
       </body>
     </html>
   );

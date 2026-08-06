@@ -6,14 +6,21 @@ import SectionHeading from "@/components/luxury/SectionHeading";
 import TestimonialCard from "@/components/luxury/TestimonialCard";
 import CTABanner from "@/components/luxury/CTABanner";
 import { homeFeatures, homeTestimonials } from "@/lib/constants";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
+import faqs from "@/data/Frequentlyaskquestion.json";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Saurav Furnitures | Custom Furniture & Restoration",
-  description: "Discover bespoke custom furniture, expert restoration, and interior design solutions. Handcrafted by experienced manufacturers.",
+  description: "A digital showroom and manufacturing platform featuring a dynamic product catalog, custom quotation builder, and interactive consultation scheduling. Discover bespoke custom furniture, expert restoration, and interior design solutions. Handcrafted by experienced manufacturers.",
   openGraph: {
     title: "Saurav Furnitures | Custom Furniture & Restoration",
-    description: "Discover bespoke custom furniture, expert restoration, and interior design solutions.",
+    description: "A digital showroom and manufacturing platform featuring a dynamic product catalog, custom quotation builder, and interactive consultation scheduling. Discover bespoke custom furniture, expert restoration, and interior design solutions. Handcrafted by experienced manufacturers.",
     url: "https://sauravfurniture.com",
   },
 };
@@ -93,6 +100,33 @@ export default function HomePage() {
           {homeTestimonials.map((testimonial) => (
             <TestimonialCard key={testimonial.author} {...testimonial} />
           ))}
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-4 pb-16 sm:px-6 lg:px-8 lg:pb-20">
+        <SectionHeading
+          eyebrow="FAQ"
+          title="Frequently Asked Questions"
+          description="Find answers to common questions about our custom manufacturing and restoration services."
+          align="left"
+        />
+        <div className="mt-10">
+          <Accordion type="single" collapsible className="w-full space-y-4">
+            {faqs.map((faq, index) => (
+              <AccordionItem 
+                key={index} 
+                value={`item-${index}`} 
+                className="rounded-2xl border border-border bg-card px-6 py-2 shadow-sm transition-all duration-300 hover:border-accent/40 hover:shadow-md"
+              >
+                <AccordionTrigger className="text-left text-lg font-semibold text-secondary-foreground hover:no-underline">
+                  {faq.question}
+                </AccordionTrigger>
+                <AccordionContent className="text-base leading-relaxed text-muted-foreground pb-4">
+                  {faq.answer}
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
         </div>
       </section>
 
